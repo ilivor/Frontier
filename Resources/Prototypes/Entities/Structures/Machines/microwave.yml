@@ -85,29 +85,31 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Breakage"]
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 10
-    totalIntensity: 5
-    intensitySlope: 5
-    canCreateVacuum: false
-    deleteAfterExplosion: false
-  - type: ApcPowerReceiver
-    powerLoad: 400
-  - type: Machine
-    board: MicrowaveMachineCircuitboard
-  - type: ContainerContainer
-    containers:
-      microwave_entity_container: !type:Container
-      machine_board: !type:Container
-      machine_parts: !type:Container
-  - type: EmptyOnMachineDeconstruct
-    containers:
-    - microwave_entity_container
-  - type: GuideHelp
-    guides:
-    - Chef
-    - FoodRecipes
+    - type: Explosive
+      explosionType: Default
+      maxIntensity: 10
+      totalIntensity: 5
+      intensitySlope: 5
+      canCreateVacuum: false
+      deleteAfterExplosion: false
+    - type: ApcPowerReceiver
+      powerLoad: 400
+    - type: Machine
+      board: MicrowaveMachineCircuitboard
+    - type: ContainerContainer
+      containers:
+        microwave_entity_container: !type:Container
+        machine_board: !type:Container
+        machine_parts: !type:Container
+    - type: EmptyOnMachineDeconstruct
+      containers:
+      - microwave_entity_container
+    - type: GuideHelp
+      guides:
+      - Chef
+      - FoodRecipes
+    - type: PirateBountyItem
+      id: KitchenMicrowave
 
 - type: entity
   id: SyndicateMicrowave

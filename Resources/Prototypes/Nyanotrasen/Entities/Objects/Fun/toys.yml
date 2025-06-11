@@ -20,6 +20,8 @@
       path: /Audio/Voice/Moth/squeak_moth.ogg
   - type: UseDelay
     delay: 2
+  - type: PirateBountyItem
+    id: PlushieMoffRandom
 
 - type: entity
   parent: BasePlushieMoff
