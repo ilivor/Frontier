@@ -5,8 +5,8 @@
   priority: 7
   children:
   - Smugler
-  - Cadet
-  - Commander
+  - SCadet
+  - SComa
   - SParamed
   - SShturm
 
