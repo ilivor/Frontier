@@ -1,6 +1,7 @@
 - type: guideEntry
   id: NFAntag
   name: guide-entry-nfantag
+  text: "/ServerInfo/_NF/Guidebook/SectorTopology.xml"
   priority: 7
   children:
   - Smugler
