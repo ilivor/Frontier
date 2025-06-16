@@ -261,6 +261,8 @@
   - type: Drink
   - type: Sprite
     sprite: Objects/Consumable/Drinks/sodawater.rsi
+  - type: PirateBountyItem
+    id: DrinkSodaWaterCan
 
 - type: entity
   parent: DrinkCanBaseFull

@@ -371,6 +371,8 @@
     - entity_storage
   - type: StaticPrice
     price: 660
+  - type: PirateBountyItem
+    id: GunSafe
 
 - type: entity
   id: GunSafeBaseSecure
