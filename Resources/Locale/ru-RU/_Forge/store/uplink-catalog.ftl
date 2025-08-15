@@ -4,9 +4,11 @@ uplink-security-mech-ares-name = Арес
 uplink-security-mech-ares-desc = Тяжелый аргумент для подавления беспорядков, прорыва укреплений, эвакуации под огнем и противодействия тяжелым угрозам внутренней и внешней безопасности. "Железный кулак" ДСБФ.
 
 uplink-security-mech-bpearl-name = Чёрная Жемчужина
-uplink-security-mech-bpearl-desc = 
+uplink-security-mech-bpearl-desc =
     Не ищи логотип NanoTrasen на этой боевой машине, приятель. Перед тобой "Чёрная Жемчужина" – гордость Пиратского Братства и кошмар корпоративных крыс!
     Пушки в комплект не входят!
+uplink-BoxPirateTrackingBundle-name = Набор для преследования
+uplink-BoxPirateTrackingBundle-desc = Побег удел слабаков! В этой коробочке находиться пик пиратской инженерии, способный помочь вам отследить судно с толстым трюмом!
 
 uplink-security-mech-dgygax-name = Тёмный Гигакс
 uplink-security-mech-dgygax-desc = Модифицированный Гигакс, используемый в неблагих целях. На обратной стороне брони есть надпись "Cybersun Inc.".
