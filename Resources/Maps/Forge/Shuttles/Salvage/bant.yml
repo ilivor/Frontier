@@ -4,8 +4,8 @@ meta:
   engineVersion: 262.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/09/2025 12:55:30
-  entityCount: 321
+  time: 08/12/2025 02:40:30
+  entityCount: 324
 maps: []
 grids:
 - 1
@@ -434,7 +434,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,-0.5
       parent: 1
-- proto: AirlockShuttle
+- proto: AirlockShuttleSyndicate
   entities:
   - uid: 8
     components:
@@ -1148,6 +1148,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: ComputerGunneryConsole
+  entities:
+  - uid: 322
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,3.5
+      parent: 1
 - proto: ComputerShuttle
   entities:
   - uid: 137
@@ -1294,10 +1302,10 @@ entities:
     - type: Conveyed
 - proto: DisposalPipe
   entities:
-  - uid: 153
+  - uid: 230
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: -1.5707963267948966 rad
       pos: 5.5,3.5
       parent: 1
 - proto: DisposalTrunk
@@ -1573,6 +1581,17 @@ entities:
     - type: Transform
       pos: -2.5,0.5
       parent: 1
+- proto: GunneryServerLow
+  entities:
+  - uid: 324
+    components:
+    - type: Transform
+      pos: 4.5,8.5
+      parent: 1
+    - type: Battery
+      startingCharge: 0
+    - type: ApcPowerReceiver
+      powerLoad: 5
 - proto: Gyroscope
   entities:
   - uid: 189
@@ -1715,6 +1734,32 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,-2.5
+      parent: 1
+- proto: MiningWindow
+  entities:
+  - uid: 153
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,0.5
+      parent: 1
+  - uid: 231
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,3.5
+      parent: 1
+  - uid: 232
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 5.5,3.5
+      parent: 1
+  - uid: 233
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,0.5
       parent: 1
 - proto: Mirror
   entities:
@@ -2005,28 +2050,6 @@ entities:
           occludes: True
           ents:
           - 156
-- proto: ShuttleWindow
-  entities:
-  - uid: 230
-    components:
-    - type: Transform
-      pos: 5.5,3.5
-      parent: 1
-  - uid: 231
-    components:
-    - type: Transform
-      pos: -3.5,3.5
-      parent: 1
-  - uid: 232
-    components:
-    - type: Transform
-      pos: -2.5,0.5
-      parent: 1
-  - uid: 233
-    components:
-    - type: Transform
-      pos: 4.5,0.5
-      parent: 1
 - proto: SignalButton
   entities:
   - uid: 234
@@ -2345,7 +2368,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,3.5
       parent: 1
-- proto: WallShuttle
+- proto: WallMining
   entities:
   - uid: 262
     components:
@@ -2581,67 +2604,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,-0.5
       parent: 1
-- proto: WallShuttleDiagonal
-  entities:
-  - uid: 301
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 5.5,-0.5
-      parent: 1
-  - uid: 302
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,-2.5
-      parent: 1
-  - uid: 303
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,-2.5
-      parent: 1
-  - uid: 304
-    components:
-    - type: Transform
-      pos: -3.5,-0.5
-      parent: 1
-  - uid: 305
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,2.5
-      parent: 1
-  - uid: 306
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,2.5
-      parent: 1
-  - uid: 307
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 5.5,9.5
-      parent: 1
-  - uid: 308
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -0.5,9.5
-      parent: 1
-  - uid: 309
-    components:
-    - type: Transform
-      pos: -3.5,9.5
-      parent: 1
-  - uid: 310
-    components:
-    - type: Transform
-      pos: 2.5,9.5
-      parent: 1
-- proto: WallShuttleInterior
-  entities:
   - uid: 311
     components:
     - type: Transform
@@ -2678,6 +2640,65 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,-0.5
       parent: 1
+- proto: WallMiningDiagonal
+  entities:
+  - uid: 301
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,-2.5
+      parent: 1
+  - uid: 302
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 5.5,-0.5
+      parent: 1
+  - uid: 303
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,-2.5
+      parent: 1
+  - uid: 304
+    components:
+    - type: Transform
+      pos: -3.5,-0.5
+      parent: 1
+  - uid: 305
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,2.5
+      parent: 1
+  - uid: 306
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,2.5
+      parent: 1
+  - uid: 307
+    components:
+    - type: Transform
+      pos: 2.5,9.5
+      parent: 1
+  - uid: 308
+    components:
+    - type: Transform
+      pos: -3.5,9.5
+      parent: 1
+  - uid: 309
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,9.5
+      parent: 1
+  - uid: 310
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 5.5,9.5
+      parent: 1
 - proto: WarpPoint
   entities:
   - uid: 317
@@ -2695,6 +2716,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: WeaponNavalCannonM25
+  entities:
+  - uid: 323
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,6.5
+      parent: 1
 - proto: WindoorSecure
   entities:
   - uid: 318
