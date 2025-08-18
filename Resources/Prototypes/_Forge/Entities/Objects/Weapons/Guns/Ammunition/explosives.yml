@@ -66,6 +66,12 @@
   - type: Sprite
     sprite: Forge/Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: ball
+    layers:
+    - state: icon
+      scale: 0.7, 0.7
+    - state: icon-overlay
+      scale: 0.7, 0.7
+      shader: unshaded
   - type: Ammo
     muzzleFlash: null
   - type: Fixtures
