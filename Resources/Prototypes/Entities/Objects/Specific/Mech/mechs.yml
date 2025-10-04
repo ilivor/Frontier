@@ -6,6 +6,12 @@
   - type: MobMover
   - type: Mech
     maxEquipmentAmount: 2
+    batteryWhitelist:
+      tags:
+        - PowerCage
+    gasTankWhitelist:
+      tags:
+        - MechAirTank
   - type: MechAir
   - type: AirFilter
     # everything except oxygen and nitrogen
@@ -84,9 +90,11 @@
       mech-pilot-slot: !type:ContainerSlot
       mech-equipment-container: !type:Container
       mech-battery-slot: !type:ContainerSlot
+      mech-gas-tank-slot: !type:ContainerSlot  # Forge-Change
+      mech-capacitor-slot: !type:ContainerSlot # Forge-Change
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Metallic
+    damageModifierSet: BaseArmor
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Mecha/mechmove03.ogg
@@ -97,7 +105,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 400
+        damage: 1000
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -106,10 +114,42 @@
         node: start
       - !type:DoActsBehavior
         acts: ["Destruction"]
+    # Forge-Change start
+  - type: ItemSlots
+    slots:
+      mech-battery-slot:
+        disableEject: true
+        whitelist:
+          tags:
+            - PowerCage
+      mech-gas-tank-slot:
+        disableEject: true
+        whitelist:
+          tags:
+            - MechAirTank
+  - type: PointLight
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 6
+    energy: 5
+    enabled: false
+  - type: PowerCellDraw
+    enabled: false
+    drawRate: 0.5
+    useRate: 1.5
+  - type: RadarBlip
+    enabled: true
+    scale: 1.5
+    radarColor: "#ff8800"
+    highlightedRadarColor: "#000000"
+    requireNoGrid: true
+  - type: Magboots
+    # Forge-Change end
 
+# Ripley MK-I
 - type: entity
   id: MechRipley
-  parent: BaseMech
+  parent: [ BaseMech, IndustrialMech ] # Forge-Change: +IndustrialMech
   name: Ripley APLU
   description: Versatile and lightly armored, the Ripley is useful for almost any heavy work scenario. The "APLU" stands for Autonomous Power Loading Unit.
   components:
@@ -149,11 +189,13 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageSmall # Forge-Change
+      mech-capacitor-slot: # Forge-Change
+      - CapacitorStockPart
 
-# TODO: have a whitelist for honker equipment
+# H.O.N.K.
 - type: entity
-  parent: BaseMech
+  parent: [ BaseMech, SpecialMech ] # Forge-Change: +SpecialMech
   id: MechHonker
   name: H.O.N.K.
   description: "Produced by \"Tyranny of Honk, INC\", this exosuit is designed as heavy clown-support. Used to spread the fun and joy of life. HONK!"
@@ -171,11 +213,12 @@
       params:
         variation: 0.17
   - type: Mech
-    maxEquipmentAmount: 2
+    maxEquipmentAmount: 3 # Forge-Change
     baseState: honker
     openState: honker-open
     brokenState: honker-broken
     mechToPilotDamageMultiplier: 0.5
+    airtight: true # Forge-Change
     pilotWhitelist:
       components:
       - HumanoidAppearance
@@ -183,15 +226,20 @@
 - type: entity
   parent: MechHonker
   id: MechHonkerBattery
-  suffix: Battery
+  suffix: Battery, Air # Forge-Change: +Air
   components:
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageSmall # Forge-Change
+      mech-gas-tank-slot: # Forge-Change
+      - MechAirTankFilled
+      mech-capacitor-slot: # Forge-Change
+      - CapacitorStockPart
 
+# HAMTR
 - type: entity
-  parent: BaseMech
+  parent: [ BaseMech, SmallMech ] # Forge-Change: +SmallMech
   id: MechHamtr
   name: HAMTR
   description: "An experimental mech which uses a brain–computer interface to connect directly to a hamsters brain."
@@ -213,9 +261,6 @@
     mechToPilotDamageMultiplier: 0.2
     maxEquipmentAmount: 2
     airtight: true
-    equipmentWhitelist:
-      tags:
-      - SmallMech
     pilotWhitelist:
       tags:
       - Hamster
@@ -238,7 +283,9 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageSmall # Forge-Change
+      mech-capacitor-slot: # Forge-Change
+      - CapacitorStockPart
 
 # Vim!!!!!!!
 
@@ -268,9 +315,9 @@
         - MobLayer
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Mecha/mechmove03.ogg
+      path: /Audio/Effects/Footsteps/borgwalk1.ogg # Frontier: Mecha/mechmove03 > /Footsteps/borgwalk1.ogg
       params:
-        volume: -10
+        volume: -5 # Frontier: Louder due to change in sound effect
   - type: Mech
     baseState: vim
     openState: vim-open
@@ -311,4 +358,6 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageSmall # Forge-Change
+      mech-capacitor-slot: # Forge-Change
+      - CapacitorStockPart

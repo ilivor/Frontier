@@ -3,7 +3,6 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Station.Systems;
-using Content.Shared._NF.Shuttles.Events; // Frontier
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Popups;
@@ -22,14 +21,19 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
 using Content.Shared.UserInterface;
+using Robust.Shared.Prototypes;
 using Content.Shared.Access.Systems; // Frontier
 using Content.Shared.Construction.Components; // Frontier
+using Content.Shared._NF.Shuttles.Events; // Frontier
+using System.Linq; // Frontier
+using Robust.Shared.Map.Components; // Frontier
 
 namespace Content.Server.Shuttles.Systems;
 
 public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 {
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly MapSystem _map = default!; // Frontier
     [Dependency] private readonly ActionBlockerSystem _blocker = default!;
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -46,6 +50,8 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     private EntityQuery<TransformComponent> _xformQuery;
 
     private readonly HashSet<Entity<ShuttleConsoleComponent>> _consoles = new();
+
+    private static readonly ProtoId<TagPrototype> CanPilotTag = "CanPilot";
 
     public override void Initialize()
     {
@@ -155,8 +161,28 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     private void OnConsoleUIOpenAttempt(EntityUid uid, ShuttleConsoleComponent component,
         ActivatableUIOpenAttemptEvent args)
     {
-        if (!TryPilot(args.User, uid))
-            args.Cancel();
+//        if (!TryPilot(args.User, uid)) Frontier
+//            args.Cancel();
+
+        // Frontier start
+        var griduid = Transform(uid).GridUid;
+        if (griduid != null)
+        {
+            var mapGridComp = Comp<MapGridComponent>(griduid.Value);
+            var tiles = _map.GetAllTiles(griduid.Value, mapGridComp).ToList();
+            var tilesCount = tiles.Count;
+            if (tilesCount > 20)
+            {
+                if (!TryPilot(args.User, uid))
+                    args.Cancel();
+            }
+            else
+            {
+                args.Cancel();
+                _popup.PopupEntity(Loc.GetString("not-enough-tiles"), uid);
+            }
+        }
+        // Frontier end
     }
 
     private void OnConsoleAnchorChange(EntityUid uid, ShuttleConsoleComponent component,
@@ -175,7 +201,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
     private bool TryPilot(EntityUid user, EntityUid uid)
     {
-        if (!_tags.HasTag(user, "CanPilot") ||
+        if (!_tags.HasTag(user, CanPilotTag) ||
             !TryComp<ShuttleConsoleComponent>(uid, out var component) ||
             !this.IsPowered(uid, EntityManager) ||
             !Transform(uid).Anchored ||
@@ -286,7 +312,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         }
         else
         {
-            navState = new NavInterfaceState(0f, null, null, new Dictionary<NetEntity, List<DockingPortState>>(), InertiaDampeningMode.Dampen, ServiceFlags.None); // Frontier: inertia dampening);
+            navState = new NavInterfaceState(0f, null, null, new Dictionary<NetEntity, List<DockingPortState>>(), InertiaDampeningMode.Dampen, ServiceFlags.None, null, NetEntity.Invalid, true); // Frontier: inertia dampening
             mapState = new ShuttleMapInterfaceState(
                 FTLState.Invalid,
                 default,
@@ -306,6 +332,24 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         var toRemove = new ValueList<(EntityUid, PilotComponent)>();
         var query = EntityQueryEnumerator<PilotComponent>();
+
+//        var griduid = Transform(uid).GridUid; это нужно чтобы если один человек активировал консоль и другой удалил лишние тайлы то консоль закроется, но я не хочу кидать такую проверку в update
+//        if (griduid != null)
+//        {
+//            var mapGridComp = Comp<MapGridComponent>(griduid.Value);
+//            var tiles = _map.GetAllTiles(griduid.Value, mapGridComp).ToList();
+//            var tilesCount = tiles.Count;
+//            if (tilesCount > 15)
+//            {
+//                if (!TryPilot(args.User, uid))
+//                    args.Cancel();
+//            }
+//            else
+//            {
+//                args.Cancel();
+//                _popup.PopupEntity(Loc.GetString("not-enough-tiles"), uid);
+//            }
+//        }
 
         while (query.MoveNext(out var uid, out var comp))
         {
@@ -401,7 +445,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     public NavInterfaceState GetNavState(Entity<RadarConsoleComponent?, TransformComponent?> entity, Dictionary<NetEntity, List<DockingPortState>> docks)
     {
         if (!Resolve(entity, ref entity.Comp1, ref entity.Comp2))
-            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, null, null, docks, Shared._NF.Shuttles.Events.InertiaDampeningMode.Dampen, ServiceFlags.None); // Frontier: add inertia dampening
+            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, null, null, docks, InertiaDampeningMode.Dampen, ServiceFlags.None, null, NetEntity.Invalid, true); // Frontier: add inertia dampening, target
 
         return GetNavState(
             entity,
@@ -417,7 +461,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         Angle angle)
     {
         if (!Resolve(entity, ref entity.Comp1, ref entity.Comp2))
-            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, GetNetCoordinates(coordinates), angle, docks, InertiaDampeningMode.Dampen, ServiceFlags.None); // Frontier: add inertial dampening
+            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, GetNetCoordinates(coordinates), angle, docks, InertiaDampeningMode.Dampen, ServiceFlags.None, null, NetEntity.Invalid, true); // Frontier: add inertial dampening, target
 
         return new NavInterfaceState(
             entity.Comp1.MaxRange,
@@ -425,7 +469,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             angle,
             docks,
             _shuttle.NfGetInertiaDampeningMode(entity), // Frontier
-            _shuttle.NfGetServiceFlags(entity)); // Frontier
+            _shuttle.NfGetServiceFlags(entity), // Frontier
+            entity.Comp1.Target, // Frontier
+            GetNetEntity(entity.Comp1.TargetEntity), // Frontier
+            entity.Comp1.HideTarget); // Frontier
     }
 
     /// <summary>

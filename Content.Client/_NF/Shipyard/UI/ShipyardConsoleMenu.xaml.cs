@@ -19,7 +19,6 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
 
     public event Action<ButtonEventArgs>? OnSellShip;
     public event Action<ButtonEventArgs>? OnOrderApproved;
-    private readonly ShipyardConsoleBoundUserInterface _menu;
     private readonly List<VesselSize> _categoryStrings = new();
     private readonly List<VesselClass> _classStrings = new();
     private readonly List<VesselEngine> _engineStrings = new();
@@ -31,12 +30,12 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     private List<string> _lastUnavailableProtos = new();
     private bool _freeListings = false;
     private bool _validId = false;
+    private ConfirmButton? _currentlyConfirmingButton = null;
 
-    public ShipyardConsoleMenu(ShipyardConsoleBoundUserInterface owner)
+    public ShipyardConsoleMenu()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-        _menu = owner;
         Title = Loc.GetString("shipyard-console-menu-title");
         SearchBar.OnTextChanged += OnSearchBarTextChanged;
         Categories.OnItemSelected += OnCategoryItemSelected;
@@ -86,19 +85,28 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
         _engine = id == 0 ? null : _engineStrings[id];
         Engines.SelectId(id);
     }
+
+    // Forge method
+    private void SortVesselsByPrice(List<VesselPrototype?> vessels)
+    {
+        vessels.Sort((x, y) => x!.Price.CompareTo(y!.Price));
+    }
+
     /// <summary>
     ///     Populates the list of products that will actually be shown, using the current filters.
     /// </summary>
     public void PopulateProducts(List<string> availablePrototypes, List<string> unavailablePrototypes, bool free, bool canPurchase)
     {
         Vessels.RemoveAllChildren();
-
         var search = SearchBar.Text.Trim().ToLowerInvariant();
 
         var newVessels = GetVesselPrototypesFromIds(availablePrototypes);
-        AddVesselsToControls(newVessels, search, free, canPurchase);
-
         var newUnavailableVessels = GetVesselPrototypesFromIds(unavailablePrototypes);
+
+        SortVesselsByPrice(newVessels); // Forge-Change
+        SortVesselsByPrice(newUnavailableVessels); // Forge-Change
+        
+        AddVesselsToControls(newVessels, search, free, canPurchase);
         AddVesselsToControls(newUnavailableVessels, search, free, false);
 
         _lastAvailableProtos = availablePrototypes;
@@ -114,8 +122,8 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
             .Where(it => it != null)
             .ToList();
 
-        vesselList.Sort((x, y) =>
-            string.Compare(x!.Name, y!.Name, StringComparison.CurrentCultureIgnoreCase));
+        //vesselList.Sort((x, y) => Forge-Change
+            //string.Compare(x!.Name, y!.Name, StringComparison.CurrentCultureIgnoreCase)); Forge-Change
         return vesselList;
     }
 
@@ -150,9 +158,23 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
                 Guidebook = { Disabled = prototype.GuidebookPage is null, TooltipDelay = 0.2f, ToolTip = prototype.Description },
                 Price = { Text = priceText },
             };
-            vesselEntry.Purchase.OnPressed += (args) => { OnOrderApproved?.Invoke(args); };
+            vesselEntry.Purchase.OnConfirming += OnStartConfirmingPurchase;
+            vesselEntry.Purchase.OnPressed += (args) => { _currentlyConfirmingButton = null; OnOrderApproved?.Invoke(args); };
             Vessels.AddChild(vesselEntry);
         }
+    }
+
+    /// <summary>
+    /// Confirming handler: ensures that only one button is confirming at a time.
+    /// </summary>
+    private void OnStartConfirmingPurchase(ButtonEventArgs args)
+    {
+        if (args.Button is not ConfirmButton confirmButton)
+            return;
+
+        if (_currentlyConfirmingButton != null)
+            _currentlyConfirmingButton.ClearIsConfirming();
+        _currentlyConfirmingButton = confirmButton;
     }
 
     /// <summary>

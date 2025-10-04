@@ -1,0 +1,41 @@
+# Author -
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: -
+# Discord: -
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Placebo
+  parent: BaseVessel
+  name: NC Плацебо
+  description: Малогабаритный шаттл психолога. Рекомендуемый состав команды 1 человек.
+  price: 20000
+  category: Small
+  group: Medical
+  access: Medical
+  shuttlePath: /Maps/Forge/Shuttles/Medical/placebo.yml
+  guidebookPage: Null
+  class:
+  - Medical
+
+- type: gameMap
+  id: Placebo
+  mapName: 'NC Плацебо'
+  mapPath: /Maps/Forge/Shuttles/Medical/placebo.yml
+  minPlayers: 0
+  stations:
+    Placebo:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Плацебо {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            paraMedicalInterview: [ 0, 0 ]

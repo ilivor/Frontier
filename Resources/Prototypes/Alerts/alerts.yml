@@ -24,6 +24,7 @@
     - category: Hunger
     - category: Thirst
     - alertType: Magboots
+    - alertType: Rooted
     - alertType: Pacified
     - alertType: Offer # Corvax-Frontier
 
@@ -97,7 +98,7 @@
   id: Offer
   clickEvent: !type:AcceptOfferAlertEvent
   icons:
-  - sprite: /Textures/Corvax/Alerts/offer_item.rsi
+  - sprite: Forge/Alerts/offer_item.rsi
     state: offer_item
   name: alerts-offer-name
   description: alerts-offer-desc
@@ -143,6 +144,7 @@
     state: walking
   name: alerts-walking-name
   description: alerts-walking-desc
+  clientHandled: true
 
 - type: alert
   id: Stun
@@ -151,6 +153,15 @@
     state: stunbaton_off
   name: alerts-stunned-name
   description: alerts-stunned-desc
+
+- type: alert
+  id: Knockdown
+  clickEvent: !type:KnockedDownAlertEvent
+  icons:
+  - sprite: /Textures/Interface/Alerts/stunnable.rsi
+    state: knocked-down
+  name: alerts-knockdown-name
+  description: alerts-knockdown-desc
 
 - type: alert
   id: Handcuffed

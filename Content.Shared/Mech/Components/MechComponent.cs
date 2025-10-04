@@ -1,5 +1,6 @@
 using Content.Shared.FixedPoint;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -13,6 +14,44 @@ namespace Content.Shared.Mech.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class MechComponent : Component
 {
+    /// <summary>
+    /// Forge-Change: Whether or not an emag disables it.
+    /// </summary>
+    [DataField("breakOnEmag")]
+    [AutoNetworkedField]
+    public bool BreakOnEmag = true;
+
+    /// <summary>
+    /// Forge-Change:
+    /// A multiplier used to calculate how much of the damage done to a mech
+    /// is transfered to the pilot
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float MechEnergyWaste = 10;
+
+    /// <summary>
+    /// Forge-Change: is the mech lights are toggled?
+    /// </summary>
+    [DataField("light")]
+    [AutoNetworkedField]
+    public bool Light = false;
+
+    /// <summary>
+    /// Forge-Change: is the mech internals enabled?
+    /// </summary>
+    [DataField("internals")]
+    [AutoNetworkedField]
+    public bool Internals = false;
+
+    /// <summary>
+    /// Forge-Change: A whitelist for inserting equipment items.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? BatteryWhitelist;
+    
+    [DataField]
+    public EntityWhitelist? GasTankWhitelist;
+
     /// <summary>
     /// How much "health" the mech has left.
     /// </summary>
@@ -47,6 +86,24 @@ public sealed partial class MechComponent : Component
 
     [ViewVariables]
     public readonly string BatterySlotId = "mech-battery-slot";
+
+    /// <summary>
+    /// Forge-Change: The slot the gas tank is stored in.
+    /// </summary>
+    [ViewVariables]
+    public ContainerSlot GasTankSlot = default!;
+
+    [ViewVariables]
+    public readonly string GasTankSlotId = "mech-gas-tank-slot";
+
+    /// <summary>
+    /// The slot the battery is stored in.
+    /// </summary>
+    [ViewVariables]
+    public ContainerSlot CapacitorSlot = default!;
+
+    [ViewVariables]
+    public readonly string CapacitorSlotId = "mech-capacitor-slot";
 
     /// <summary>
     /// A multiplier used to calculate how much of the damage done to a mech
@@ -112,7 +169,7 @@ public sealed partial class MechComponent : Component
     /// outside of the mech. You can exit instantly yourself.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float ExitDelay = 3;
+    public float ExitDelay = 5;
 
     /// <summary>
     /// How long it takes to pull out the battery.
@@ -144,6 +201,12 @@ public sealed partial class MechComponent : Component
     public EntProtoId MechUiAction = "ActionMechOpenUI";
     [DataField]
     public EntProtoId MechEjectAction = "ActionMechEject";
+    [DataField]
+    public EntProtoId MechToggleLightAction = "ActionMechToggleLights"; // Forge-Change
+    [DataField]
+    public EntProtoId MechToggleInternalsAction = "ActionMechToggleInternals"; // Forge-Change
+    [DataField]
+    public EntProtoId MechToggleThrustersAction = "ActionMechToggleThrusters"; // Forge-Change
     #endregion
 
     #region Visualizer States
@@ -155,13 +218,52 @@ public sealed partial class MechComponent : Component
     public string? BrokenState;
     #endregion
 
+    // Forge-Change-Start
+    #region Sounds
+    [DataField]
+    public SoundSpecifier ToggleLightSound = new SoundPathSpecifier("/Audio/Items/flashlight_pda.ogg");
+    [DataField]
+    public SoundSpecifier LowPowerSound = new SoundPathSpecifier("/Audio/Forge/Mecha/lowpower.ogg");
+    [DataField]
+    public SoundSpecifier NominalSound = new SoundPathSpecifier("/Audio/Forge/Mecha/nominal.ogg");
+    [DataField]
+    public SoundSpecifier NominalLongSound = new SoundPathSpecifier("/Audio/Forge/Mecha/longnanoactivation.ogg");
+    [DataField]
+    public SoundSpecifier PowerupSound = new SoundPathSpecifier("/Audio/Forge/Mecha/powerup.ogg");
+    [DataField]
+    public SoundSpecifier CriticalDamageSound = new SoundPathSpecifier("/Audio/Forge/Mecha/critnano.ogg");
+    
+    [DataField]
+    public bool FirstStart = true;
+    
+    [DataField]
+    public bool PlayPowerSound = true;
+    [DataField]
+    public bool PlayIntegritySound = true;
+    #endregion
+    // Forge-Change-End
+
     [DataField] public EntityUid? MechCycleActionEntity;
     [DataField] public EntityUid? MechUiActionEntity;
     [DataField] public EntityUid? MechEjectActionEntity;
+    [DataField] public EntityUid? MechToggleLightActionEntity; // Forge-Change
+    [DataField] public EntityUid? MechToggleInternalsActionEntity; // Forge-Change
+    [DataField] public EntityUid? MechToggleThrustersActionEntity; // Forge-Change
 
+    // Frontier: extra fields
     /// <summary>
-    /// Frontier: whether or not the equipment in the mech can be removed.
+    /// Whether or not the equipment in the mech can be removed.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public bool CanRemoveEquipment = true;
+
+    [DataField(serverOnly: true)]
+    public bool MobStateAdded = false;
+
+    [DataField(serverOnly: true)]
+    public bool MobThresholdsAdded = false;
+
+    [DataField(serverOnly: true)]
+    public bool NpcFactionAdded = false;
+    // End Frontier: extra fields
 }

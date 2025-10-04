@@ -1,0 +1,41 @@
+# Author Info
+# GitHub: -
+# Discord: tochka_dunaxy
+# License: CC-BY-NC-ND-3.0
+# Corvax_frontier
+
+# Maintainer Info
+# GitHub: https://github.com/mersen-tyn
+# Discord: mersen
+
+- type: vessel
+  id: Unit
+  parent: BaseVessel
+  name: SBI Юнит
+  description: Малогабаритный шаттл для наёмников, рекомендуемый состав экипажа 1 человека.
+  price: 53800
+  category: Small
+  group: Mercenary
+  shuttlePath: /Maps/Forge/Shuttles/Mercenary/Unit.yml
+  addComponents:
+  - type: MercenaryBountyDatabase
+    bounties: []
+
+- type: gameMap
+  id: Unit
+  mapName: 'SBI Юнит'
+  mapPath: /Maps/Forge/Shuttles/Mercenary/Unit.yml
+  minPlayers: 0
+  stations:
+    Unit:
+      stationProto: MercenaryFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Юнит {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

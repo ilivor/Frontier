@@ -1,0 +1,46 @@
+# Author -
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: -
+# Discord: -
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Wasp
+  parent: BaseVessel
+  name: NSF Шершень
+  description: Крупногабаритный каторжный шаттл. Рекомендованный состав команды 8+ человек.
+  price: 226350
+  category: Large
+  group: Security
+  access: Bailiff
+  shuttlePath: /Maps/Forge/Shuttles/Nfsd/wasp.yml
+  guidebookPage: Null
+  class:
+  - Capital
+  - Detainment
+  - Expedition
+  addComponents:
+  - type: ShuttleFaction
+    faction: NFSD
+
+- type: gameMap
+  id: Wasp
+  mapName: 'NSF Шершень'
+  mapPath: /Maps/Forge/Shuttles/Nfsd/wasp.yml
+  minPlayers: 0
+  stations:
+    Wasp:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Шершень {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Prisoner: [ 0, 0 ]

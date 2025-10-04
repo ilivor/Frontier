@@ -1,0 +1,44 @@
+- type: entity
+  id: SyndicateTradingConsole
+  parent: BaseLatheLube
+  name: Консоль торгов синдиката
+  description: Используеться для оформления заказов на нелегальные предметы
+  components:
+  - type: Sprite
+    sprite: Forge/Structures/Machines/terminal_syndicatechange.rsi
+    noRot: true
+    layers:
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.Base" ]
+    - state: "normal-unshaded"
+      map: [ "enum.VendingMachineVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: Machine
+    board: AutolatheMachineCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+    staticPacks:
+    - SyndicateTradingConsoleWeapons
+    - SyndicateTradingConsoleArmor
+    - SyndicateTradingConsoleBoomA
+    - SyndicateTradingConsoleMed
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - blueprint
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#f71713"
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - SSpaceCash

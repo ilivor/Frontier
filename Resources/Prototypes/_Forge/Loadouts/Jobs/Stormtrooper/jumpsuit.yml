@@ -1,0 +1,5 @@
+- type: loadout
+  id: StormtrooperJumpsuit1
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitStormtrooper

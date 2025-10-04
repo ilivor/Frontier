@@ -1,0 +1,189 @@
+# Консоль Центуриона
+- type: entity
+  id: CenturionMothershipComputer
+  parent: BaseMothershipComputer
+  name: консоль авианосца "Центурион"
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: shipyard_nfsd
+    - map: ["computerLayerKeys"]
+      state: telesci_key
+  - type: ShipyardConsole
+    newJobTitle: null
+    shipyardChannel: Nfsd
+    newAccessLevels: [Captain, Security, Brig]
+  - type: ShipyardListing
+    shuttles:
+    - Templar
+    - hammer
+
+- type: entity
+  id: SkatMothershipComputer
+  parent: BaseMothershipComputer
+  name: Консоль авианосца "Большой скат"
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: shipyard_nfsd
+    - map: ["computerLayerKeys"]
+      state: telesci_key
+  - type: ShipyardConsole
+    newJobTitle: null
+    shipyardChannel: Nfsd
+    newAccessLevels: [Captain, Security, Brig]
+  - type: ShipyardListing
+    shuttles:
+    - Rogue
+    - hammer
+    - Templar
+
+# The caduceus console
+- type: entity
+  id: CaduceusMothershipComputer
+  parent: BaseMothershipComputer
+  name: caduceus shipyard console
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer_medical
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: shipyard_medical
+    - map: ["computerLayerKeys"]
+      state: telesci_key
+  - type: ShipyardListing
+    shuttles:
+    - Spirit
+    - Searchlight
+    - Beaker
+    - Eagle
+    - Apothecary
+    - Tyne
+
+- type: entity
+  id: VostokMothershipComputer
+  parent: BaseMothershipComputer
+  name: консоль верфи Востока
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: shipyard_nfsd
+    - map: ["computerLayerKeys"]
+      state: telesci_key
+  - type: ShipyardConsole
+    newJobTitle: null
+    shipyardChannel: Nfsd
+    newAccessLevels: [Captain, Security, Brig]
+  - type: ShipyardListing
+    shuttles:
+    - Sword
+    - Trest
+    - Dagger1
+
+- type: entity
+  id: DredMothershipComputer
+  parent: BaseMothershipComputer
+  name: консоль верфи Дредноута
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: shipyard_nfsd
+    - map: ["computerLayerKeys"]
+      state: telesci_key
+  - type: ShipyardListing
+    shuttles:
+    - Owl
+
+- type: entity
+  id: ZenichMothershipComputer
+  parent: BaseMothershipComputer
+  name: консоль верфи Зенита
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: shipyard_mining
+    - map: ["computerLayerKeys"]
+      state: telesci_key
+  - type: ShipyardListing
+    shuttles:
+    - Owl
+    - Sergeant
+
+# Консоль Нансена
+- type: entity
+  id: NansenMothershipComputer
+  parent: BaseMothershipComputer
+  name: Captain Nansen shipyard console
+  components:
+  - type: Sprite
+    sprite: Forge/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: Nansenshipyard
+  - type: ShipyardListing
+    shuttles:
+    - Bentsen
+    - Johan
+    - Viking
+    - Hendrick
+    - Serge
+    - Fram
+
+- type: entity
+  id: StarMothershipComputer
+  parent: BaseMothershipComputer
+  name: консоль верфи Энтерпрайза
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: shipyard_nfsd
+    - map: ["computerLayerKeys"]
+      state: telesci_key
+  - type: ShipyardListing
+    shuttles:
+    - Owl
+    - Sergeant

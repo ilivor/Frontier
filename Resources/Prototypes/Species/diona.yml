@@ -36,6 +36,12 @@
   id: MobDionaMarkingLimits
   onlyWhitelisted: true
   points:
+    hair:
+      points: 0
+      required: false
+    FacialHair:
+      points: 0
+      required: false
     Head:
       points: 2
       required: false
@@ -52,7 +58,7 @@
       points: 1
       required: false
     Chest:
-      points: 1
+      points: 2
       required: false
     Legs:
       points: 2

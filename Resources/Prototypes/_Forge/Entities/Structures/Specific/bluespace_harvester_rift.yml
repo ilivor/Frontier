@@ -1,0 +1,68 @@
+- type: entity
+  id: BluespaceHarvesterRift
+  name: redspace rift
+  description: Run! Run while you can! Just run!
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: BluespaceHarvesterRift
+    passiveSpawn:
+    - MobArgocyteEnforcerExpeditionsRift
+    spawn:
+      # Flesh
+      - id: MobArgocyteFounderExpeditionsRift
+        cost: 50
+      - id: MobArgocyteSwiperExpeditionsRift
+        cost: 50
+      - id: MobArgocyteSwiperExpeditionsRift
+        cost: 50
+      - id: MobArgocyteCrawlerExpeditionsRift
+        cost: 50
+      # DEATH
+      - id: MobBehonkerGravRift
+        cost: 800
+      - id: NFMobDragonDungeonRift
+        cost: 900
+      - id: NFMobXenoQueenRift
+        cost: 1000
+      - id: MobArgocyteLeviathingExpeditionsRift
+        cost: 1000
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+  - type: Sprite
+    layers:
+    - sprite: Structures/Specific/carp_rift.rsi
+      state: icon
+      color: "#ff0000"
+      shader: unshaded
+  - type: InteractionOutline
+  - type: Clickable
+  - type: PointLight
+    enabled: true
+    color: "#ff0000"
+    radius: 12.0
+    energy: 5.0
+    netsync: false
+  - type: NavMapBeacon
+    color: "#ff0000"
+    text: redspace rift
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Weapons/Guns/Gunshots/rocket_launcher.ogg
+  - type: TimedDespawn
+    lifetime: 50

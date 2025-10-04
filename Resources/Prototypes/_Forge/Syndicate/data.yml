@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseMachinePowered
+  id: SyndicateDataMiner
+  name: data miner title
+  description: Data collecting and processing machine produced by Cybersun.
+  components:
+  - type: Sprite
+    sprite: Forge/Structures/Specific/Syndicate/syndicatedataminer.rsi
+    noRot: true
+    layers:
+    - state: server
+    - state: server_o
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+    - state: device-on
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: DataMinerSyndicate

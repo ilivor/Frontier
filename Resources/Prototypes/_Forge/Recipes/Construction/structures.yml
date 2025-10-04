@@ -1,0 +1,10 @@
+- type: construction
+  id: DefibrillatorCabinetConst
+  graph: DefibrillatorCabinetGraph
+  startNode: start
+  targetNode: DefibrillatorCabinet
+  category: construction-category-structures
+  placementMode: SnapgridCenter
+  objectType: Structure
+  canRotate: true
+  canBuildInImpassable: true

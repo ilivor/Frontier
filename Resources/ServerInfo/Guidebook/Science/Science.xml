@@ -11,6 +11,12 @@
 Самыми важными устройствами вашего отдела являются сервер РнД, на котором хранятся все изученные технологии, и исследовательская консоль, который позволяет вам эти технологии открывать.
 
 Каждая технология стоит определённое число [color=#a4885c]Очков исследований[/color], и их изучение открывает новые рецепты для печати на производственных станках. Некоторые технологии нельзя разблокировать, не изучив технологии им предшествующие.
+  <Box>
+    <GuideEntityEmbed Entity="Wrench" Caption="Industrial"/>
+    <GuideEntityEmbed Entity="WeaponTetherGun" Caption="Experimental"/>
+    <GuideEntityEmbed Entity="ComputerTelevision" Caption="Civil Services"/>
+    <GuideEntityEmbed Entity="NFWeaponEnergyRifleSniperXrayCannon" Caption="Arsenal"/> <!-- Frontier: WeaponXrayCannon<WeaponEnergyRifleSniperXrayCannon -->
+  </Box>
 
 Информацию о различных технологиях можно посмотреть [textlink="на странице справочника технологий" link="Technologies"].
 
@@ -21,7 +27,7 @@
   <GuideEntityEmbed Entity="Syringe" Caption="Биохимия"/>
   <GuideEntityEmbed Entity="WeaponTetherGun" Caption="Экспериментальное"/>
   <GuideEntityEmbed Entity="ComputerTelevision" Caption="Обслуживание персонала"/>
-  <GuideEntityEmbed Entity="WeaponXrayCannon" Caption="Арсенал"/>
+  <GuideEntityEmbed Entity="NFWeaponEnergyRifleSniperXrayCannon" Caption="Арсенал"/>
 </Box>
 
 <GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/> Воспользуйтесь ближайшей консолью РнД, чтобы узнать, какой вид исследований закреплен за каждым древом дисциплины.

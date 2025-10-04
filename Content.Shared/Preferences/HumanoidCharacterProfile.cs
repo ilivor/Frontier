@@ -7,7 +7,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
-using Content.Shared._Corvax.Speech.Synthesis; // Corvax-Frontier-Barks
+using Content.Shared._Forge.Speech.Synthesis; // Corvax-Frontier-Barks
 using Content.Shared.Traits;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
@@ -497,25 +497,89 @@ namespace Content.Shared.Preferences
         // Frontier
         public string BankBalanceText => BankSystemExtensions.ToSpesoString(BankBalance);
 
-        public bool MemberwiseEquals(ICharacterProfile maybeOther)
+        // Forge-Change-Start
+        public bool MemberwiseEquals(ICharacterProfile maybeOther, out string? error)
         {
-            if (maybeOther is not HumanoidCharacterProfile other) return false;
-            if (Name != other.Name) return false;
-            if (Age != other.Age) return false;
-            if (Sex != other.Sex) return false;
-            if (Gender != other.Gender) return false;
-            if (Species != other.Species) return false;
-            if (BankBalance != other.BankBalance) return false; // Frontier
-            if (BarkVoice != other.BarkVoice) return false; // Corvax-Frontier-Barks
-            if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
-            if (SpawnPriority != other.SpawnPriority) return false;
-            if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
-            if (!_antagPreferences.SequenceEqual(other._antagPreferences)) return false;
-            if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
-            if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
-            if (FlavorText != other.FlavorText) return false;
-            return Appearance.MemberwiseEquals(other.Appearance);
+            if (maybeOther is not HumanoidCharacterProfile other)
+            {
+                error = $"Не является профилем {maybeOther.Name}";
+                return false;
+            }
+            if (Name != other.Name)
+            {
+                error = $"Имя: {Name} не совпадает с {other.Name}";
+                return false;
+            }
+            if (Age != other.Age)
+            {
+                error = $"Возраст: {Age} не совпадает с {other.Age}";
+                return false;
+            }
+            if (Sex != other.Sex)
+            {
+                error = $"Пол: {Sex} не совпадает с {other.Sex}";
+                return false;
+            }
+            if (Gender != other.Gender)
+            {
+                error = $"Гендер: {Gender} не совпадает с {other.Gender}";
+                return false;
+            }
+            if (Species != other.Species)
+            {
+                error = $"Вид: {Species} не совпадает с {other.Species}";
+                return false;
+            }
+            if (BankBalance != other.BankBalance) // Frontier
+            {
+                error = $"Баланс банка: {BankBalance} не совпадает с {other.BankBalance}";
+                return false;
+            }
+            if (BarkVoice != other.BarkVoice) // Forge-Barks
+            {
+                error = $"Голос: {BarkVoice} не совпадает с {other.BarkVoice}";
+                return false;
+            }
+            if (PreferenceUnavailable != other.PreferenceUnavailable)
+            {
+                error = $"Настройки: {PreferenceUnavailable} не совпадают с {other.PreferenceUnavailable}";
+                return false;
+            }
+            if (SpawnPriority != other.SpawnPriority)
+            {
+                error = $"Приоритет спавна: {SpawnPriority} не совпадает с {other.SpawnPriority}";
+                return false;
+            }
+            if (!_jobPriorities.SequenceEqual(other._jobPriorities))
+            {
+                error = $"Приоритеты работы не совпадают";
+                return false;
+            }
+            if (!_antagPreferences.SequenceEqual(other._antagPreferences))
+            {
+                error = $"Настройки антагов не совпадают";
+                return false;
+            }
+            if (!_traitPreferences.SequenceEqual(other._traitPreferences))
+            {
+                error = $"Настройки черт не совпадают";
+                return false;
+            }
+            if (!Loadouts.SequenceEqual(other.Loadouts))
+            {
+                error = $"Наборы не совпадают";
+                return false;
+            }
+            if (FlavorText != other.FlavorText)
+            {
+                error = $"Текст: {FlavorText} не совпадает с {other.FlavorText}";
+                return false;
+            }
+            var valid = Appearance.MemberwiseEquals(other.Appearance, out var error1);
+            error = error1;
+            return valid;
         }
+        // Forge-Change-End
 
         public void EnsureValid(ICommonSession session, IDependencyCollection collection)
         {
@@ -528,7 +592,7 @@ namespace Content.Shared.Preferences
                 speciesPrototype = prototypeManager.Index(Species);
 
             }
-// Corvax-frontier-blacklistrace
+            // Forge-Change-blacklistrace
 #if !DEBUG
             if (speciesPrototype.JobWhitelist != null)
             {
@@ -550,7 +614,7 @@ namespace Content.Shared.Preferences
             if (_jobPriorities.Count == 0)
                 PreferenceUnavailable = PreferenceUnavailableMode.StayInLobby;
 #endif
-// Corvax-frontier-blacklistrace
+            // Forge-Change-blacklistrace
 
 
 
@@ -578,13 +642,14 @@ namespace Content.Shared.Preferences
             };
 
             string name;
+            var maxNameLength = configManager.GetCVar(CCVars.MaxNameLength);
             if (string.IsNullOrEmpty(Name))
             {
                 name = GetName(Species, gender);
             }
-            else if (Name.Length > MaxNameLength)
+            else if (Name.Length > maxNameLength)
             {
-                name = Name[..MaxNameLength];
+                name = Name[..maxNameLength];
             }
             else
             {
@@ -604,7 +669,7 @@ namespace Content.Shared.Preferences
                  * 00F8-00FF  Latin-1 Supplement: Letters III
                  * 0100-017F  Latin Extended A: European Latin
                  */
-				 name = RestrictedNameRegex.Replace(name, string.Empty);
+                name = RestrictedNameRegex.Replace(name, string.Empty);
             }
 
             if (configManager.GetCVar(CCVars.ICNameCase))
@@ -619,9 +684,10 @@ namespace Content.Shared.Preferences
             }
 
             string flavortext;
-            if (FlavorText.Length > MaxDescLength)
+            var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
+            if (FlavorText.Length > maxFlavorTextLength)
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..MaxDescLength];
+                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
             }
             else
             {

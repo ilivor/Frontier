@@ -1,0 +1,74 @@
+- type: job
+  id: paraMedical
+  name: Парамедик
+  description: Полевой медик занимающийся спасением раненых.
+  playTimeTracker: JobparaMedical
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 1 # 48 hours
+ # whitelisted: true
+  startingGear: ParaMedicalGear
+  alwaysUseSpawner: true
+  hideConsoleVisibility: true
+  canBeAntag: true
+  icon: "JobIconParamedic"
+  supervisors: job-supervisors-MMO
+  weight: 40
+  displayWeight: 40
+  setPreference: true
+  access:
+  - Medical
+  accessGroups:
+  - Medical
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: SpecialSectorStationRecord
+      recordGeneration: FalseRecord
+  - !type:AddImplantSpecial
+    implants: [ MedicalTrackingImplanter ]
+
+- type: job
+  id: paraMedicalInterview
+  name: Парамедик
+  description: Полевой медик занимающийся спасением раненых.
+  playTimeTracker: JobparaMedicalInterview
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 1 # 48 hours
+ # whitelisted: true
+#  startingGear: ParaMedicalHologramGear
+  icon: "JobIconParamedic"
+  supervisors: job-supervisors-MMO
+  setPreference: false
+  access:
+  - Medical
+  accessGroups:
+  - Medical
+  jobEntity: InterviewHologramparaMedical
+
+- type: startingGear
+  id: ParaMedicalGear
+  equipment:
+    ears: ClothingHeadsetMedical
+    id: ParamedicPDA
+    belt: ClothingBeltMedicalEMTFilled
+    pocket1: WeaponShotgunKD12Medic
+    pocket2: BoxBeanbagKS23
+    eyes: ClothingEyesHudMedical
+  storage:
+    back:
+    - NFBoxSurvivalExtended
+    - PaperWrittenMedic
+    - DefibrillatorCompact
+    - MedTekCartridge
+
+#- type: startingGear
+#  id: ParaMedicalHologramGear
+#  equipment:
+#    jumpsuit: ClothingUniformJumpsuitPilot
+#    shoes: ClothingShoesBootsPilot
+
+- type: chameleonOutfit
+  id: paraMedicalChameleonOutfit
+  job: paraMedical

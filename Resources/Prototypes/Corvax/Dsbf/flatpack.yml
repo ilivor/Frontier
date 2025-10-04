@@ -1,8 +1,0 @@
-- type: entity
-  parent: MedicalTechFabFlatpack
-  id: MedicalAssemblerFlatpack
-  name: MedicalAssembler flatpack
-  description: A flatpack used for constructing a chemmaster.
-  components:
-  - type: Flatpack
-    entity: MedicalAssembler

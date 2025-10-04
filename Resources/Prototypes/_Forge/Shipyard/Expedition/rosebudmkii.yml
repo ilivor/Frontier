@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: ???
+# Discord: ???
+
+# Shuttle Notes:
+
+- type: vessel
+  id: RosebudMKII
+  parent: BaseVessel
+  name: NT Бутон MKII
+  description: Среднегабаритный экспедиционный шаттл. Рекомендованный состав команды 3-6 человек.
+  price: 106000
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/Forge/Shuttles/Expedition/rosebudmkii.yml
+  guidebookPage: Null
+  class:
+  - Expedition
+
+- type: gameMap
+  id: RosebudMKII
+  mapName: 'NT Бутон MKII'
+  mapPath: /Maps/Forge/Shuttles/Expedition/rosebudmkii.yml
+  minPlayers: 0
+  stations:
+    RosebudMKII:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Бутон MKII {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

@@ -1,0 +1,95 @@
+- type: entity #FrontierCorvax
+  id: MagazineVector22
+  name: magazine (.22 LR)
+  parent: BaseItem
+  description: A ridiculously large magazine with ridiculously small and ridiculous .22 ammo
+  components:
+  - type: Tag
+    tags:
+      - MagazineVector22
+  - type: BallisticAmmoProvider
+    proto: NFCartridgePistol35
+    mayTransfer: true
+    whitelist:
+      tags:
+        - NFCartridgePistol35
+    capacity: 44
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Forge/Objects/Weapons/Guns/Ammunition/Magazine/Vector/vector22mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity #FrontierCorvax
+  id: MagazineVector22Empty
+  parent: MagazineVector22
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity #FrontierCorvax
+  id: MagazineVector45
+  name: magazine (.45 ACP)
+  parent: BaseItem
+  description: Standard magazine for 13 small (big and slow) friends in .45 ACP
+  components:
+  - type: Tag
+    tags:
+      - MagazineVector45
+  - type: BallisticAmmoProvider
+    proto: NFCartridgePistol45
+    mayTransfer: true
+    whitelist:
+      tags:
+        - NFCartridgePistol45
+    capacity: 15
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Forge/Objects/Weapons/Guns/Ammunition/Magazine/Vector/vector45mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity #FrontierCorvax
+  id: MagazineVector45Empty
+  parent: MagazineVector45
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]

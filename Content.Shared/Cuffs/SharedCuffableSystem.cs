@@ -4,6 +4,7 @@ using Content.Shared.Administration.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
+using Content.Shared.CombatMode;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -19,6 +20,7 @@ using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Events;
+using Content.Shared.Movement.Systems; // Forge-Change
 using Content.Shared.Popups;
 using Content.Shared.Pulling.Events;
 using Content.Shared.Rejuvenate;
@@ -39,11 +41,11 @@ namespace Content.Shared.Cuffs
     // TODO remove all the IsServer() checks.
     public abstract partial class SharedCuffableSystem : EntitySystem
     {
-        [Dependency] private readonly IComponentFactory _componentFactory = default!;
         [Dependency] private readonly INetManager _net = default!;
         [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
         [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
         [Dependency] private readonly AlertsSystem _alerts = default!;
+        [Dependency] private readonly MovementSpeedModifierSystem _move = default!; // Forge-Change
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly SharedContainerSystem _container = default!;
         [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
@@ -53,10 +55,15 @@ namespace Content.Shared.Cuffs
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly UseDelaySystem _delay = default!;
+        [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
+
+        private EntityQuery<HandcuffComponent> _cuffQuery; // Forge-Change
 
         public override void Initialize()
         {
             base.Initialize();
+
+            _cuffQuery = GetEntityQuery<HandcuffComponent>(); // Forge-Change
 
             SubscribeLocalEvent<CuffableComponent, HandCountChangedEvent>(OnHandCountChanged);
             SubscribeLocalEvent<UncuffAttemptEvent>(OnUncuffAttempt);
@@ -87,6 +94,9 @@ namespace Content.Shared.Cuffs
             SubscribeLocalEvent<HandcuffComponent, MeleeHitEvent>(OnCuffMeleeHit);
             SubscribeLocalEvent<HandcuffComponent, AddCuffDoAfterEvent>(OnAddCuffDoAfter);
             SubscribeLocalEvent<HandcuffComponent, VirtualItemDeletedEvent>(OnCuffVirtualItemDeleted);
+            SubscribeLocalEvent<CuffableComponent, GetStandUpTimeEvent>(OnCuffableStandupArgs); // Forge-Change
+            SubscribeLocalEvent<CuffableComponent, KnockedDownRefreshEvent>(OnCuffableKnockdownRefresh); // Forge-Change
+            SubscribeLocalEvent<CuffableComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers); // Forge-Change
         }
 
         private void CheckInteract(Entity<CuffableComponent> ent, ref InteractionAttemptEvent args)
@@ -144,7 +154,7 @@ namespace Content.Shared.Cuffs
 
         private void OnStartup(EntityUid uid, CuffableComponent component, ComponentInit args)
         {
-            component.Container = _container.EnsureContainer<Container>(uid, _componentFactory.GetComponentName(component.GetType()));
+            component.Container = _container.EnsureContainer<Container>(uid, Factory.GetComponentName(component.GetType()));
         }
 
         private void OnRejuvenate(EntityUid uid, CuffableComponent component, RejuvenateEvent args)
@@ -364,6 +374,9 @@ namespace Content.Shared.Cuffs
                     _adminLog.Add(LogType.Action, LogImpact.High,
                         $"{ToPrettyString(user):player} has cuffed {ToPrettyString(target):player}");
                 }
+
+                if (!MathHelper.CloseTo(component.MovementMod, 1f)) // Forge-Change
+                    _move.RefreshMovementSpeedModifiers(target); // Forge-Change
             }
             else
             {
@@ -379,7 +392,8 @@ namespace Content.Shared.Cuffs
                     _popup.PopupClient(Loc.GetString("handcuff-component-cuff-interrupt-message",
                         ("targetName", Identity.Name(target, EntityManager, user))), user, user);
                     _popup.PopupClient(Loc.GetString("handcuff-component-cuff-interrupt-other-message",
-                        ("otherName", Identity.Name(user, EntityManager, target))), target, target);
+                        ("otherName", Identity.Name(user, EntityManager, target)),
+                        ("otherEnt", user)), target, target);
                 }
             }
         }
@@ -412,7 +426,73 @@ namespace Content.Shared.Cuffs
                 UpdateCuffState(ent.Owner, ent.Comp);
             }
         }
+        // Forge-Change-Start
+        /// <summary>
+        ///     Takes longer to stand up when cuffed
+        /// </summary>
+        private void OnCuffableStandupArgs(Entity<CuffableComponent> ent, ref GetStandUpTimeEvent time)
+        {
+            if (!HasComp<KnockedDownComponent>(ent) || !IsCuffed(ent))
+                return;
 
+            var cuffs = GetAllCuffs(ent.Comp);
+            var mod = 1f;
+
+            if (cuffs.Count == 0)
+                return;
+
+            foreach (var cuff in cuffs)
+            {
+                if (!_cuffQuery.TryComp(cuff, out var comp))
+                    continue;
+
+                // Get the worst modifier
+                mod = Math.Max(mod, comp.StandupMod);
+            }
+
+            time.DoAfterTime *= mod;
+        }
+
+        private void OnCuffableKnockdownRefresh(Entity<CuffableComponent> ent, ref KnockedDownRefreshEvent args)
+        {
+            var cuffs = GetAllCuffs(ent.Comp);
+            var mod = 1f;
+
+            if (cuffs.Count == 0)
+                return;
+
+            foreach (var cuff in cuffs)
+            {
+                if (!_cuffQuery.TryComp(cuff, out var comp))
+                    continue;
+
+                // Get the worst modifier
+                mod = Math.Min(mod, comp.KnockedMovementMod);
+            }
+
+            args.SpeedModifier *= mod;
+        }
+
+        private void OnRefreshMovementSpeedModifiers(Entity<CuffableComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
+        {
+            var cuffs = GetAllCuffs(ent.Comp);
+            var mod = 1f;
+
+            if (cuffs.Count == 0)
+                return;
+
+            foreach (var cuff in cuffs)
+            {
+                if (!_cuffQuery.TryComp(cuff, out var comp))
+                    continue;
+
+                // Get the worst modifier
+                mod = Math.Min(mod, comp.MovementMod);
+            }
+
+            args.ModifySpeed(mod);
+        }
+        // Forge-Change-End
         /// <summary>
         ///     Adds virtual cuff items to the user's hands.
         /// </summary>
@@ -717,10 +797,34 @@ namespace Content.Shared.Cuffs
                 }
             }
 
+            var shoved = false;
+            // if combat mode is on, shove the person.
+            if (_combatMode.IsInCombatMode(user) && target != user && user != null)
+            {
+                var eventArgs = new DisarmedEvent(target, user.Value, 1f);
+                RaiseLocalEvent(target, ref eventArgs);
+                shoved = true;
+            }
+
+            if (!MathHelper.CloseTo(cuff.MovementMod, 1f)) // Forge-Change
+                _move.RefreshMovementSpeedModifiers(target); // Forge-Change
+
             if (cuffable.CuffedHandCount == 0)
             {
                 if (user != null)
-                    _popup.PopupClient(Loc.GetString("cuffable-component-remove-cuffs-success-message"), user.Value, user.Value);
+                {
+                    if (shoved)
+                    {
+                        _popup.PopupClient(Loc.GetString("cuffable-component-remove-cuffs-push-success-message",
+                            ("otherName", Identity.Name(user.Value, EntityManager, user))),
+                            user.Value,
+                            user.Value);
+                    }
+                    else
+                    {
+                        _popup.PopupClient(Loc.GetString("cuffable-component-remove-cuffs-success-message"), user.Value, user.Value);
+                    }
+                }
 
                 if (target != user && user != null)
                 {

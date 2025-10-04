@@ -1,0 +1,45 @@
+# Author -
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: -
+# Discord: -
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Prowler
+  parent: BaseVessel
+  name: NSF Бродяга
+  description: Среднегабаритный патрульный шаттл. Рекомендованный состав команды 3-6 человек.
+  price: 84550
+  category: Medium
+  group: Security
+  access: Sergeant
+  shuttlePath: /Maps/Forge/Shuttles/Nfsd/prowler.yml
+  guidebookPage: Null
+  class:
+  - Patrol
+  engine:
+  - AME
+  addComponents:
+  - type: ShuttleFaction
+    faction: NFSD
+
+- type: gameMap
+  id: Prowler
+  mapName: 'NSF Бродяга'
+  mapPath: /Maps/Forge/Shuttles/Nfsd/prowler.yml
+  minPlayers: 0
+  stations:
+    Prowler:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Бродяга {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs: {}

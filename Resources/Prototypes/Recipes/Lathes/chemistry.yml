@@ -3,14 +3,14 @@
   result: Beaker
   completetime: 2
   materials:
-    Glass: 100
+    Glass: 200
 
 - type: latheRecipe
   id: LargeBeaker
   result: LargeBeaker
   completetime: 2
   materials:
-    Glass: 200
+    Glass: 400
 
 - type: latheRecipe
   id: CryostasisBeaker
@@ -65,7 +65,7 @@
 #    Glass: 200 # Frontier
     Plasma: 30 # Frontier 50<30
     Silver: 30 # Frontier 50<30
-    Bluespace: 60 #DeltaV: Bluespace   
+    Bluespace: 60 #DeltaV: Bluespace
 
 - type: latheRecipe
   id: PillCanister
@@ -91,6 +91,14 @@
   materials:
     Plastic: 100
     Steel: 250
+
+- type: latheRecipe
+  id: BaseChemistryEmptyVial
+  result: BaseChemistryEmptyVial
+  completetime: 2
+  materials:
+    Glass: 50
+    # Wood: 20 # Frontier
 
 - type: latheRecipe
   id: ClothingEyesGlassesChemical

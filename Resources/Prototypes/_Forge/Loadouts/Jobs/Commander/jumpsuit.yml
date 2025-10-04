@@ -1,0 +1,11 @@
+- type: loadout
+  id: CommanderJumpsuit1
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCommander
+
+- type: loadout
+  id: CommanderJumpsuit2
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCommander

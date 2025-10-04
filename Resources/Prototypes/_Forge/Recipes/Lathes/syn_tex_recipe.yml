@@ -1,0 +1,352 @@
+- type: latheRecipe
+  id: NFAmmunitionBoxShellShotgunBeanbagRecipe
+  categories: [SyndicateTexSyn1]
+  result: NFAmmunitionBoxShellShotgunBeanbag
+  completetime: 1
+  materials:
+    CreditCounterfeit: 1000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxPistol35RubberRecipe
+  categories: [SyndicateTexSyn1]
+  result: NFAmmunitionBoxPistol35Rubber
+  completetime: 1
+  materials:
+    CreditCounterfeit: 1000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxRifle20RubberRecipe
+  categories: [SyndicateTexSyn1]
+  result: NFAmmunitionBoxRifle20Rubber
+  completetime: 1
+  materials:
+    CreditCounterfeit: 1000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxShellShotgunSlugRecipe
+  categories: [SyndicateTexSyn2]
+  result: NFAmmunitionBoxShellShotgunSlug
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2500
+
+- type: latheRecipe
+  id: NFAmmunitionBoxShellShotgunTranquilizerRecipe
+  categories: [SyndicateTexSyn2]
+  result: NFAmmunitionBoxShellShotgunTranquilizer
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2500
+
+- type: latheRecipe
+  id: NFAmmunitionBoxShellShotgunBuckshotRecipe
+  categories: [SyndicateTexSyn2]
+  result: NFAmmunitionBoxShellShotgunBuckshot
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2500
+
+- type: latheRecipe
+  id: NFAmmunitionBoxPistol45Recipe
+  categories: [SyndicateTexSyn2]
+  result: NFAmmunitionBoxPistol45
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2500
+
+- type: latheRecipe
+  id: NFAmmunitionBoxPistol35Recipe
+  categories: [SyndicateTexSyn2]
+  result: NFAmmunitionBoxPistol35
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2500
+
+- type: latheRecipe
+  id: NFAmmunitionBoxRifle20Recipe
+  categories: [SyndicateTexSyn2]
+  result: NFAmmunitionBoxRifle20
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2500
+
+- type: latheRecipe
+  id: NFAmmunitionBoxRifle30Recipe
+  categories: [SyndicateTexSyn2]
+  result: NFAmmunitionBoxRifle30
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2500
+
+- type: latheRecipe
+  id: NFAmmunitionBoxShellShotgunUraniumRecipe
+  categories: [SyndicateTexSyn3]
+  result: NFAmmunitionBoxShellShotgunUranium
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxPistol45UraniumRecipe
+  categories: [SyndicateTexSyn3]
+  result: NFAmmunitionBoxPistol45Uranium
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxRifle20UraniumRecipe
+  categories: [SyndicateTexSyn3]
+  result: NFAmmunitionBoxRifle20Uranium
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxRifle30UraniumRecipe
+  categories: [SyndicateTexSyn3]
+  result: NFAmmunitionBoxRifle30Uranium
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxShellShotgunIncendiaryRecipe
+  categories: [SyndicateTexSyn3]
+  result: NFAmmunitionBoxShellShotgunIncendiary
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxRifle20IncendiaryRecipe
+  categories: [SyndicateTexSyn3]
+  result: NFAmmunitionBoxRifle20Incendiary
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxPistol45IncendiaryRecipe
+  categories: [SyndicateTexSyn3]
+  result: NFAmmunitionBoxPistol45Incendiary
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxRifle30IncendiaryRecipe
+  categories: [SyndicateTexSyn3]
+  result: NFAmmunitionBoxRifle30Incendiary
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: NFAmmunitionBoxPistol35EmpRecipe
+  categories: [SyndicateTexSyn4]
+  result: NFAmmunitionBoxPistol35Emp
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: GrenadeEMPRecipe
+  categories: [SyndicateTexSyn4]
+  result: NFGrenadeEMP
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: GrenadeFlashRecipe
+  categories: [SyndicateTexSyn4]
+  result: NFGrenadeFlash
+  completetime: 1
+  materials:
+    CreditCounterfeit: 5000
+
+- type: latheRecipe
+  id: GrenadeFragRecipe
+  categories: [SyndicateTexSyn4]
+  result: NFGrenadeFrag
+  completetime: 1
+  materials:
+    CreditCounterfeit: 7500
+
+- type: latheRecipe
+  id: GrenadeBlastRecipe
+  categories: [SyndicateTexSyn4]
+  result: NFGrenadeBlast
+  completetime: 1
+  materials:
+    CreditCounterfeit: 7500
+
+- type: latheRecipe
+  id: GrenadeBatonRecipe
+  categories: [SyndicateTexSyn4]
+  result: NFGrenadeBaton
+  completetime: 1
+  materials:
+    CreditCounterfeit: 7500
+
+- type: latheRecipe
+  id: NFAmmunitionBoxRifle60Recipe
+  categories: [SyndicateTexSyn4]
+  result: NFAmmunitionBoxRifle60
+  completetime: 1
+  materials:
+    CreditCounterfeit: 7500
+
+- type: latheRecipe
+  id: NFMagazinePistol35EmptyRecipe
+  categories: [SyndicateTexSynAmmo]
+  result: NFMagazinePistol35Empty
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: NFMagazinePistol45Recipe
+  categories: [SyndicateTexSynAmmo]
+  result: NFMagazinePistol45
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: MagazineP90LRKEmptyRecipe
+  categories: [SyndicateTexSynAmmo]
+  result: MagazineP90LRKEmpty
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: NFMagazineHighCapacityPistol35EmptyRecipe
+  categories: [SyndicateTexSynAmmo]
+  result: NFMagazineHighCapacityPistol35Empty
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: NFMagazineRifle30EmptyRecipe
+  categories: [SyndicateTexSynAmmo]
+  result: NFMagazineRifle30Empty
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: NFMagazineLowCapacityRifle30EmptyRecipe
+  categories: [SyndicateTexSynAmmo]
+  result: NFMagazineLowCapacityRifle30Empty
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: NFMagazineShotgunDrumEmptydsRecipe
+  categories: [SyndicateTexSynAmmo]
+  result: NFMagazineShotgunDrumEmpty
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: NFMagazineSubMachineGunTopMounted35EmptyRecipe
+  categories: [SyndicateTexSynAmmo]
+  result: NFMagazineSubMachineGunTopMounted35Empty
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: NFMagazineSubMachineGun35EmptyRecipe
+  categories: [SyndicateTexSynAmmo]
+  result: NFMagazineSubMachineGun35Empty
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: NFSpeedLoaderPistol45EmptyRecipe
+  categories: [SyndicateTexSynAmmo]
+  result: NFSpeedLoaderPistol45Empty
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+
+- type: latheRecipe
+  id: WeaponMechCombatFiredartLaserRecipe
+  categories: [SyndicateTexMechAmmo]
+  result: WeaponMechCombatFiredartLaser
+  completetime: 1
+  materials:
+    CreditCounterfeit: 30000
+
+- type: latheRecipe
+  id: WeaponMechCombatSolarisLaserRecipe
+  categories: [SyndicateTexMechAmmo]
+  result: WeaponMechCombatSolarisLaser
+  completetime: 1
+  materials:
+    CreditCounterfeit: 40000
+
+- type: latheRecipe
+  id: WeaponMechCombatImmolationGunRecipe
+  categories: [SyndicateTexMechAmmo]
+  result: WeaponMechCombatImmolationGun
+  completetime: 1
+  materials:
+    CreditCounterfeit: 85000
+
+- type: latheRecipe
+  id: WeaponMechCombatUltraRifleRecipe
+  categories: [SyndicateTexMechAmmo]
+  result: WeaponMechCombatUltraRifle
+  completetime: 1
+  materials:
+    CreditCounterfeit: 55000
+
+- type: latheRecipe
+  id: WeaponMechCombatShotgunRecipe
+  categories: [SyndicateTexMechAmmo]
+  result: WeaponMechCombatShotgun
+  completetime: 1
+  materials:
+    CreditCounterfeit: 65000
+
+- type: latheRecipe
+  id: WeaponMechCombatShotgunIncendiaryRecipe
+  categories: [SyndicateTexMechAmmo]
+  result: WeaponMechCombatShotgunIncendiary
+  completetime: 1
+  materials:
+    CreditCounterfeit: 72500
+
+- type: latheRecipe
+  id: WeaponMechCombatMissileRack8Recipe
+  categories: [SyndicateTexMechAmmo]
+  result: WeaponMechCombatMissileRack8
+  completetime: 1
+  materials:
+    CreditCounterfeit: 85000
+
+- type: latheRecipe
+  id: WeaponMechCombatMissileRack6Recipe
+  categories: [SyndicateTexMechAmmo]
+  result: WeaponMechCombatMissileRack6
+  completetime: 1
+  materials:
+    CreditCounterfeit: 100000
+
+- type: latheRecipe
+  id: ClothingBackpackDuffelSyndicateAmmoRecipe
+  categories: [SyndicateTexMechAmmo]
+  result: ClothingBackpackDuffelSyndicateAmmoFilled
+  completetime: 1
+  materials:
+    CreditCounterfeit: 79999

@@ -1,0 +1,43 @@
+# Author -
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: -
+# Discord: -
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Schooner
+  parent: BaseVessel
+  name: Шхуна
+  description: Среднегабаритный пиратский шаттл. Рекомендованный состав команды 2-4 человека.
+  price: 69400
+  category: Medium
+  group: BlackMarket
+  shuttlePath: /Maps/Forge/Shuttles/BlackMarket/schooner.yml
+  class:
+  - Pirate
+  engine:
+  - Uranium
+  addComponents:
+  - type: IFF
+    flags: [HideLabel]
+  - type: ShuttleFaction
+    faction: Pirate
+
+- type: gameMap
+  id: Schooner
+  mapName: 'Schooner'
+  mapPath: /Maps/Forge/Shuttles/BlackMarket/schooner.yml
+  minPlayers: 0
+  stations:
+    Schooner:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Шхуна {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'

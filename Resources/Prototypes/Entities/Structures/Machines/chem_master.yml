@@ -7,17 +7,24 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: Structures/Machines/mixer.rsi
+    sprite: _Mono/Structures/Machines/mixer.rsi
     snapCardinals: true
     layers:
     - state: mixer_empty
-      map: ["BeakerInserted"] # Frontier
     - state: mixer_screens
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
       shader: unshaded
-      map: ["enum.PowerDeviceVisualLayers.Powered"]
+      visible: false
   - type: Icon
-    sprite: Structures/Machines/mixer.rsi
-    state: mixer_loaded
+    sprite: _Mono/Structures/Machines/mixer.rsi
+    state: mixer_empty
+  - type: ItemMapper
+    containerWhitelist: [beakerSlot]
+    mapLayers:
+      mixer_loaded:
+        whitelist:
+          components:
+          - FitsInDispenser
   - type: ChemMaster
     pillDosageLimit: 20
   - type: Physics
@@ -62,10 +69,6 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
-      enum.ChemMasterVisualState.BeakerInserted: # Frontier
-        BeakerInserted: # Frontier
-          True: {state: "mixer_loaded"} # Frontier
-          False: {state: "mixer_empty"} # Frontier
   # Machine / Construction stuff
   - type: WiresPanel
   - type: Machine

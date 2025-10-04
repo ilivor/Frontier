@@ -7,14 +7,19 @@
   - PositronicBrain
   - SciFlash
   - CyborgEndoskeleton
+  #Forge-Change Mechs
+  - MechAirTank
+  - MechThruster
+  - PowerCageHigh
+  - PowerCageMedium
+  - PowerCageSmall
 
 - type: latheRecipePack
   id: BorgModulesStatic
   recipes:
+  - BorgModuleTool
   - BorgModuleCable
   - BorgModuleFireExtinguisher
-  - BorgModuleRadiationDetection
-  - BorgModuleTool
 
 - type: latheRecipePack
   id: BorgLimbsStatic
@@ -38,16 +43,9 @@
   recipes:
   - BorgModuleAdvancedCleaning
   - BorgModuleAdvancedTool
-  # - BorgModuleGPS # Frontier: useless
-  - BorgModuleArtifact
-  - BorgModuleAnomaly
-  - BorgModuleGardening
-  - BorgModuleHarvesting
-  #- BorgModuleDefibrillator # Frontier: base module
-  #- BorgModuleAdvancedTreatment # Frontier: base module
+  - BorgModuleAdvancedChemical
+  - BorgModuleAdvancedMining
   - BorgModuleAdvancedParamedic # Frontier
-  - BorgModuleAdvancedMining # Frontier
-  - BorgModuleChef # Frontier
   - BorgModuleRCD # Frontier
 
 - type: latheRecipePack
@@ -69,6 +67,27 @@
   - HamtrLLeg
   - HamtrRLeg
   - VimHarness
+  # Forge-Change-Start
+  - ClarkeHarness
+  - ClarkeHead
+  - ClarkeLArm
+  - ClarkeRArm
+  - ClarkeTreads
+  - DurandHarness
+  - DurandArmor
+  - DurandHead
+  - DurandLArm
+  - DurandLLeg
+  - DurandRArm
+  - DurandRLeg
+  - GygaxHarness
+  - GygaxArmor
+  - GygaxHead
+  - GygaxLArm
+  - GygaxLLeg
+  - GygaxRArm
+  - GygaxRLeg
+  # Forge-Change-End
 
 - type: latheRecipePack
   id: MechEquipment
@@ -77,3 +96,7 @@
     - MechEquipmentHorn
     - MechEquipmentGrabberSmall
     - MechEquipmentFork # Frontier
+    - MechEquipmentHonkerBananaMortar # Forge-Change
+    - MechEquipmentHonkerMousetrapMortar # Forge-Change
+    - MechEquipmentDrill # Forge-Change
+    - MechEquipmentDrillDiamond # Forge-Change

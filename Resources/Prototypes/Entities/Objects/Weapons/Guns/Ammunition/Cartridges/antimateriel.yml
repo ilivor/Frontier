@@ -1,5 +1,6 @@
 - type: entity
-  parent: [ BaseCartridge, BaseC2Contraband ] # Frontier: BaseMajorContraband<BaseC2Contraband
+  categories: [ HideSpawnMenu ] # Frontier
+  parent: [ BaseCartridge, BaseC2ContrabandUnredeemable ] # Frontier: BaseMajorContraband<BaseC2ContrabandUnredeemable
   id: CartridgeAntiMateriel
   name: cartridge (.60 anti-materiel)
   components:
@@ -8,7 +9,7 @@
     - Cartridge
     - CartridgeAntiMateriel
   - type: CartridgeAmmo
-    proto: BulletAntiMateriel
+    # proto: BulletAntiMateriel # Frontier
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
     layers:
@@ -23,7 +24,7 @@
 - type: entity
   id: BaseMagazineAntiMateriel
   name: "magazine (.60 AntiMateriel)"
-  parent: [ BaseItem, BaseC1Contraband, RecyclableItemSteelTiny ] 
+  parent: [ BaseItem, BaseC1Contraband, RecyclableItemSteelTiny ]
   abstract: true
   components:
   - type: Tag
@@ -42,7 +43,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Corvax/Objects/Weapons/Guns/Ammunition/Magazine/antiMateriel.rsi
+    sprite: Forge/Objects/Weapons/Guns/Ammunition/Magazine/antiMateriel.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -62,7 +63,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeAntiMateriel
   - type: Sprite
-    sprite: Corvax/Objects/Weapons/Guns/Ammunition/Magazine/antiMateriel.rsi
+    sprite: Forge/Objects/Weapons/Guns/Ammunition/Magazine/antiMateriel.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]

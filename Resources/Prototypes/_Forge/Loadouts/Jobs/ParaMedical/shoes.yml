@@ -1,0 +1,26 @@
+- type: loadout
+  id: ParaMedicalShoes1
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 0
+  equipment:
+    shoes: ClothingShoesBootsWinterParamedic
+
+- type: loadout
+  id: ParaMedicalShoes2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 0
+  equipment:
+    shoes: ClothingShoesBootsWinterMed
+
+- type: loadout
+  id: ParaMedicalShoes3
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 0
+  equipment:
+    shoes: ClothingShoesColorBlack

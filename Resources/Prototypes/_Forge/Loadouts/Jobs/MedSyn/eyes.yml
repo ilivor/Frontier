@@ -1,0 +1,10 @@
+- type: loadout
+  id: MedSynClothingEyes1
+  equipment:
+    eyes: ClothingEyesHudSyndicateAgent
+
+- type: loadout
+  id: MedSynClothingEyes2
+  price: 30000
+  equipment:
+    eyes: NFClothingEyesNightVisionGoggleSyndicate

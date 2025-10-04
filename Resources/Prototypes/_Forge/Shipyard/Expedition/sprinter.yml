@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: Kesiath (https://github.com/Kesiath)
+# Discord: @kesiath
+
+# Maintainer Info
+# GitHub: ???
+# Discord: ???
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Sprinter
+  parent: BaseVessel
+  name: KC Спринтер
+  description: Среднегабаритный экспедиционный шаттл. Рекомендованный состав команды 3-6 человек.
+  price: 77400 # ~51200$ on mapinit + ~15360$ from 30% markup
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/Forge/Shuttles/Expedition/sprinter.yml
+  guidebookPage: Null
+  class:
+  - Expedition
+
+- type: gameMap
+  id: Sprinter
+  mapName: 'KC Спринтер'
+  mapPath: /Maps/Forge/Shuttles/Expedition/sprinter.yml
+  minPlayers: 0
+  stations:
+    Sprinter:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Спринтер {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

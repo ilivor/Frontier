@@ -1,12 +1,17 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server._Mono.FireControl; //Forge
+using Content.Server._NF.Radar;
 using Content.Server.Cargo.Systems;
+using Content.Server.Mech.Equipment.Components; // Forge-Change
 using Content.Server.Power.EntitySystems;
 using Content.Server.Weapons.Ranged.Components;
+using Content.Shared.Cargo;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Effects;
+using Content.Shared.Mech.Equipment.Components; // Forge-Change
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Ranged;
@@ -22,23 +27,24 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Robust.Shared.Containers;
+using Content.Server.PowerCell;
+using Content.Shared._Mono;
 using Content.Shared.Interaction; // Frontier
 using Content.Shared.Examine; // Frontier
-using Content.Server.Power.Components;
 using Content.Shared.Power; // Frontier
+using Content.Shared.Hands.Components; // Frontier
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
 public sealed partial class GunSystem : SharedGunSystem
 {
     [Dependency] private readonly IComponentFactory _factory = default!;
-    [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
     [Dependency] private readonly PricingSystem _pricing = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     private const float DamagePitchVariation = 0.05f;
 
@@ -86,16 +92,16 @@ public sealed partial class GunSystem : SharedGunSystem
             }
         }
 
-        var fromMap = fromCoordinates.ToMap(EntityManager, TransformSystem);
-        var toMap = toCoordinates.ToMapPos(EntityManager, TransformSystem);
+        var fromMap = TransformSystem.ToMapCoordinates(fromCoordinates);
+        var toMap = TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var mapDirection = toMap - fromMap.Position;
         var mapAngle = mapDirection.ToAngle();
         var angle = GetRecoilAngle(Timing.CurTime, gun, mapDirection.ToAngle());
 
         // If applicable, this ensures the projectile is parented to grid on spawn, instead of the map.
-        var fromEnt = MapManager.TryFindGridAt(fromMap, out var gridUid, out var grid)
-            ? fromCoordinates.WithEntityId(gridUid, EntityManager)
-            : new EntityCoordinates(MapManager.GetMapEntityId(fromMap.MapId), fromMap.Position);
+        var fromEnt = MapManager.TryFindGridAt(fromMap, out var gridUid, out _)
+            ? TransformSystem.WithEntityId(fromCoordinates, gridUid)
+            : new EntityCoordinates(_map.GetMapOrInvalid(fromMap.MapId), fromMap.Position);
 
         // Update shot based on the recoil
         toMap = fromMap.Position + angle.ToVec() * mapDirection.Length();
@@ -110,7 +116,7 @@ public sealed partial class GunSystem : SharedGunSystem
         {
             // Frontier: set projectiles to map parent
             if (ent != null)
-                _transform.SetParent(ent.Value, fromEnt.EntityId);
+                TransformSystem.SetParent(ent.Value, fromEnt.EntityId);
             // End Frontier: set projectiles to map parent
 
             // pneumatic cannon doesn't shoot bullets it just throws them, ignore ammo handling
@@ -202,7 +208,7 @@ public sealed partial class GunSystem : SharedGunSystem
                             var hit = result.HitEntity;
                             lastHit = hit;
 
-                            FireEffects(fromEffect, result.Distance, dir.Normalized().ToAngle(), hitscan, hit);
+                            FireEffects(fromEffect, result.Distance, dir.Normalized().ToAngle(), hitscan, user);
 
                             var ev = new HitScanReflectAttemptEvent(user, gunUid, hitscan.Reflective, dir, false);
                             RaiseLocalEvent(hit, ref ev);
@@ -211,7 +217,7 @@ public sealed partial class GunSystem : SharedGunSystem
                                 break;
 
                             fromEffect = Transform(hit).Coordinates;
-                            from = fromEffect.ToMap(EntityManager, _transform);
+                            from = TransformSystem.ToMapCoordinates(fromEffect);
                             dir = ev.Direction;
                             lastUser = hit;
                         }
@@ -257,7 +263,7 @@ public sealed partial class GunSystem : SharedGunSystem
                     }
                     else
                     {
-                        FireEffects(fromEffect, hitscan.MaxLength, dir.ToAngle(), hitscan);
+                        FireEffects(fromEffect, hitscan.MaxLength, dir.ToAngle(), hitscan, null, user); //Mono
                     }
 
                     Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
@@ -322,6 +328,10 @@ public sealed partial class GunSystem : SharedGunSystem
         }
 
         ShootProjectile(uid, mapDirection, gunVelocity, gunUid, user, gun.ProjectileSpeedModified);
+        if (HasComp<FireControllableComponent>(gunUid)) //Forge
+        {
+            EnsureComp<ProjectileGridPhaseComponent>(uid); //Forge
+        }
     }
 
     /// <summary>
@@ -405,8 +415,13 @@ public sealed partial class GunSystem : SharedGunSystem
     // TODO: Pseudo RNG so the client can predict these.
     #region Hitscan effects
 
-    private void FireEffects(EntityCoordinates fromCoordinates, float distance, Angle angle, HitscanPrototype hitscan, EntityUid? hitEntity = null)
+    private void FireEffects(EntityCoordinates fromCoordinates, float distance, Angle angle, HitscanPrototype hitscan, EntityUid? hitEntity = null, EntityUid? user = null)
     {
+        // Raise custom event for radar tracking
+        // Use the actual user as shooter instead of trying to derive from coordinates
+        var shooter = user ?? GetShooterFromCoordinates(fromCoordinates);
+        var radarEv = new HitscanRadarSystem.HitscanFireEffectEvent(fromCoordinates, distance, angle, hitscan, hitEntity, shooter);
+        RaiseLocalEvent(radarEv);
         // Lord
         // Forgive me for the shitcode I am about to do
         // Effects tempt me not
@@ -420,13 +435,13 @@ public sealed partial class GunSystem : SharedGunSystem
         if (gridUid != fromCoordinates.EntityId && TryComp(gridUid, out TransformComponent? gridXform))
         {
             var (_, gridRot, gridInvMatrix) = TransformSystem.GetWorldPositionRotationInvMatrix(gridXform);
-            var map = _transform.ToMapCoordinates(fromCoordinates);
+            var map = TransformSystem.ToMapCoordinates(fromCoordinates);
             fromCoordinates = new EntityCoordinates(gridUid.Value, Vector2.Transform(map.Position, gridInvMatrix));
             angle -= gridRot;
         }
         else
         {
-            angle -= _transform.GetWorldRotation(fromXform);
+            angle -= TransformSystem.GetWorldRotation(fromXform);
         }
 
         if (distance >= 1f)
@@ -464,6 +479,27 @@ public sealed partial class GunSystem : SharedGunSystem
             }, Filter.Pvs(fromCoordinates, entityMan: EntityManager));
         }
     }
+    private EntityUid? GetShooterFromCoordinates(EntityCoordinates coordinates) //Mono
+    {
+        var entity = coordinates.EntityId;
 
+        // Check if the entity is a gun
+        if (HasComp<GunComponent>(entity))
+            return entity;
+
+        // Try to find a parent that might be the shooter
+        if (TryComp<TransformComponent>(entity, out var transform) && transform.ParentUid != EntityUid.Invalid)
+        {
+            if (HasComp<GunComponent>(transform.ParentUid))
+                return transform.ParentUid;
+
+            // If parent has hands, it might be the shooter
+            if (HasComp<HandsComponent>(transform.ParentUid))
+                return transform.ParentUid;
+        }
+
+        // Default to the entity itself
+        return entity;
+    } //Mono
     #endregion
 }

@@ -1,0 +1,41 @@
+# Author -
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: -
+# Discord: -
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Beaker
+  parent: BaseVessel
+  name: SBI Мензурка
+  description: Малогабаритная химическая лаборатория. Рекомендованный состав команды 1-2 человека.
+  price: 65000
+  category: Small
+  group: Medical
+  access: Medical
+  shuttlePath: /Maps/Forge/Shuttles/Medical/beaker.yml
+  guidebookPage: Null
+  class:
+  - Chemistry
+
+- type: gameMap
+  id: Beaker
+  mapName: 'SBI Мензурка'
+  mapPath: /Maps/Forge/Shuttles/Medical/beaker.yml
+  minPlayers: 0
+  stations:
+    Beaker:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Мензурка {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            paraMedicalInterview: [ 0, 0 ]

@@ -1,0 +1,192 @@
+- type: Tag
+  id: CartridgeVector22
+
+- type: Tag
+  id: CartridgeVector45
+
+- type: Tag
+  id: SyndicateSabre
+
+- type: Tag
+  id: MagazineVector22
+
+- type: Tag
+  id: MagazineVector45
+
+- type: Tag
+  id: MagazineP90LRK
+
+- type: Tag
+  id: ShuttleShotgunShellsBox
+
+- type: Tag
+  id: ShuttleRifleAmmoBox
+
+- type: Tag
+  id: ShuttleSmgRifleAmmoBox
+
+- type: Tag
+  id: ShuttleMagnumRifleAmmoBox
+
+- type: Tag
+  id: Postman
+
+- type: Tag
+  id: ShellKS23
+
+- type: Tag
+  id: ColiseumGrenade
+
+- type: Tag
+  id: ColiseumMagazineGrenade
+
+- type: Tag
+  id: ColiseumCoin
+
+- type: Tag
+  id: SolarAssemblyFlatpack
+
+- type: Tag
+  id: Jetpack
+
+- type: Tag
+  id: SpaceCash
+
+- type: Tag
+  id: CyberPen
+
+- type: Tag
+  id: BookSmygler
+
+- type: Tag
+  id: TMagazineGrenade
+
+- type: Tag
+  id: MercenaryToken
+
+- type: Tag
+  id: BookPirateCodex
+
+- type: Tag
+  id: BookSCadet
+
+- type: Tag
+  id: BookSComa
+
+- type: Tag
+  id: BookSParamed
+
+- type: Tag
+  id: BookSShturm
+
+- type: Tag
+  id: BookPirateCode
+
+- type: Tag
+  id: LuxuryPen
+
+- type: Tag
+  id: SSpaceCash
+
+- type: Tag
+  id: MagazineAntiMateriel
+
+- type: Tag
+  id: Ipc
+
+- type: Tag
+  id: NightVisionGoggles
+
+- type: Tag
+  id: BaseEnergySwordTL
+
+- type: Tag
+  id: IndustrialMech
+
+- type: Tag
+  id: CombatMech
+# TODO: Make medical mech
+
+- type: Tag
+  id: SpecialMech
+
+- type: Tag
+  id: ClarkeCentralControlModule
+
+- type: Tag
+  id: ClarkePeripheralsControlModule
+
+- type: Tag
+  id: ClarkeHead
+
+- type: Tag
+  id: ClarkeLArm
+
+- type: Tag
+  id: ClarkeRArm
+
+- type: Tag
+  id: ClarkeTreads
+
+- type: Tag
+  id: DurandArmor
+
+- type: Tag
+  id: DurandCentralControlModule
+
+- type: Tag
+  id: DurandPeripheralsControlModule
+
+- type: Tag
+  id: DurandTargetingControlModule
+
+- type: Tag
+  id: DurandHead
+
+- type: Tag
+  id: DurandLArm
+
+- type: Tag
+  id: DurandLLeg
+
+- type: Tag
+  id: DurandRArm
+
+- type: Tag
+  id: DurandRLeg
+
+- type: Tag
+  id: GygaxArmor
+
+- type: Tag
+  id: GygaxCentralControlModule
+
+- type: Tag
+  id: GygaxPeripheralsControlModule
+
+- type: Tag
+  id: GygaxTargetingControlModule
+
+- type: Tag
+  id: GygaxHead
+
+- type: Tag
+  id: GygaxLArm
+
+- type: Tag
+  id: GygaxLLeg
+
+- type: Tag
+  id: GygaxRArm
+
+- type: Tag
+  id: GygaxRLeg
+
+- type: Tag
+  id: MechAirTank
+
+- type: Tag
+  id: MechThruster
+
+- type: Tag
+  id: RipleyMKIIUpgradeKit

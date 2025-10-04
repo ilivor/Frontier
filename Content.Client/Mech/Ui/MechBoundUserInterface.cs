@@ -1,4 +1,5 @@
 using Content.Client.UserInterface.Fragments;
+using Content.Shared.Access.Systems; // Forge-Change
 using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
 using JetBrains.Annotations;
@@ -37,8 +38,8 @@ public sealed class MechBoundUserInterface : BoundUserInterface
         if (state is not MechBoundUiState msg)
             return;
         UpdateEquipmentControls(msg);
-        _menu?.UpdateMechStats();
-        _menu?.UpdateEquipmentView();
+        _menu?.UpdateMechStats(msg.Equipment.Count); // Forge-Change
+        _menu?.UpdateEquipmentView(msg); // Forge-Change
     }
 
     public void UpdateEquipmentControls(MechBoundUiState state)
@@ -53,7 +54,8 @@ public sealed class MechBoundUserInterface : BoundUserInterface
                 continue;
             foreach (var (attached, estate) in state.EquipmentStates)
             {
-                if (ent == EntMan.GetEntity(attached))
+                if (ent == EntMan.GetEntity(attached) &&
+                    estate != null) // Forge-Change
                     ui.UpdateState(estate);
             }
         }

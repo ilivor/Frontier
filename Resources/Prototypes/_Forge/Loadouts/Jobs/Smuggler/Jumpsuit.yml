@@ -1,0 +1,17 @@
+- type: loadout
+  id: SmugglerJumpsuit1
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSmuggler
+
+- type: loadout
+  id: SmugglerJumpsuit2
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSmuggler
+
+- type: loadout
+  id: SmugglerJumpsuit3
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSmugglerTactical

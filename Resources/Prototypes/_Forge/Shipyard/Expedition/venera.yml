@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: SergeantEcho
+# Discord: SergeantEcho
+
+# Maintainer Info
+# GitHub:
+# Discord:
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Venera
+  parent: BaseVessel
+  name: NC Венера
+  description: Среднегабаритная экспедиционная баржа. Рекомендованный размер команды 6-8 человек.
+  price: 114100
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/Forge/Shuttles/Expedition/venera.yml
+  class:
+  - Expedition
+  - Civilian
+
+- type: gameMap
+  id: Venera
+  mapName: 'NC Венера'
+  mapPath: /Maps/Forge/Shuttles/Expedition/venera.yml
+  minPlayers: 0
+  stations:
+    Venera:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Венера {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

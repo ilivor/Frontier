@@ -1,0 +1,213 @@
+#Патроны
+
+##Static
+
+- type: latheRecipePack
+  id: CorvaxAmmoStatic
+  recipes:
+  - BoxBeanbagKS23
+  - BoxLethalshotKS23
+  - MagazineVector45
+  - MagazineVector22
+
+##Dynamic
+
+- type: latheRecipePack
+  id: CorvaxAmmoDynamic
+  recipes:
+  - BoxSmokeKS23
+  - BoxFlashbangKS23
+
+- type: latheRecipePack
+  id: CorvaxShuttleGunsDynamic
+  recipes:
+  - ShuttleShotgunMachineCircuitboard
+  - ShuttleGunAntiMaterialMachineCircuitboard
+  - ShuttleLightRifleGunMachineCircuitboard
+  - ShuttleSMGRifleMachineCircuitboard
+  - ShuttleMagnumRifleMachineCircuitboard
+  - ShuttleShotgunShellsBox
+  - ShuttleSmgRifleAmmoBox
+  - ShuttleRifleAmmoBox
+  - ShuttleMagnumRifleAmmoBox
+
+#Снаряжение
+- type: latheRecipePack
+  id: CorvaxEquipment
+  recipes:
+  - JetpackMining
+  - ClothingShoesBootsJetBoots
+
+- type: latheRecipePack
+  id: CorvaxMagmiteEquipment
+  recipes:
+  - WeaponMagmiteCrusher
+  - WeaponMagmiteCrusherGlaive
+  - WeaponMagmitePlasmaCutter
+
+#Материалы
+
+- type: latheRecipePack
+  id: CorvaxMaterialsStatic
+  recipes:
+  - SheetMagmite1
+
+#Обменники
+
+- type: latheRecipePack
+  id: CorvaxExchangerStatic
+  recipes:
+  - ColiseumCoinExchangerRecipe
+  - HolyPlushieOrangeFoxRecipe
+
+
+- type: latheRecipePack
+  id: MercenaryExchangerStatic
+  recipes:
+  - ClothingOuterHardsuitMercenaryEliteExchangeRecipe
+  - ClothingOuterHardsuitScafExchangeRecipe
+  - WeaponMagmiteCrusherGlaiveExchangeRecipe
+  - WeaponAntiqueLaserExchangeRecipe
+  - ClothingOuterArmorRiotExchangeRecipe
+  - TelescopicShieldExchangeRecipe
+  - MedkitCombatExchangeRecipe
+  - AmmoTechFabCircuitboardExchangeRecipe
+  - SpaceCash2500ExchangeRecipe
+  - ResearchDisk5000ExchangeRecipe
+  - BruteAutoInjectorExchangeRecipe
+  - BurnAutoInjectorExchangeRecipe
+  - BoxSmokeGrenadesExchangeRecipe
+  - CrateChemistryPExchangeRecipe
+  - CrateChemistrySExchangeRecipe
+  - CrateChemistryDExchangeRecipe
+  - HolofanProjectorExchangeRecipe
+  - MedkitExchangeRecipe
+  - ClothingBeltSheathExchangeRecipe
+  - WeaponEnergyGunExchangeRecipe
+  - NFWeaponRifleAssaultGestioExchangeRecipe
+  - NFWeaponRifleAssaultNovaliteC1ExchangeRecipe
+  - NFWeaponSubMachineGunTypewriterExchangeRecipe
+  - ClothingHeadHelmetSwatExchangeRecipe
+  - BoxMagazinePistolSubMachineGunTopMountedExchangeRecipe
+  - RiotLaserShieldExchangeRecipe
+  - ClothingOuterArmorHeavyGreenExchangeRecipe
+  - ChemMasterMachineCircuitboardExchangeRecipe
+  - CombatMedipenExchangeRecipe
+  - ClothingOuterHardsuitTacticalMaidExchangeRecipe
+
+
+- type: latheRecipePack
+  id: SyndicateTradingConsoleWeapons
+  recipes:
+  - WeaponRifleAkCyberSunRecipe
+  - WeaponLaserSvalinnRecipe
+  - WeaponLaserCannonRecipe
+  - ClothingBackpackDuffelSyndicateFilledShotgunRecipe
+  - WeaponXrayCannonRecipe
+  - WeaponLaserCarbineRecipe
+  - EnergyDaggerLoudRecipe
+  - EnergySwordRecipe
+  - EnergySwordDoubleRecipe
+  - WeaponEmpEmitterRecipe
+  - WeaponPistolCHIMPUpgradedRecipe
+  - WeaponSubMachineGunDrozdRecipe
+  - ClothingBackpackDuffelSyndicateFilledLMGRecipe
+  - ClothingBackpackDuffelSyndicateFilledSMGRecipe
+  - ClothingBackpackDuffelSyndicateFilledHristovRecipe
+  - ClothingBackpackDuffelSyndicateFilledEmpGrenadeLauncherRecipe
+  - ClothingBackpackDuffelSyndicateFilledCarbineRecipe
+  - ClothingBackpackDuffelSyndicateFilledAtreidesRecipe
+  - WeaponPistolViperRecipe
+  - WeaponRevolverPythonRecipe
+  - HypoDartBoxRecipe
+  - Rickenbacker4001InstrumentRecipe
+  - KanabouRecipe
+  - ClothingHandsGlovesNorthStarRecipe
+  - WeaponSyndieEnergyRifleCarbineRecipe
+  - WeaponSyndieEnergyFalconPistolLaserRecipe
+
+- type: latheRecipePack
+  id: SyndicateTradingConsoleArmor
+  recipes:
+  - ClothingOuterHardsuitJuggernautRecipe
+  - ClothingOuterHardsuitSyndieSSTRecipe
+  - ClothingHandsGlovesCombatSyndicateRecipe
+  - ClothingOuterVestWebRecipe
+  - ClothingOuterHardsuitTacticalMaidRecipe
+  - WeaponTurretSyndicateFlatpackRecipe
+  - ShuttleGunSunsetFlatpackRecipe
+  - JetpackBlackFilledRecipe
+  - ClothingShoesBootsMagSyndieRecipe
+  - ClothingShoesBootsMagSyndieEliteRecipe
+  - ClothingBackpackDuffelSyndicateHardsuitBundleRecipe
+  - ClothingBackpackDuffelSyndicateEliteHardsuitBundleRecipe
+  - ClothingBackpackSyndicateRaidBundleRecipe
+  - SpaceCashSyndicateESRecipe
+  - NFClothingEyesNightVisionGoggleSyndicateRecipe
+  - MechGygaxSyndieBatteryRecipe
+  - MechMaulerSyndieBatteryRecipe
+
+- type: latheRecipePack
+  id: SyndicateTradingConsoleBoomA
+  recipes:
+  - ClusterBananaPeelRecipe
+  - ClusterGrenadeRecipe
+  - SingularityGrenadeRecipe
+  - CleanerGrenadeRecipe
+  - C4Recipe
+  - GrenadeFlashBangRecipe
+  - TearGasGrenadeRecipe
+  - GrenadeIncendiaryRecipe
+  - SmokeGrenadeRecipe
+  - BreachingChargeRecipe
+  - WhiteholeGrenadeRecipe
+  - EmpGrenadeRecipe
+  - GrenadeShrapnelRecipe
+
+- type: latheRecipePack
+  id: SyndicateTradingConsoleMed
+  recipes:
+  - VestineChemistryVialRecipe
+  - CigPackSyndicateRecipe
+  - StimpackMiniRecipe
+  - StimpackRecipe
+  - LacerAutoInjectorRecipe
+  - HemostasisAutoInjectorRecipe
+  - PyraAutoInjectorRecipe
+  - PunctAutoInjectorRecipe
+  - BruizAutoInjectorRecipe
+  - MedkitToxinRecipe
+  - MedkitRadiationRecipe
+  - BruteAutoInjectorRecipe
+  - BurnAutoInjectorRecipe
+  - MedkitAdvancedRecipe
+  - MedkitRecipe
+  - EmergencyMedipenRecipe
+  - CombatMedipenRecipe
+  - ClothingBackpackDuffelSyndicateMedicalBundleRecipe
+  - WehMedipenRecipe
+
+- type: latheRecipePack
+  id: BluespaceHarvester
+  recipes:
+  - MachineBluespaceHarvesterCircuitboard
+  - MachineBluespaceTransitorCircuitboard
+
+# Одежда
+- type: latheRecipePack
+  id: CFClothing
+  recipes:
+  - ClothingUniformJumpsuitHoSBlack
+  - ClothingUniformJumpskirtHoSBlack
+  - ClothingUniformJumpsuitWhiteCaptain
+  - ClothingUniformJumpskirtWhiteCaptain
+  - ClothingUniformJumpsuitSheriffAlt
+  - ClothingOuterCoatLabSecurityMedic
+  - ClothingHeadHatBeretHeadOfSecurityAdvanced
+  - ClothingHeadHelmetSecurityMedic
+  - ClothingHeadHatBeretCaptainWhite
+  - ClothingHeadHatCapcapWhite
+  - ClothingHeadHatBeretSheriff
+  - ClothingHeadHatCapcapSheriff
+  - ClothingOuterVestArmorMedSec
+  - ClothingOuterArmorHoSVestWeb

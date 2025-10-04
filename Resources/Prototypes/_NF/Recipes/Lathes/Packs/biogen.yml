@@ -39,9 +39,9 @@
   - BioGenChocolate
   - BioGenSalt
   - NFBioGenFoodMeat
-  - NFBioGenFoodMeatChicken
-  - NFBioGenFoodMeatPenguin
-  - NFBioGenFoodMeatDuck
+  - NFBioGenFoodMeatWholeChicken
+  - NFBioGenFoodMeatWholePenguin
+  - NFBioGenFoodMeatWholeDuck
   - NFBioGenFoodMeatCrab
   - NFBioGenFoodMeatBacon
 
@@ -114,7 +114,7 @@
   id: NFBioGenSoil
   recipes:
   - NFBioGenHydroponicsSoilNutritionFlatpack
-  
+
 - type: latheRecipePack
   id: NFBioGenAnimalCubesStatic
   recipes:

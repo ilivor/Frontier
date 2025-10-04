@@ -1,4 +1,0 @@
-#- type: sectorService
-#  id: MercenaryBounties
-#  components:
-#  - type: SectorMercenaryBountyDatabase

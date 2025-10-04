@@ -1,0 +1,42 @@
+# Author -
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: -
+# Discord: -
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Cleric
+  parent: BaseVessel
+  name: NSF Пастырь
+  description: Малогабаритный медицинский шаттл ДСБФ. Рекомендованный состав команды 1 человек.
+  price: 11800 #Appraisal is 10500
+  category: Micro
+  group: Custom
+  shuttlePath: /Maps/Forge/Shuttles/Nfsd/cleric.yml
+  guidebookPage: Null
+  class:
+  - Medical
+  addComponents:
+  - type: ShuttleFaction
+    faction: NFSD
+
+- type: gameMap
+  id: Cleric
+  mapName: 'NSF Пастырь'
+  mapPath: /Maps/Forge/Shuttles/Nfsd/cleric.yml
+  minPlayers: 0
+  stations:
+    Cleric:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Пастырь {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs: {}

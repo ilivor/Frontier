@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: Shodhans
+# Discord: ???
+
+# Maintainer Info
+# GitHub: dustylens (https://github.com/dustylens)
+# Discord: dustylens
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Comet
+  parent: BaseVessel
+  name: NT Комета
+  description: Среднегабаритный инженерный шаттл. Рекомендованный размер команды 3-6 человек.
+  price: 55000
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/Forge/Shuttles/Engineering/comet.yml
+  guidebookPage: ShipyardComet
+  class:
+  - Salvage
+  - Engineering
+
+- type: gameMap
+  id: Comet
+  mapName: 'NT Комета'
+  mapPath: /Maps/Forge/Shuttles/Engineering/comet.yml
+  minPlayers: 0
+  stations:
+    Comet:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Комета {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

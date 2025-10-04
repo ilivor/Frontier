@@ -1,0 +1,42 @@
+# Author -
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: -
+# Discord: -
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Rogue
+  parent: BaseVessel
+  name: NSF Плут
+  description: Малогабаритный штурмовой шаттл ДСБФ с системами активной маскировки.
+  price: 25125 #the appraisal is 9100$
+  category: Micro
+  group: Custom
+  shuttlePath: /Maps/Forge/Shuttles/Nfsd/rogue.yml
+  guidebookPage: Null
+  class:
+  - Fighter
+  addComponents:
+  - type: ShuttleFaction
+    faction: NFSD
+
+- type: gameMap
+  id: Rogue
+  mapName: 'NSF Плут'
+  mapPath: /Maps/Forge/Shuttles/Nfsd/rogue.yml
+  minPlayers: 0
+  stations:
+    Rogue:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Плут {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs: {}

@@ -3,6 +3,7 @@ store-category-debug = debug category
 store-category-debug2 = debug category 2
 store-category-weapons = Вооружение
 store-category-ammo = Боеприпасы
+store-category-kit = Набор
 store-category-explosives = Взрывчатка
 store-category-chemicals = Химикаты
 store-category-deception = Обман
@@ -20,3 +21,6 @@ store-caregory-spellbook-defensive = Защитные заклинания
 store-caregory-spellbook-utility = Вспомогательные заклинания
 store-caregory-spellbook-equipment = Волшебное снаряжение
 store-caregory-spellbook-events = Заклинания событий
+store-discounted-items = Скидки!
+
+# Revenant

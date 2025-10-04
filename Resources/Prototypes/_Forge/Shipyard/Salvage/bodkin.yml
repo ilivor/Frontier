@@ -1,0 +1,45 @@
+# Author Info
+# GitHub: Tych0theSynth
+# Discord: tych0
+
+# Maintainer Info
+# GitHub: Tych0theSynth
+# Discord: Tych0
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Bodkin
+  parent: BaseVessel
+  name: SBB Стилет
+  description: The smaller sibling to the Broadhead, the SBB Bodkin is designed for rockhopping and salvage recovery.
+  price: 54800 #Grid appraises at 35000. Slapped on a ~10% markup.
+  category: Medium
+  group: Salvage
+  shuttlePath: /Maps/Forge/Shuttles/Salvage/bodkin.yml
+  guidebookPage: ShipyardBodkin
+  class:
+  - Salvage
+  engine:
+  - Uranium
+
+
+
+- type: gameMap
+  id: Bodkin
+  mapName: 'SBB Стилет'
+  mapPath: /Maps/Forge/Shuttles/Salvage/bodkin.yml
+  minPlayers: 0
+  stations:
+    Bodkin:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Стилет {1}'
+        nameGenerator: !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          ContractorInterview: [ 0, 0 ]
+          PilotInterview: [ 0, 0 ]
+          MercenaryInterview: [ 0, 0 ]

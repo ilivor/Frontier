@@ -144,6 +144,8 @@
   - type: ContainerContainer
     containers:
       battery-container: !type:Container
+      gas-tank-container: !type:Container  # Forge-Change
+      capacitor-container: !type:Container # Forge-Change
   - type: MechAssemblyVisuals
     statePrefix: ripley
   - type: Sprite
@@ -272,6 +274,8 @@
   - type: ContainerContainer
     containers:
       battery-container: !type:Container
+      gas-tank-container: !type:Container  # Forge-Change
+      capacitor-container: !type:Container # Forge-Change
   - type: MechAssemblyVisuals
     statePrefix: honker
   - type: Sprite
@@ -400,6 +404,8 @@
   - type: ContainerContainer
     containers:
       battery-container: !type:Container
+      gas-tank-container: !type:Container  # Forge-Change
+      capacitor-container: !type:Container # Forge-Change
   - type: MechAssemblyVisuals
     statePrefix: hamtr
   - type: Sprite
@@ -442,7 +448,8 @@
       helmet:
         whitelist:
           tags:
-          - HelmetEVA
+          # - HelmetEVA # Frontier
+          - SuitEVA # Frontier: phasing separate EVA helmets out
       left_leg:
         whitelist:
           tags:
@@ -458,7 +465,8 @@
   - type: MechAssembly
     finishedPrototype: VimChassis
     requiredParts:
-      HelmetEVA: false
+      # HelmetEVA: false # Frontier
+      SuitEVA: false # Frontier: phasing separate EVA helmets out
       BorgLeg: false
   - type: Sprite
     state: harness
@@ -474,6 +482,8 @@
   - type: ContainerContainer
     containers:
       battery-container: !type:Container
+      gas-tank-container: !type:Container  # Forge-Change
+      capacitor-container: !type:Container # Forge-Change
   - type: MechAssemblyVisuals
     statePrefix: vim
   - type: Sprite

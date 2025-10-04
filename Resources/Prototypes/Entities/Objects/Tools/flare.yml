@@ -11,8 +11,6 @@
     - Trash
   - type: SpaceGarbage
   - type: ExpendableLight
-    spentName: expendable-light-spent-flare-name
-    spentDesc: expendable-light-spent-flare-desc
     glowDuration: 225
     fadeOutDuration: 15
     iconStateOn: flare_unlit
@@ -54,6 +52,7 @@
     radius: 1.0
     energy: 9.0
     netsync: false
+  - type: FlareEvacuation # Forge-Contractor
   - type: IgnitionSource
     temperature: 1000
   - type: LightBehaviour

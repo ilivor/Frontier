@@ -47,6 +47,12 @@
   kind: source
   path: "/Textures/Shaders/rainbow.swsl"
 
+# sin city effect: everything is greyscale, except red
+- type: shader
+  id: Noir
+  kind: source
+  path: "/Textures/Shaders/noir.swsl"
+
 - type: shader
   id: CameraStatic
   kind: source
@@ -109,3 +115,12 @@
   id: Hologram
   kind: source
   path: "/Textures/Shaders/hologram.swsl"
+
+# Monolith addition
+# Cuts out everything outside of a circle
+# Anti-aliased so the edges are smooth
+# Radius is relative to target size (0.5 is a full circle)
+- type: shader
+  id: CircleAlphaMask
+  kind: source
+  path: "/Textures/Shaders/circle_alpha_mask.swsl"

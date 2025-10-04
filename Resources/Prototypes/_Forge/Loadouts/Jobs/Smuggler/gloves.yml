@@ -1,0 +1,4 @@
+- type: loadout
+  id: SmugglerClothingHandsGloves1
+  equipment:
+    gloves: ClothingHandsGlovesCombat

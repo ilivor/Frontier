@@ -1,5 +1,0 @@
-- type: ore
-  id: OreMagmite
-  oreEntity: MagmiteOre1
-  minOreYield: 1
-  maxOreYield: 2

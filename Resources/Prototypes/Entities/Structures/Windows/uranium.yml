@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _NF/Structures/Windows/uranium_window.rsi # Frontier
+    sprite: Forge/Structures/Windows/uranium_window.rsi # Frontier
   - type: Icon
-    sprite: _NF/Structures/Windows/uranium_window.rsi # Frontier
+    sprite: Forge/Structures/Windows/uranium_window.rsi # Frontier
     state: full
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -16,13 +16,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 200
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 100
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -53,7 +53,7 @@
 
 - type: entity
   id: UraniumWindowDirectional
-  parent: WindowDirectional
+  parent: WindowDirectionalRCDResistant
   name: directional uranium window
   description: Don't smudge up the glass down there.
   placement:
@@ -62,10 +62,10 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+    sprite: Forge/Structures/Windows/directional.rsi # Forge-Change
     state: uranium_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: Forge/Structures/Windows/directional.rsi # Forge-Change
     state: uranium_window
   - type: Construction
     graph: WindowDirectional
@@ -76,18 +76,18 @@
     damageDivisor: 1.5
     trackAllDamage: true
     damageOverlay:
-      sprite: Structures/Windows/cracks_directional.rsi
+      sprite: Forge/Structures/Windows/cracks_directional.rsi # Forge-Change
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 100
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 37
+        damage: 50
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -115,7 +115,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _NF/Structures/Windows/uranium_window_diagonal.rsi # Frontier
+    sprite: Forge/Structures/Windows/uranium_window_diagonal.rsi # Forge-Change
     state: state0
   - type: Tag
     tags:
@@ -125,7 +125,7 @@
     key: walls # Frontier: windows<walls
     base: state
   - type: Icon
-    sprite: _NF/Structures/Windows/uranium_window_diagonal.rsi # Frontier
+    sprite: Forge/Structures/Windows/uranium_window_diagonal.rsi # Forge-Change
     state: state0
   - type: Fixtures
     fixtures:
@@ -147,7 +147,7 @@
     - East
   - type: DamageVisuals
     damageOverlay:
-      sprite: Structures/Windows/cracks_diagonal.rsi
+      sprite: Forge/Structures/Windows/cracks_diagonal.rsi # Forge-Change
   - type: Construction
     graph: WindowDiagonal
     node: uraniumWindowDiagonal

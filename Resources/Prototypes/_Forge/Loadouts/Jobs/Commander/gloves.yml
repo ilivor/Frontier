@@ -1,0 +1,10 @@
+- type: loadout
+  id: CommanderClothingHandsGloves1
+  equipment:
+    gloves: ClothingHandsGlovesCombat
+
+- type: loadout
+  id: CommanderClothingHandsGloves2
+  price: 10000
+  equipment:
+    gloves: ClothingHandsGlovesCombatSyndicate

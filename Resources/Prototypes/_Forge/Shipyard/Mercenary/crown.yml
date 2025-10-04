@@ -1,0 +1,42 @@
+# Author -
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: -
+# Discord: -
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Crown
+  parent: BaseVessel
+  name: SBI Ворон
+  description: Малогабаритный шаттл для наёмников, рекомендуемый состав экипажа 2 человека.
+  price: 50000
+  category: Small
+  group: Mercenary
+  shuttlePath: /Maps/Forge/Shuttles/Mercenary/crown.yml
+  addComponents:
+  - type: MercenaryBountyDatabase
+    bounties: []
+
+- type: gameMap
+  id: Crown
+  mapName: 'SBI Ворон'
+  mapPath: /Maps/Forge/Shuttles/Mercenary/crown.yml
+  minPlayers: 0
+  stations:
+    Crown:
+      stationProto: MercenaryFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Ворон {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

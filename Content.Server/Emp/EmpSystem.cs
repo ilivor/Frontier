@@ -1,4 +1,4 @@
-using Content.Server.Corvax.Elzuosa; //Corvax-Frontier
+using Content.Server._Forge.Elzuosa; //Corvax-Frontier
 using Content.Server.Entry;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Power.Components;
@@ -6,6 +6,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.Radio;
 using Content.Server.Station.Components;
 using Content.Server.SurveillanceCamera;
+using Content.Shared._Forge.Emp;
 using Content.Shared.Emp;
 using Content.Shared.Examine;
 using Content.Shared.Tiles; // Frontier
@@ -57,8 +58,14 @@ public sealed class EmpSystem : SharedEmpSystem
     {
         foreach (var uid in _lookup.GetEntitiesInRange(coordinates, range))
         {
+            if (HasComp<EmpProtectionComponent>(uid))
+                continue;
+
+            if (!TryComp<TransformComponent>(uid, out var xform))
+                continue;
+
             // Frontier: Block EMP on grid
-            var gridUid = Transform(uid).GridUid;
+            var gridUid = xform.GridUid;
             if (gridUid != null &&
                 (immuneGrids != null && immuneGrids.Contains(gridUid.Value) ||
                 TryComp<ProtectedGridComponent>(gridUid, out var prot) && prot.PreventEmpEvents))
@@ -79,6 +86,22 @@ public sealed class EmpSystem : SharedEmpSystem
     }
 
     /// <summary>
+    ///   Triggers an EMP pulse at the given location, by first raising an <see cref="EmpAttemptEvent"/>, then a raising <see cref="EmpPulseEvent"/> on all entities in range.
+    /// </summary>
+    /// <param name="coordinates">The location to trigger the EMP pulse at.</param>
+    /// <param name="range">The range of the EMP pulse.</param>
+    /// <param name="energyConsumption">The amount of energy consumed by the EMP pulse.</param>
+    /// <param name="duration">The duration of the EMP effects.</param>
+    public void EmpPulse(EntityCoordinates coordinates, float range, float energyConsumption, float duration)
+    {
+        foreach (var uid in _lookup.GetEntitiesInRange(coordinates, range))
+        {
+            TryEmpEffects(uid, energyConsumption, duration);
+        }
+        Spawn(EmpPulseEffectPrototype, coordinates);
+    }
+
+    /// <summary>
     ///    Attempts to apply the effects of an EMP pulse onto an entity by first raising an <see cref="EmpAttemptEvent"/>, followed by raising a <see cref="EmpPulseEvent"/> on it.
     /// </summary>
     /// <param name="uid">The entity to apply the EMP effects on.</param>
@@ -86,6 +109,9 @@ public sealed class EmpSystem : SharedEmpSystem
     /// <param name="duration">The duration of the EMP effects.</param>
     public void TryEmpEffects(EntityUid uid, float energyConsumption, float duration)
     {
+        if (HasComp<EmpProtectionComponent>(uid))
+            return;
+
         var attemptEv = new EmpAttemptEvent();
         RaiseLocalEvent(uid, attemptEv);
         if (attemptEv.Cancelled)
@@ -106,7 +132,8 @@ public sealed class EmpSystem : SharedEmpSystem
         RaiseLocalEvent(uid, ref ev);
         if (ev.Affected)
         {
-            Spawn(EmpDisabledEffectPrototype, Transform(uid).Coordinates);
+            if (TryComp<TransformComponent>(uid, out var xform))
+                Spawn(EmpDisabledEffectPrototype, xform.Coordinates);
         }
         if (ev.Disabled)
         {

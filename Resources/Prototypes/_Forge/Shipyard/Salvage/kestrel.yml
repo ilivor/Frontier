@@ -1,0 +1,44 @@
+# Author Info
+# GitHub: @No-Dad-Not-The-Belt (https://github.com/No-Dad-Not-The-Belt)
+# Discord: ???
+
+# Maintainer Info
+# GitHub: ???
+# Discord: ???
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Kestrel
+  parent: BaseVessel
+  name: NC Пустельга
+  description: Среднегабаритный добывающий шаттл. Рекомендуемый состав команды 2-6 человек.
+  price: 66800 # ~45370$ on mapinit + ~6805$ from 15% markup
+  category: Small
+  group: Salvage
+  shuttlePath: /Maps/Forge/Shuttles/Salvage/kestrel.yml
+  guidebookPage: ShipyardKestrel
+  class:
+  - Salvage
+
+
+
+- type: gameMap
+  id: Kestrel
+  mapName: 'NC Пустельга'
+  mapPath: /Maps/Forge/Shuttles/Salvage/kestrel.yml
+  minPlayers: 0
+  stations:
+    Kestrel:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Пустельга {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

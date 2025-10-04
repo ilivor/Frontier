@@ -1,0 +1,37 @@
+# Maintainer Info
+# GitHub: dvir001
+# Discord: dvir01 (84770870936997888)
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Cleithro
+  parent: BaseVessel
+  name: DC Клейтро
+  description: Малогабаритный сервисный шаттл. Рекомендованный размер команды 2-4 человека.
+  price: 33000 # 10+% up from sell
+  category: Medium
+  group: Medical
+  access: Medical
+  shuttlePath: /Maps/Forge/Shuttles/Medical/cleithro.yml
+  guidebookPage: Null
+  class:
+  - Medical # HEH
+
+- type: gameMap
+  id: Cleithro
+  mapName: 'DC Клейтро'
+  mapPath: /Maps/Forge/Shuttles/Medical/cleithro.yml
+  minPlayers: 0
+  stations:
+    Cleithro:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Клейтро {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            paraMedicalInterview: [ 0, 0 ]

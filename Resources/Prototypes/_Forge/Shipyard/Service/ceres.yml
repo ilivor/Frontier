@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: arimah
+# Discord: arimah
+
+# Maintainer Info
+# GitHub: arimah
+# Discord: arimah
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Ceres
+  parent: BaseVessel
+  name: SBB Церера
+  description: Среднегабаритный шаттл-ресторан. Рекомендованный размер команды 2-5 человек.
+  price: 75666
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/Forge/Shuttles/Service/ceres.yml
+  guidebookPage: ShipyardCeres
+  class:
+  - Kitchen
+
+- type: gameMap
+  id: Ceres
+  mapName: 'SBB Церера'
+  mapPath: /Maps/Forge/Shuttles/Service/ceres.yml
+  minPlayers: 0
+  stations:
+    Ceres:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Церера {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

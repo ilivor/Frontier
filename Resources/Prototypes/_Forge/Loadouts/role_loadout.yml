@@ -1,0 +1,73 @@
+- type: roleLoadout
+  id: Jobsmuggler
+  canCustomizeName: true
+  groups:
+  - SmugglerCaptainHead
+  - SmugglerJumpsuit
+  - SmugglerBags
+  - SmugglerGloves
+  - SmugglerShoes
+  - SmugglerNeck
+  - SmugglerOuterclothing
+  - SmugglerGlasses
+
+- type: roleLoadout
+  id: JobMedSyn
+  canCustomizeName: true
+  groups:
+  - SmugglerCaptainHead
+  - MedSynJumpsuit
+  - MedSynBack
+  - MedSynGlasses
+  - SmugglerShoes
+  - SmugglerNeck
+  - SmugglerOuterclothing
+  - MedSynGloves
+
+- type: roleLoadout
+  id: JobStormtrooper
+  canCustomizeName: true
+  groups:
+  - StormtrooperCaptainHead
+  - StormtrooperJumpsuit
+  - StormtrooperBags
+  - StormtrooperGlasses
+  - StormtrooperShoes
+  - StormtrooperNeck
+  - StormtrooperOuterclothing
+  - StormtrooperGlasses
+  - StormtrooperGloves
+
+- type: roleLoadout
+  id: JobCommander
+  canCustomizeName: true
+  groups:
+  - CommanderCaptainHead
+  - CommanderJumpsuit
+  - CommanderBags
+  - CommanderGlasses
+  - CommanderShoes
+  - CommanderNeck
+  - CommanderOuterclothing
+  - CommanderGloves
+
+- type: roleLoadout
+  id: JobparaMedical
+  groups:
+  - ParaMedicalJumpsuit
+  - ParaMedicalBackpack
+  - ParaMedicalOuterClothing
+  - ParaMedicalShoes
+  - ParaMedicalHead
+  - DocGloves
+  - ContractorOuterClothing
+  - ContractorFace
+  - ContractorGlasses
+  - ContractorBelt
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorEncryptionKey
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific

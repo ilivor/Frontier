@@ -7,7 +7,7 @@
     sprite: /Textures/Objects/Fun/goldbikehorn.rsi
     visible: false
     state: icon
-  - type: TriggerOnSpawn   
+  - type: TriggerOnSpawn
   - type: TimedDespawn
     lifetime: 5
 
@@ -21,15 +21,23 @@
     energyConsumption: 2700000 # Frontier: 50kJ<2.7MJ
 
 - type: entity
+  id: AdminInstantEffectBluespace
+  suffix: BluespaceFlash
+  parent: AdminInstantEffectBase
+  components:
+  - type: SpawnOnTrigger
+    proto: EffectFlashBluespace
+
+- type: entity
   id: AdminInstantEffectFlash
   suffix: Flash
   parent: AdminInstantEffectBase
   components:
   - type: FlashOnTrigger
     range: 7
-  - type: SpawnOnTrigger 
+  - type: SpawnOnTrigger
     proto: GrenadeFlashEffect
-  
+
 - type: entity
   id: AdminInstantEffectSmoke3
   suffix: Smoke (03 sec)
@@ -43,7 +51,7 @@
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/Smoke-grenade.ogg
-  
+
 - type: entity
   id: AdminInstantEffectSmoke10
   suffix: Smoke (10 sec)
@@ -57,7 +65,7 @@
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/Smoke-grenade.ogg
-  
+
 - type: entity
   id: AdminInstantEffectSmoke30
   suffix: Smoke (30 sec)
@@ -89,7 +97,7 @@
   id: AdminInstantEffectGravityWell
   suffix: Gravity Well
   parent: AdminInstantEffectBase
-  components: 
+  components:
   - type: SoundOnTrigger
     removeOnTrigger: true
     sound:
@@ -109,4 +117,4 @@
   - type: SingularityDistortion
     intensity: 10
     falloffPower: 1.5
-      
+

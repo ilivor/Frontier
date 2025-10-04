@@ -1,0 +1,43 @@
+# Author -
+# GitHub: -
+# Discord: -
+
+# Maintainer Info
+# GitHub: -
+# Discord: -
+
+# Shuttle Notes:
+
+- type: vessel
+  id: Hospitaller
+  parent: BaseVessel
+  name: NSF Лазарет
+  description: Малогабаритный медицинский шаттл. Рекомендованный состав команды 1-3 человека.
+  price: 17550
+  category: Small
+  group: Security
+  access: Security
+  shuttlePath: /Maps/Forge/Shuttles/Nfsd/hospitaller.yml
+  guidebookPage: Null
+  class:
+  - Medical
+  addComponents:
+  - type: ShuttleFaction
+    faction: NFSD
+
+- type: gameMap
+  id: Hospitaller
+  mapName: 'NSF Лазарет'
+  mapPath: /Maps/Forge/Shuttles/Nfsd/hospitaller.yml
+  minPlayers: 0
+  stations:
+    Hospitaller:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Лазарет {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs: {}

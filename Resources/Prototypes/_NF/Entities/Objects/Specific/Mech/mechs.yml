@@ -1,6 +1,6 @@
 - type: entity
   id: MechEmu
-  parent: BaseMech
+  parent: [ BaseMech, IndustrialMech ] # Forge-Change: +IndustrialMech
   name: Emu PLU
   description: An older model of cargo hauler mech, the Emu Power Loading Unit has a single integral power fork module.
   components:
@@ -46,7 +46,9 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageHigh
+      mech-capacitor-slot:
+      - CapacitorStockPart
 
 - type: entity
   id: MechEmuCargo
@@ -57,4 +59,6 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellMedium
+      - PowerCageMedium
+      mech-capacitor-slot:
+      - CapacitorStockPart
