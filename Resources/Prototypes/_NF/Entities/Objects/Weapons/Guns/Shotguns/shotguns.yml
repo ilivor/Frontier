@@ -14,9 +14,12 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
   - type: Gun
+    fireRate: 2.5 # Corvax-Forge: Weaponary update
     selectedMode: FullAuto
     availableModes:
     - FullAuto
+    soundGunshot:
+      path: /Audio/_Forge/Weapons/Guns/Gunshots/shotgun_auto.ogg
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-gorlex-steel-works
 
@@ -27,6 +30,8 @@
   description: |-
     An immortal classic. A civilian grade shotgun.
   components:
+  - type: Gun # Corvax-Forge: Weaponary update
+    fireRate: 3
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
   - type: Clothing
@@ -48,6 +53,10 @@
   description: |-
     A premium semi-automatic shotgun, featuring an upgraded tube capacity.
   components:
+  - type: Gun # Corvax-Forge: Weaponary update
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/_Forge/Weapons/Guns/Gunshots/shotgun_metal.ogg
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: Clothing
@@ -92,6 +101,10 @@
     capacity: 2
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-custom-made
+  - type: Gun # Corvax-Forge: Weaponary update
+    fireRate: 3
+    soundGunshot:
+      path: /Audio/_Forge/Weapons/Guns/Gunshots/shotgun_sawed.ogg
 
 - type: entity
   id: NFWeaponShotgunSawnEmpty
@@ -120,6 +133,9 @@
     capacity: 1
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-custom-made
+  - type: Gun # Corvax-Forge: Weaponary update
+    soundGunshot:
+      path: /Audio/_Forge/Weapons/Guns/Gunshots/shotgun_pipe.ogg
 
 - type: entity
   id: NFWeaponShotgunHandmadeEmpty
@@ -172,6 +188,9 @@
   - type: Construction
     graph: ImprovisedShotgunGraph
     node: shotgun
+  - type: Gun # Corvax-Forge: Weaponary update
+    soundGunshot:
+      path: /Audio/_Forge/Weapons/Guns/Gunshots/shotgun_pipe.ogg
 
 #region Less-lethal
 - type: entity
