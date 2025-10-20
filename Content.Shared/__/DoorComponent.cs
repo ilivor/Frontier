@@ -1,13 +1,12 @@
-using System.Threading;
-using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Explosion;
-using Content.Shared.Nuke;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Content.Shared._Forge.CodeDoor;
+using Content.Shared._ForgeCodeDoor;
 
-namespace Content.Server.Nuke
+namespace Content.Shared._ForgeCodeDoorComponent
 {
     /// <summary>
     ///     Nuclear device that can devastate an entire station.
@@ -15,8 +14,7 @@ namespace Content.Server.Nuke
     ///     To activate it, user needs to insert an authorization disk and enter a secret code.
     /// </summary>
     [RegisterComponent]
-    [Access(typeof(NukeSystem))]
-    public sealed partial class NukeComponent : SharedNukeComponent
+    public sealed partial class DoorCodeTimerComponent : Component
     {
         /// <summary>
         ///     Default bomb timer value in seconds.
@@ -25,7 +23,7 @@ namespace Content.Server.Nuke
         public int Timer = 300;
 
         /// <summary>
-        ///     If the nuke is disarmed, this sets the minimum amount of time the timer can have.
+        ///     If the Door is disarmed, this sets the minimum amount of time the timer can have.
         ///     The remaining time will reset to this value if it is below it.
         /// </summary>
         [DataField]
@@ -47,7 +45,7 @@ namespace Content.Server.Nuke
         public ItemSlot DiskSlot = new();
 
         /// <summary>
-        ///     When this time is left, nuke will play last alert sound
+        ///     When this time is left, Door will play last alert sound
         /// </summary>
         [DataField("alertTime")]
         public float AlertSoundTime = 10.0f;
@@ -67,16 +65,16 @@ namespace Content.Server.Nuke
         public int LastPlayedKeypadSemitones = 0;
 
         [DataField("keypadPressSound")]
-        public SoundSpecifier KeypadPressSound = new SoundPathSpecifier("/Audio/Machines/Nuke/general_beep.ogg");
+        public SoundSpecifier KeypadPressSound = new SoundPathSpecifier("/Audio/Machines/Door/general_beep.ogg");
 
         [DataField("accessGrantedSound")]
-        public SoundSpecifier AccessGrantedSound = new SoundPathSpecifier("/Audio/Machines/Nuke/confirm_beep.ogg");
+        public SoundSpecifier AccessGrantedSound = new SoundPathSpecifier("/Audio/Machines/Door/confirm_beep.ogg");
 
         [DataField("accessDeniedSound")]
-        public SoundSpecifier AccessDeniedSound = new SoundPathSpecifier("/Audio/Machines/Nuke/angry_beep.ogg");
+        public SoundSpecifier AccessDeniedSound = new SoundPathSpecifier("/Audio/Machines/Door/angry_beep.ogg");
 
         [DataField("alertSound")]
-        public SoundSpecifier AlertSound = new SoundPathSpecifier("/Audio/Machines/Nuke/nuke_alarm.ogg");
+        public SoundSpecifier AlertSound = new SoundPathSpecifier("/Audio/Machines/Door/Door_alarm.ogg");
 
         [DataField("armSound")]
         public SoundSpecifier ArmSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
@@ -85,12 +83,12 @@ namespace Content.Server.Nuke
         public SoundSpecifier DisarmSound = new SoundPathSpecifier("/Audio/Misc/notice2.ogg");
 
         [DataField("armMusic")]
-        public SoundSpecifier ArmMusic = new SoundCollectionSpecifier("NukeMusic");
+        public SoundSpecifier ArmMusic = new SoundCollectionSpecifier("DoorMusic");
 
         // These datafields here are duplicates of those in explosive component. But I'm hesitant to use explosive
         // component, just in case at some point, somehow, when grenade crafting added in someone manages to wire up a
-        // proximity trigger or something to the nuke and set it off prematurely. I want to make sure they MEAN to set of
-        // the nuke.
+        // proximity trigger or something to the Door and set it off prematurely. I want to make sure they MEAN to set of
+        // the Door.
         #region ExplosiveComponent
         /// <summary>
         ///     The explosion prototype. This determines the damage types, the tile-break chance, and some visual
@@ -167,23 +165,23 @@ namespace Content.Server.Nuke
         /// <summary>
         ///     Current status of a nuclear bomb.
         /// </summary>
-        [DataField]
-        public NukeStatus Status = NukeStatus.AWAIT_DISK;
+        [ViewVariables]
+        public DoorCodeStatus Status = DoorCodeStatus.AwaitingCode;
 
         /// <summary>
-        ///     Check if nuke has already played the nuke song so we don't do it again
+        ///     Check if Door has already played the Door song so we don't do it again
         /// </summary>
-        public bool PlayedNukeSong = false;
+        public bool PlayedDoorSong = false;
 
         /// <summary>
-        ///     Check if nuke has already played last alert sound
+        ///     Check if Door has already played last alert sound
         /// </summary>
         public bool PlayedAlertSound = false;
 
         public EntityUid? AlertAudioStream = default;
 
         /// <summary>
-        ///     The radius from the nuke for which there must be floor tiles for it to be anchorable.
+        ///     The radius from the Door for which there must be floor tiles for it to be anchorable.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("requiredFloorRadius")]
