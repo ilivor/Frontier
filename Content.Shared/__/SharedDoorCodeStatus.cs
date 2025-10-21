@@ -30,4 +30,8 @@ namespace Content.Shared._ForgeCodeDoor
 
     public sealed class DoorCodeSubmitMessage : BoundUserInterfaceMessage { }
     public sealed class DoorCodeClearMessage : BoundUserInterfaceMessage { }
+    public enum DoorCodeUiKey : byte
+    {
+        Key
+    }
 }
