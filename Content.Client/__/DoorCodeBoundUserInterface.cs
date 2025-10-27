@@ -5,7 +5,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Content.Shared._ForgeCodeDoor;
 
-namespace Content.Client.DoorCode
+namespace Content.Client.__
 {
     [UsedImplicitly]
     public sealed class DoorCodeBoundUserInterface : BoundUserInterface
@@ -17,7 +17,7 @@ namespace Content.Client.DoorCode
         protected override void Open()
         {
             base.Open();
-            _menu = new DoorCodeMenu();
+            _menu = this.CreateWindow<DoorCodeMenu>();
 
             _menu.OnKeypadButtonPressed += i => SendMessage(new DoorCodeInputMessage(i));
             _menu.OnClearButtonPressed += () => SendMessage(new DoorCodeClearMessage());

@@ -1,7 +1,7 @@
 - type: entity
   id: AirlockSuSal
   parent: BaseStructure
-  name: airlock
+  name: Шлюз с кодом
   description: It opens, it closes, and maybe crushes you.
   components:
   - type: StationAiWhitelist
@@ -122,10 +122,10 @@
       DoorStatus: false
   - type: SoundOnOverload
   - type: SpawnOnOverload
+  - type: ActivatableUI
+    key: enum.DoorCodeUiKey.Key
   - type: UserInterface
     interfaces:
-      enum.AiUi.Key:
-        type: StationAiBoundUserInterface
       enum.DoorCodeUiKey.Key:
         type: DoorCodeBoundUserInterface
   - type: DoorCode
@@ -175,10 +175,30 @@
       # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
   - type: PryUnpowered
   - type: BlockWeather
-  - type: GuideHelp
-    guides:
-    - Airlocks
-    - WirePanels
-    - Networking
   placement:
     mode: SnapgridCenter
+
+- type: entity
+  parent: Paper
+  id: DoorCodePaper
+  name: мятая бумажка
+  components:
+  - type: DoorCodePaper
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper_receipt_horizontal
+    - state: paper_receipt_horizontal_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_perforated.svg.96dpi.png"
+    headerImagePath: "/Textures/Forge/Interface/Paper/paper_heading_Code_Paper.svg.96dpi.png"
+    headerMargin: 0.0, 0.0, 0.0, 4.0
+    backgroundImageTile: true
+    backgroundPatchMargin: 6.0, 0.0, 6.0, 0.0
+    contentMargin: 12.0, 0.0, 6.0, 0.0
+    maxWritableArea: 368.0, 256.0

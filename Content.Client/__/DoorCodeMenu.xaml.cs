@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Localization;
 using Content.Shared._Forge.CodeDoor;
 
-namespace Content.Client.DoorCode
+namespace Content.Client.__
 {
     [GenerateTypedNameReferences]
     public sealed partial class DoorCodeMenu : DefaultWindow

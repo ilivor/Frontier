@@ -1,4 +1,7 @@
+using Content.Shared.DoAfter;
+using Robust.Shared.Serialization;
 using Content.Shared._Forge.CodeDoor;
+
 namespace Content.Shared._ForgeCodeDoor
 {
     public enum DoorCodeStatus : byte
@@ -30,6 +33,8 @@ namespace Content.Shared._ForgeCodeDoor
 
     public sealed class DoorCodeSubmitMessage : BoundUserInterfaceMessage { }
     public sealed class DoorCodeClearMessage : BoundUserInterfaceMessage { }
+
+    [Serializable, NetSerializable]
     public enum DoorCodeUiKey : byte
     {
         Key
