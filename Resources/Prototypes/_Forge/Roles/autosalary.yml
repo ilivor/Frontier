@@ -51,7 +51,7 @@
   salary: 11000
 
 - type: autoSalaryJob
-  id: Представитель Юридического Департамента
+  id: Представитель ЮД # Никакого депа юридического
   salary: 12000
 
 - type: autoSalaryJob

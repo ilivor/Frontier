@@ -392,3 +392,14 @@
     stackRequirements:
       Steel: 120
       Cable: 60
+
+- type: entity
+  id: FSyndicateProtolatheCircuitboard
+  parent: [ProtolatheMachineCircuitboard, BaseC3ContrabandUnredeemable]
+  name: syndicate protolathe board
+  description:  A machine board for a syndicate protolathe.
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      prototype: FSyndicateProtolathe
