@@ -27,7 +27,7 @@
           Heat: 0.3
         flatReductions:
           Heat: 5
-          Piercing: 5          
+          Piercing: 5
       activeBlockModifier:
         coefficients:
           Blunt: 0.1

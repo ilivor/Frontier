@@ -45,7 +45,7 @@
   - type: Contraband
     # Corvax-Forge change:
     allowedDepartments: [ Engineering, CentralCommand ]
-    allowedJobs: [ StationRepresentative] 
+    allowedJobs: [ StationRepresentative]
 
 - type: entity
   parent: BaseC2ContrabandUnredeemable
