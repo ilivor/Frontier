@@ -1028,6 +1028,21 @@
           - SecurityUplink
 
 - type: listing
+  id: UplinkSecurityBoxRifle60
+  name: коробка патронов (.60 крупнокалиберный)
+  description: Коробка смертоносных патрон .60 калибра для снайперской винтовки. Для тех, кто хочет открыть новый сезон охоты на нарушителей.
+  productEntity: NFAmmunitionBoxRifle60
+  cost:
+    FrontierUplinkCoin: 3
+  categories:
+    - UplinkSecurityAmmo
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+
+- type: listing
   id: UplinkSecurityShotBeanbag
   name:  uplink-security-shotbeanbag-name
   description: uplink-security-shotbeanbag-desc

@@ -270,7 +270,7 @@
   - type: Projectile
     damage: # Corvax-Forge-change
       types:
-        Piercing: 50
+        Piercing: 70
         Structural: 100
     penetrationThreshold: 360
     penetrationDamageTypeRequirement:

@@ -565,6 +565,10 @@
       amount: 1
     - id: MagazineAntiMateriel
       amount: 2
+    - id: MagazineAntiMaterielAP
+      amount: 2
+    - id: MagazineAntiMaterielIncendiary
+      amount: 2
     - id: NFAmmunitionBoxRifle60
 
 - type: entity
