@@ -1545,6 +1545,27 @@
         - Sheriff
 
 - type: listing
+  id: UplinkSecurityWeaponSniperBrute
+  name: Снайперская винтовка "Брут"
+  description: Смертоносная крупнокалиберная снайперская винтовка. Очевидно, что она не предназначена для разгона мирных демонстраций... Хотя, кто с вами будет спорить? Использует .60 калибр.
+  productEntity: WeaponCaseLongWeaponSniperBrute
+  icon: { sprite: Forge/Objects/Weapons/Guns/Snipers/brute.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 30
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
   id: UplinkSecurityWeaponPulseCarbineSniper
   name:  uplink-security-contraband-forensics-CarbineSniper
   description: uplink-security-contraband-forensics-CarbineSniper-desc

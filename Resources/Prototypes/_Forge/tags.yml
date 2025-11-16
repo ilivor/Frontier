@@ -8,6 +8,9 @@
   id: SyndicateSabre
 
 - type: Tag
+  id: MagazineAntiMateriel
+
+- type: Tag
   id: MagazineVector22
 
 - type: Tag

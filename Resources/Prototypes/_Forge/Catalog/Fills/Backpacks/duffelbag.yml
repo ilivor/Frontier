@@ -33,6 +33,8 @@
   - type: StorageFill
     contents:
       - id: NFWeaponRifleSniperHristov
+      - id: MagazineAntiMateriel
+        amount: 2
       - id: NFAmmunitionBoxRifle60
 
 - type: entity
