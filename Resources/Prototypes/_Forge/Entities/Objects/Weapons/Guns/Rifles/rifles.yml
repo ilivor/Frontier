@@ -514,7 +514,7 @@
   - type: Appearance
 
 - type: entity
-  parent: [ NFBaseWeaponRifleChamber60, BaseGunWieldable, NFBaseWeaponFrameRifleSniperNanotrasen]
+  parent: [ NFBaseWeaponRifleChamber60Magazine, BaseGunWieldable, NFBaseWeaponFrameRifleSniperNanotrasen]
   id: WeaponSniperBrute
   name: Брут
   description: Смертоносная крупнокалиберная снайперская винтовка. Очевидно, что она не предназначена для разгона мирных демонстраций... Хотя, кто с вами будет спорить?

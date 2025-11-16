@@ -51,6 +51,25 @@
     examineCaliber: gun-examine-caliber-60
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  - type: BallisticAmmoProvider
+    capacity: 5
+    proto: NFCartridgeRifle60
+    whitelist:
+      tags:
+      - NFCartridgeRifle60
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+- type: entity
+  id: NFBaseWeaponRifleChamber60Magazine
+  abstract: true
+  components:
+  - type: Gun
+    examineCaliber: gun-examine-caliber-60
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   # Corvax-Forge: Add hristov magazine
   - type: ChamberMagazineAmmoProvider
     autoCycle: false
