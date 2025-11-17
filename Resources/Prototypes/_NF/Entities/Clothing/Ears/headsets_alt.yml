@@ -17,7 +17,7 @@
     sprite: _NF/Clothing/Ears/Headsets/pilot.rsi
 
 - type: entity
-  parent: ClothingHeadsetAlt
+  parent: [BaseC2ContrabandUnredeemable, ClothingHeadsetAlt] # Corvax-Forge: +BaseC2ContrabandUnredeemable
   id: ClothingHeadsetAltNfsdBrown
   name: NFSD over-ear headset
   components:
