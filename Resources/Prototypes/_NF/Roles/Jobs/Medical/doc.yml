@@ -9,7 +9,7 @@
   whitelisted: true
   startingGear: DocGear
   alwaysUseSpawner: true
-  icon: "JobIconDoc"
+  icon: "JobIconDocForge" # Forge-change
   requireAdminNotify: true
   supervisors: job-supervisors-centcom
   weight: 170

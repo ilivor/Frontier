@@ -1,0 +1,19 @@
+- type: loadoutGroup
+  id: EngineerSynJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  minLimit: 1
+  loadouts:
+  - EngineerSynJumpsuit1
+  - EngineerSynJumpsuit2
+  fallbacks:
+  - EngineerSynJumpsuit1
+
+- type: loadoutGroup
+  id: EngineerSynBackpackItems
+  name: loadout-group-contractor-backpack-items
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - PouchSyndicateTechLd
+  fallbacks:
+  - PouchSyndicateTechLd
