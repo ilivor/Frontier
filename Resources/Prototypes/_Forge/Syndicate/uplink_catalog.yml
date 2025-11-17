@@ -2852,3 +2852,23 @@
     TelecrystalDamaged: 20
   categories:
   - UplinkWearablesSmugger
+
+- type: listing
+  id: SmuggerUplinkFSyndicateProtolathe
+  name: uplink-FSyndicateProtolathe-name
+  description: uplink-FSyndicateProtolathe-desc
+  productEntity: FSyndicateProtolatheFlatpack
+  cost:
+    TelecrystalDamaged: 100
+  categories:
+  - UplinkJobSmugger
+
+- type: listing
+  id: SmuggerUplinkClothingBackpackSyndicateRaidBundle
+  name: uplink-ClothingBackpackSyndicateRaidBundle-name
+  description: uplink-ClothingBackpackSyndicateRaidBundle-desc
+  productEntity: ClothingBackpackSyndicateRaidBundle
+  cost:
+    TelecrystalDamaged: 24
+  categories:
+  - UplinkWearablesSmugger

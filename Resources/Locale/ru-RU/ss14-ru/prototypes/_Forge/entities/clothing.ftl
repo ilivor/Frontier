@@ -108,3 +108,6 @@ ent-ClothingUniformJumpsuitMilitaryMercTac = чёрный тактический
     .desc = Обычный тактический комбинезон без знаков отличия.
 ent-ClothingHandsGlovesCombatUpgrade = усиленные боевые перчатки
     .desc = Усиленные тактические перчатки, позволяющие чаще побеждать в драках на яме.
+
+ent-ClothingBackpackSyndicateRaidBundle = { ent-ClothingBackpackSyndicate }
+    .desc = { ent-ClothingBackpackSyndicate.desc }

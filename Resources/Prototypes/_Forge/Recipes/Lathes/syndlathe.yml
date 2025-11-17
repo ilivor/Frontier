@@ -486,7 +486,7 @@
   categories:
   - Chemicals
   materials:
-    Biomass: 2000
+    Biomass: 002
 
 - type: latheRecipe
   id: FSynLRecSprayPainterMagic
