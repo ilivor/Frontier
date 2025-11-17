@@ -20,7 +20,7 @@
 
 - type: autoSalaryJob
   id: Офицер АФ
-  salary: 11000 # + 1000 как извинение
+  salary: 11000
 
 - type: autoSalaryJob
   id: Бейлиф
@@ -43,7 +43,7 @@
   salary: 11000
 
 - type: autoSalaryJob
-  id: Представитель Юр. Департамента
+  id: Представитель ЮД
   salary: 15000
 
 - type: autoSalaryJob

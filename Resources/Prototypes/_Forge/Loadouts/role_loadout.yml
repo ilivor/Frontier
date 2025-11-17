@@ -12,10 +12,38 @@
   - SmugglerGlasses
 
 - type: roleLoadout
-  id: JobMedSyn
+  id: JobsmugglerBodyguard
   canCustomizeName: true
   groups:
   - SmugglerCaptainHead
+  - SmugglerJumpsuit
+  - SmugglerBags
+  - SmugglerGloves
+  - SmugglerShoes
+  - SmugglerNeck
+  - SmugglerOuterclothing
+  - SmugglerGlasses
+
+- type: roleLoadout
+  id: JobEngineerSyn
+  canCustomizeName: true
+  groups:
+  - StormtrooperCaptainHead
+  - EngineerSynJumpsuit
+  - StormtrooperBags
+  - StormtrooperGlasses
+  - StormtrooperShoes
+  - StormtrooperNeck
+  - StormtrooperOuterclothing
+  - StormtrooperGlasses
+  - StormtrooperGloves
+  - EngineerSynBackpackItems
+
+- type: roleLoadout
+  id: JobMedSyn
+  canCustomizeName: true
+  groups:
+  - MedSynHead
   - MedSynJumpsuit
   - MedSynBack
   - MedSynGlasses
@@ -59,12 +87,12 @@
   groups:
   - ParaMedicalJumpsuit
   - ParaMedicalBackpack
-  - ParaMedicalOuterClothing
   - ParaMedicalShoes
   - ParaMedicalWallet
   - ParaMedicalHead
+  - ParaMedicalNeck
   - DocGloves
-  - ContractorOuterClothing
+  - ParaMedicalOuterClothing
   - ContractorFace
   - ContractorGlasses
   - ContractorBelt
