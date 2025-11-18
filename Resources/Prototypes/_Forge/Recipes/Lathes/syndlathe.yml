@@ -988,7 +988,7 @@
   categories:
   - Tools
   materials:
-    Glass: 50
+    Glass: 100
 
 - type: latheRecipe
   id: FSynLRecChemistryEmptyBottle02
@@ -997,7 +997,7 @@
   categories:
   - Tools
   materials:
-    Glass: 50
+    Glass: 100
 
 - type: latheRecipe
   id: FSynLRecChemistryEmptyBottle03
@@ -1006,7 +1006,7 @@
   categories:
   - Tools
   materials:
-    Glass: 50
+    Glass: 100
 
 - type: latheRecipe
   id: FSynLRecPaper
