@@ -62,6 +62,7 @@
     - PaperWrittenMedic
     - DefibrillatorCompact
     - MedTekCartridge
+    - EncryptionKeyHospital
 
 #- type: startingGear
 #  id: ParaMedicalHologramGear
