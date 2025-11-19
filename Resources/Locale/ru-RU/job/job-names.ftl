@@ -61,7 +61,8 @@ JobChiefMedicalOfficer = главный врач
 JobClown = клоун
 JobDetective = детектив
 JobERTEngineer = инженер ОБР
-JobBrigmedic = бригмедик
+#  Forge-change Немного ренейм роли, с бригмедика до коронера.
+JobBrigmedic = коронер
 JobERTChaplain = священник ОБР
 JobERTJanitor = уборщик ОБР
 JobERTLeader = лидер ОБР
