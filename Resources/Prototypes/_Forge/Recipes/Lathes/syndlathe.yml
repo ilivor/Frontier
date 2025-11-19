@@ -486,7 +486,7 @@
   categories:
   - Chemicals
   materials:
-    Biomass: 2000
+    Biomass: 002
 
 - type: latheRecipe
   id: FSynLRecSprayPainterMagic
@@ -643,7 +643,7 @@
   - SyndicateTradingConsoleBoom
   materials:
     Steel: 500
-    Biomass: 200
+    Biomass: 0002
 
 - type: latheRecipe
   id: FSynLRecEmpGrenade
@@ -674,3 +674,656 @@
   materials:
     Steel: 2000
     Plasma: 1000
+
+- type: latheRecipe
+  id: FSynLRecWeaponTurretSyndicateFlatpack
+  result: WeaponTurretSyndicateFlatpack
+  completetime: 2
+  categories:
+  - Weapons
+  materials:
+    Steel: 12000
+    Plasteel: 6000
+
+- type: latheRecipe
+  id: FSynLRecMaterialReclaimerMachineCircuitboard
+  result: MaterialReclaimerMachineCircuitboard
+  completetime: 2
+  categories:
+  - Circuitry
+  materials:
+    Steel: 500
+    Glass: 2000
+    Gold: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: FSynLRecFlatpackerMachineCircuitboard
+  result: FlatpackerMachineCircuitboard
+  completetime: 2
+  categories:
+  - Circuitry
+  materials:
+    Steel: 500
+    Glass: 2000
+    Gold: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: FSynLRecMiniGravityGeneratorCircuitboard
+  result: MiniGravityGeneratorCircuitboard
+  completetime: 2
+  categories:
+  - Circuitry
+  materials:
+    Steel: 500
+    Glass: 2000
+    Gold: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: FSynLRecPortableGeneratorJrPacmanMachineCircuitboard
+  result: PortableGeneratorJrPacmanMachineCircuitboard
+  completetime: 2
+  categories:
+  - Circuitry
+  materials:
+    Steel: 500
+    Glass: 2000
+    Gold: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: FSynLRecComputerIFFCircuitboard
+  result: ComputerIFFCircuitboard
+  completetime: 2
+  categories:
+  - Circuitry
+  materials:
+    Steel: 500
+    Glass: 2000
+    Gold: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: FSynLRecPortableGeneratorSuperPacmanMachineCircuitboard
+  result: PortableGeneratorSuperPacmanMachineCircuitboard
+  completetime: 2
+  categories:
+  - Circuitry
+  materials:
+    Steel: 500
+    Glass: 2000
+    Gold: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: FSynLRecPouchSyndicate
+  result: PouchSyndicate
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 1000
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecPouchSyndicateMed
+  result: PouchSyndicateMed
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 1000
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecPouchSyndicateTech
+  result: PouchSyndicateTech
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 1000
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingBeltSyndieHolster
+  result: ClothingBeltSyndieHolster
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 1000
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingBeltAssault
+  result: ClothingBeltAssault
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 1000
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingBeltMilitaryWebbingSyndicate
+  result: ClothingBeltMilitaryWebbingSyndicate
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+    Plasteel: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingBeltMilitaryWebbingSyndicateShturm
+  result: ClothingBeltMilitaryWebbingSyndicateShturm
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+    Plasteel: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingBeltMilitaryWebbingSyndicateMed
+  result: ClothingBeltMilitaryWebbingSyndicateMed
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+    Plasteel: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingBeltMilitaryWebbingSyndicateEng
+  result: ClothingBeltMilitaryWebbingSyndicateEng
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+    Plasteel: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingBeltMilitaryWebbingSyndicateCommand
+  result: ClothingBeltMilitaryWebbingSyndicateCommand
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 4000
+    Durathread: 2000
+    Plasteel: 1000
+
+- type: latheRecipe
+  id: FSynLRecToolboxSyndicate
+  result: ToolboxSyndicate
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Steel: 2000
+    Plasteel: 1000
+
+- type: latheRecipe
+  id: FSynLRecSyndicateJawsOfLife
+  result: SyndicateJawsOfLife
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Steel: 2000
+    Glass: 1000
+    Plasma: 500
+    Gold: 200
+
+- type: latheRecipe
+  id: FSynLRecPowerDrillSyndicate
+  result: PowerDrillSyndicate
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Steel: 2000
+    Plastic: 2000
+    Plasma: 500
+    Gold: 200
+
+- type: latheRecipe
+  id: FSynLRecWelderSyndicate
+  result: WelderSyndicate
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Steel: 2000
+    Plasma: 2000
+    Gold: 1000
+
+- type: latheRecipe
+  id: FSynLRecMultitoolSyndicate
+  result: MultitoolSyndicate
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Steel: 1000
+    Plastic: 500
+
+- type: latheRecipe
+  id: FSynLRecSyndicateIDCard
+  result: SyndicateIDCard
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Steel: 1000
+    Plastic: 1000
+
+- type: latheRecipe
+  id: FSynLRecEmag
+  result: Emag
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Steel: 6000
+    Glass: 6000
+    Gold: 6000
+    Silver: 6000
+    Uranium: 6000
+    Plasma: 6000
+    Plastic: 6000
+    Brass: 6000
+    Bananium: 6000
+    Plasteel: 4000
+
+- type: latheRecipe
+  id: FSynLRecAccessBreaker
+  result: AccessBreaker
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Steel: 6000
+    Glass: 6000
+    Gold: 6000
+    Silver: 6000
+    Uranium: 6000
+    Plasma: 6000
+    Plastic: 6000
+    Brass: 6000
+    Bananium: 6000
+    Plasteel: 4000
+
+- type: latheRecipe
+  id: FSynLRecRadioJammer
+  result: RadioJammer
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Steel: 6000
+    Glass: 6000
+    Gold: 6000
+    Silver: 6000
+    Uranium: 6000
+    Plasma: 6000
+    Plastic: 6000
+    Brass: 6000
+    Bananium: 6000
+    Plasteel: 4000
+
+- type: latheRecipe
+  id: FSynLRecChemistryEmptyBottle04
+  result: ChemistryEmptyBottle04
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Glass: 100
+
+- type: latheRecipe
+  id: FSynLRecChemistryEmptyBottle02
+  result: ChemistryEmptyBottle02
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Glass: 100
+
+- type: latheRecipe
+  id: FSynLRecChemistryEmptyBottle03
+  result: ChemistryEmptyBottle03
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Glass: 100
+
+- type: latheRecipe
+  id: FSynLRecPaper
+  result: Paper
+  completetime: 2
+  materials:
+    Paper: 10
+
+- type: latheRecipe
+  id: FSynLRecRubberStampSyndicate
+  result: RubberStampSyndicate
+  completetime: 2
+  categories:
+  - Tools
+  materials:
+    Wood: 500
+    Steel: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpsuitMedSyn
+  result: ClothingUniformJumpsuitMedSyn
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpsuitStormtrooper
+  result: ClothingUniformJumpsuitStormtrooper
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpsuitEngineerSyn
+  result: ClothingUniformJumpsuitEngineerSyn
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpsuitSmuggler
+  result: ClothingUniformJumpsuitSmuggler
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpskirtSmuggler
+  result: ClothingUniformJumpskirtSmuggler
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpsuitSmugglerTactical
+  result: ClothingUniformJumpsuitSmugglerTactical
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpsuitOperative
+  result: ClothingUniformJumpsuitOperative
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpskirtOperative
+  result: ClothingUniformJumpskirtOperative
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpsuitRecruitSyndieNF
+  result: ClothingUniformJumpsuitRecruitSyndieNF
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpsuitParamedicSyndieNF
+  result: ClothingUniformJumpsuitParamedicSyndieNF
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpskirtTacticalMaid
+  result: ClothingUniformJumpskirtTacticalMaid
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingUniformJumpsuitRepairmanSyndieNF
+  result: ClothingUniformJumpsuitRepairmanSyndieNF
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: FSynLRecClothingHandsTacticalMaidGloves
+  result: ClothingHandsTacticalMaidGloves
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 500
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingHandsGlovesCombat
+  result: ClothingHandsGlovesCombat
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 500
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingOuterCoatSyndieCap
+  result: ClothingOuterCoatSyndieCap
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 2000
+
+- type: latheRecipe
+  id: FSynLRecClothingOuterWinterSyndieCap
+  result: ClothingOuterWinterSyndieCap
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 2000
+
+- type: latheRecipe
+  id: FSynLRecClothingOuterWinterSyndie
+  result: ClothingOuterWinterSyndie
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+    Durathread: 2000
+
+- type: latheRecipe
+  id: FSynLRecClothingOuterVestWeb
+  result: ClothingOuterVestWeb
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 3000
+    Durathread: 3000
+    Plasteel: 6000
+
+- type: latheRecipe
+  id: FSynLRecClothingOuterWinterSyndieCapArmored
+  result: ClothingOuterWinterSyndieCapArmored
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 3000
+    Durathread: 3000
+    Plasteel: 6000
+
+- type: latheRecipe
+  id: FSynLRecClothingHeadHatTacticalMaidHeadband
+  result: ClothingHeadHatTacticalMaidHeadband
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 500
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingHeadHatBizarreSoft
+  result: ClothingHeadHatBizarreSoft
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 500
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingHeadHatSyndie
+  result: ClothingHeadHatSyndie
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 500
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingHeadHatSyndieMAA
+  result: ClothingHeadHatSyndieMAA
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 500
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingHeadHatBeretCommander
+  result: ClothingHeadHatBeretCommander
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 500
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecTowelColorSyndicate
+  result: TowelColorSyndicate
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 2000
+
+- type: latheRecipe
+  id: FSynLRecClothingShoesBootsJack
+  result: ClothingShoesBootsJack
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 1000
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingShoesBootsWinterSyndicate
+  result: ClothingShoesBootsWinterSyndicate
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 1000
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingShoesSwat
+  result: ClothingShoesSwat
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 1000
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecClothingWalletLeatherSyndi
+  result: ClothingWalletLeatherSyndi
+  completetime: 2
+  categories:
+  - Clothing
+  materials:
+    Cloth: 1000
+    Durathread: 500
+
+- type: latheRecipe
+  id: FSynLRecFComputerShuttleAntagCircuitboard
+  result: FComputerShuttleAntagCircuitboard
+  completetime: 2
+  categories:
+  - Circuitry
+  materials:
+    Steel: 500
+    Glass: 2000
+    Gold: 500
+    Silver: 500
