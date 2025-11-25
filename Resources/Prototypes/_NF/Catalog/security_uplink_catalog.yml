@@ -75,7 +75,7 @@
   productEntity: ClothingOuterHardsuitNfsdCombat
   icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_combat.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 10
+    FrontierUplinkCoin: 7 # Corvax-Forge: Armor rebalance
   categories:
     - UplinkSecurityHardsuits
   conditions:
@@ -91,7 +91,7 @@
   productEntity: ClothingOuterHardsuitNfsdCommand
   icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_command.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 10
+    FrontierUplinkCoin: 13 # Corvax-Forge: Armor rebalance
   categories:
     - UplinkSecurityHardsuits
   conditions:
@@ -105,24 +105,24 @@
         - SeniorOfficer
         - Sheriff
 
-- type: listing
-  id: UplinkSecurityHardsuitSheriff
-  name:  uplink-security-hardsuit-sheriff-name
-  description: uplink-security-hardsuit-sheriff-desc
-  productEntity: ClothingOuterHardsuitNfsdSheriff
-  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_sheriff.rsi, state: icon }
-  cost:
-    FrontierUplinkCoin: 3
-  categories:
-    - UplinkSecurityHardsuits
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-    - !type:BuyerJobCondition
-      whitelist:
-        - Sheriff
+# - type: listing                                # Corvax-Forge: Armor rebalance
+#   id: UplinkSecurityHardsuitSheriff
+#   name:  uplink-security-hardsuit-sheriff-name
+#   description: uplink-security-hardsuit-sheriff-desc
+#   productEntity: ClothingOuterHardsuitNfsdSheriff
+#   icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_sheriff.rsi, state: icon }
+#   cost:
+#     FrontierUplinkCoin: 3
+#   categories:
+#     - UplinkSecurityHardsuits
+#   conditions:
+#     - !type:StoreWhitelistCondition
+#       whitelist:
+#         tags:
+#           - SecurityUplink
+#     - !type:BuyerJobCondition
+#       whitelist:
+#         - Sheriff
 
 - type: listing
   id: UplinkSecurityHardsuitSyndieReverseEngineered
@@ -131,7 +131,7 @@
   productEntity: ClothingOuterHardsuitNfsdExperimental
   icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_experimental.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 32
+    FrontierUplinkCoin: 40
   categories:
     - UplinkSecurityHardsuits
   conditions:
@@ -458,7 +458,7 @@
 #   id: UplinkSecurityKS23
 #   name:  uplink-security-ks23-name
 #   description: uplink-security-ks23-desc
-#   productEntity: WeaponCaseLongWeaponShotgunKS23
+#   productEntity: WeaponShotgunKD12
 #   icon: { sprite: Forge/Objects/Weapons/Guns/Shotguns/ks23.rsi, state: icon }
 #   cost:
 #     FrontierUplinkCoin: 3
@@ -513,7 +513,7 @@
   name:  uplink-security-magboots-name
   description: uplink-security-magboots-desc
   productEntity: ClothingShoesBootsMagNfsdFilled
-  icon: { sprite: _NF/Clothing/Shoes/Boots/magboots-nfsd.rsi, state: icon }
+  icon: { sprite: Forge/Clothing/Shoes/Boots/nfsd_magboots_promax.rsi, state: icon } # Forge-change: path to sprite
   cost:
     FrontierUplinkCoin: 1
   categories:
@@ -1019,6 +1019,21 @@
   icon: { sprite: _NF/Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi, state: icon-buckshot }
   cost:
     FrontierUplinkCoin: 1
+  categories:
+    - UplinkSecurityAmmo
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+
+- type: listing
+  id: UplinkSecurityBoxRifle60
+  name: коробка патронов (.60 крупнокалиберный)
+  description: Коробка смертоносных патрон .60 калибра для снайперской винтовки. Для тех, кто хочет открыть новый сезон охоты на нарушителей.
+  productEntity: NFAmmunitionBoxRifle60
+  cost:
+    FrontierUplinkCoin: 3
   categories:
     - UplinkSecurityAmmo
   conditions:
@@ -1545,6 +1560,27 @@
         - Sheriff
 
 - type: listing
+  id: UplinkSecurityWeaponSniperBrute
+  name: Снайперская винтовка "Брут"
+  description: Смертоносная крупнокалиберная снайперская винтовка. Очевидно, что она не предназначена для разгона мирных демонстраций... Хотя, кто с вами будет спорить? Использует .60 калибр.
+  productEntity: WeaponCaseLongWeaponSniperBrute
+  icon: { sprite: Forge/Objects/Weapons/Guns/Snipers/brute.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 30
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
   id: UplinkSecurityWeaponPulseCarbineSniper
   name:  uplink-security-contraband-forensics-CarbineSniper
   description: uplink-security-contraband-forensics-CarbineSniper-desc
@@ -1566,12 +1602,12 @@
 
 - type: listing
   id: UplinkSecurityWeaponPulseCarbineCarbine
-  name: Импульсный карабин
-  description: Высокотехнологичный энергетический карабин, который предпочитают оперативные группы Nanotrasen. Запрещено к использованию гражданскими.
+  name: Импульсный ФН-1000
+  description: Высокотехнологичный энергетический карабин, поставляемый силам ДСБФ. Запрещено к использованию гражданскими.
   productEntity: WeaponCaseLongWeaponPulseCarbine
   icon: { sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 20
+    FrontierUplinkCoin: 22
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -1586,8 +1622,8 @@
 
 - type: listing
   id: UplinkSecurityWeaponPulseCarbinePistol
-  name: Импульсный пистолет
-  description: Новейший энергетический пистолет, предпочитаемый оперативными группами Nanotrasen в качестве запасного оружия. Запрещено к использованию гражданскими.
+  name: Импульсный ФН-14
+  description: Новейший энергетический пистолет, поставляемый силам ДСБФ. Запрещено к использованию гражданскими.
   productEntity: WeaponCaseLongWeaponPulsePistol
   icon: { sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi, state: icon }
   cost:
@@ -1796,3 +1832,23 @@
       whitelist:
         tags:
           - SecurityUplink
+
+- type: listing
+  id: UplinkSecurityWeaponPulse200
+  name:  Импульсный ФН-200
+  description: uplink-security-contraband-forensics-CarbineSniper-desc
+  productEntity: WeaponCaseLongWeaponPulse20
+  icon: { sprite: Forge/Objects/Weapons/Guns/Battery/pulse20.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 18
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - Sheriff

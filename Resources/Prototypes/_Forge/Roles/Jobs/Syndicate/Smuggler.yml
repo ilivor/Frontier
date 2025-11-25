@@ -1,11 +1,17 @@
 - type: job
   id: smuggler
-  name: Контрабандист
-  description: Торговец контрабанды.
+  name: forge-job-name-smuggler
+  description: forge-job-desc-smuggler
   playTimeTracker: Jobsmuggler
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 1 # 48 hours
+      time: 144000 # 40 hours
+    - !type:RoleTimeRequirement
+      role: JobMercenary
+      time: 72000 # 20 hours
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 36000 # 10 hours
   whitelisted: true
   startingGear: SmugglerGear
   alwaysUseSpawner: true
@@ -13,7 +19,7 @@
   - SyndicateAgent
   hideConsoleVisibility: true
   canBeAntag: true
-  icon: "JobIconSyndicate"
+  icon: "JobIconSmuggler"
   supervisors: job-supervisors-nobody
   weight: 40
   displayWeight: 40
@@ -33,18 +39,18 @@
 - type: startingGear
   id: SmugglerGear
   equipment:
-    ears: ClothingHeadsetAltSyndicate
+    ears: ClothingHeadsetAltSyndicateSmuggler
     id: SyndiPDASmugger
     belt: ClothingBeltSyndieHolster
     pocket1: NFWeaponPistolViper
     pocket2: SmuggerUplinkRadio200TC
     mask: ClothingMaskNeckGaiter
+    wallet: ClothingWalletLeatherSyndi
   storage:
     back:
     - NFBoxSurvivalExtended
     - RubberStampSyndicate
     - ExchangerSyndicateFlatpack
-    - ReinforcementRadioSyndicateSmugger
 
 - type: chameleonOutfit
   id: smugglerChameleonOutfit

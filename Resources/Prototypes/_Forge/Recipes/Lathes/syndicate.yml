@@ -63,6 +63,14 @@
     CreditCounterfeit: 55000
 
 - type: latheRecipe
+  id: NFWeaponPistolAnaconda45Recipe
+  result: NFWeaponPistolAnaconda45
+  categories: [SyndicateTradingConsoleFirearmsWeapons]
+  completetime: 1
+  materials:
+    CreditCounterfeit: 30000
+
+- type: latheRecipe
   id: ClothingBackpackDuffelSyndicateFilledCarbineRecipe
   categories: [SyndicateTradingConsoleFirearmsWeapons]
   result: NFWeaponRifleAssaultM90GrenadeLauncher
@@ -258,7 +266,7 @@
   result: ClothingBackpackDuffelSyndicateEliteHardsuitBundle
   completetime: 1
   materials:
-    CreditCounterfeit: 32000
+    CreditCounterfeit: 60000
 
 - type: latheRecipe
   id: ClothingBackpackDuffelSyndicateHardsuitBundleRecipe
@@ -604,14 +612,6 @@
   materials:
     CreditCounterfeit: 5000
 
-# - type: latheRecipe
-#  id: SpaceCashSyndicateESRecipe
-#  categories: [SyndicateTradingConsoleChemistry]
-#  result: SpaceCash1000
-#  completetime: 1
-#  materials:
-#    CreditCounterfeit: 750
-
 - type: latheRecipe
   categories: [SyndicateTradingConsoleFirearmsWeapons]
   id: NFWeaponRifleAssaultJackdaw
@@ -718,6 +718,14 @@
 
 - type: latheRecipe
   categories: [SyndicateTradingConsoleFirearmsWeapons, SyndicateTradingConsoleLaserArmsWeapons]
+  id: EnergyShieldSTrade
+  result: EnergyShield
+  completetime: 1
+  materials:
+    CreditCounterfeit: 24000
+
+- type: latheRecipe
+  categories: [SyndicateTradingConsoleFirearmsWeapons, SyndicateTradingConsoleLaserArmsWeapons]
   id: NFWeaponEnergyRifleTemperatureSTrade
   result: NFWeaponEnergyRifleTemperature
   completetime: 1
@@ -731,6 +739,14 @@
   completetime: 1
   materials:
     CreditCounterfeit: 10000
+
+- type: latheRecipe
+  categories: [SyndicateTradingConsoleFirearmsWeapons, SyndicateTradingConsoleMeleeArmor]
+  id: ToolboxSyndicateAltFilledSTrade
+  result: ToolboxSyndicateAltFilled
+  completetime: 1
+  materials:
+    CreditCounterfeit: 30000
 
 - type: latheRecipe
   categories: [SyndicateTradingConsoleFirearmsWeapons, SyndicateTradingConsoleMeleeArmor]
@@ -807,7 +823,7 @@
 - type: latheRecipe
   categories: [SyndicateTradingConsoleMeleeArmor]
   id: ClothingBeltMilitaryWebbingSTrade
-  result: ClothingBeltMilitaryWebbing
+  result: ClothingBeltMilitaryWebbingSyndicate
   completetime: 1
   materials:
     CreditCounterfeit: 3000
@@ -815,7 +831,7 @@
 - type: latheRecipe
   categories: [SyndicateTradingConsoleMeleeArmor]
   id: ClothingBeltMilitaryWebbingMedSTrade
-  result: ClothingBeltMilitaryWebbingMed
+  result: ClothingBeltMilitaryWebbingSyndicateMed
   completetime: 1
   materials:
     CreditCounterfeit: 3000
@@ -1325,3 +1341,20 @@
   completetime: 1
   materials:
     CreditCounterfeit: 50000
+
+# Conventor region
+- type: latheRecipe
+  id: SpaceCashSyndicateTORecipe
+  categories: [SyndicateTradingConsoleConventor]
+  result: SpaceCash1000
+  completetime: 1
+  materials:
+    CreditCounterfeit: 2000
+
+- type: latheRecipe
+  id: SpaceCashSyndicateFROMRecipe
+  categories: [SyndicateTradingConsoleConventor]
+  result: SpaceCashCounterfeit1000
+  completetime: 1
+  materials:
+    Credit: 2000

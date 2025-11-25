@@ -8,12 +8,17 @@
     sprite: _NF/Clothing/Back/Duffels/arcadia.rsi
 
 - type: entity
-  parent: ClothingBackpackDuffelSecurity
+  parent: [BaseC2ContrabandUnredeemable, ClothingBackpackDuffelSecurity] # Corvax-Forge: +BaseC2ContrabandUnredeemable
   id: ClothingBackpackDuffelNfsdBrown
   name: NFSD duffel
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Duffels/nfsd_brown.rsi
+  - type: ExplosionResistance # Corvax-Forge
+    damageCoefficient: 0
+  - type: Storage
+    grid:
+    - 0,0,9,5
 
 - type: entity
   parent: ClothingBackpackDuffelNfsdBrown
