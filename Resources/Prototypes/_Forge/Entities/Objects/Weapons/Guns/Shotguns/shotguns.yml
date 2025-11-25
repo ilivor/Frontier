@@ -148,6 +148,9 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
+  - type: NFWeaponDetails
+    class: weapon-details-class-shotgun
+    manufacturer: weapon-details-manufacturer-TechnicLogistic
 
 - type: entity
   name: Suppressor
@@ -212,3 +215,6 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
+  - type: NFWeaponDetails
+    class: weapon-details-class-pistol
+    manufacturer: weapon-details-manufacturer-TechnicLogistic

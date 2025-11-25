@@ -1,13 +1,16 @@
 - type: job
   id: Stormtrooper
-  name: Штурмовик
-  description: Штурмовик подчиняющийся командиру.
+  name: forge-job-name-stormtrooper
+  description: forge-job-desc-stormtrooper
   playTimeTracker: JobStormtrooper
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 1 # 48 hours
+      time: 144000 # 40 hours
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
+      time: 72000 # 20 hours
+    - !type:RoleTimeRequirement
+      role: JobSeniorOfficer
       time: 36000 # 10 hours
   startingGear: StormtrooperGear
   access:
@@ -36,17 +39,16 @@
 - type: startingGear
   id: StormtrooperGear
   equipment:
-    ears: ClothingHeadsetAltSyndicate
+    ears: ClothingHeadsetAltSyndicateShturm
     id: SyndiPDACStorm
-    belt: ClothingBeltAssault
-    pocket1: NFWeaponPistolPollock
-    mask: ClothingMaskGasSwat
+    belt: ClothingBeltMilitaryWebbingSyndicateShturm
+    mask: ClothingMaskGasSyndicate
+    wallet: ClothingWalletLeatherSyndi
   storage:
     back:
     - NFBoxSurvivalExtended
-    - NFMagazinePistol35
-    - NFMagazinePistol35
     - SyndicateDataMinerFlatpack
+    - ToolboxShturm
 
 - type: chameleonOutfit
   id: StormtrooperChameleonOutfit

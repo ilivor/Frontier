@@ -892,10 +892,13 @@
   - ContractorNFBoxSurvivalExtendedNitrogen
   - ContractorNFBoxSurvivalSheleg
   - ContractorNFBoxSurvivalExtendedSheleg
+  - ForgeAndroidSurvival # Forge-add
+  - ForgeAndroidExtendedSurvival # Forge-add
   fallbacks:
   - ContractorNFBoxSurvival
   - ContractorNFBoxSurvivalNitrogen
   - ContractorNFBoxSurvivalSheleg
+  - ForgeAndroidSurvival # Forge-add
 
 - type: loadoutGroup
   id: ContractorEncryptionKey
@@ -904,7 +907,7 @@
   maxLimit: 5
   loadouts:
   - ContractorEncryptionKeyTraffic
-#  - ContractorEncryptionKeyMedical #CorvaxFrontier
+  - ContractorEncryptionKeyMedical
   - ContractorEncryptionKeyCargo
   - ContractorEncryptionKeyEngineering
   - ContractorEncryptionKeyScience

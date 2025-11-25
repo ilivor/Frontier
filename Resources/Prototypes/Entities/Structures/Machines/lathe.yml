@@ -532,6 +532,7 @@
     - EmptyMedkitsStatic
     - SurgeryStatic
     - NFMedicalStatic # Frontier
+    - ForgeIpcAndroidPack # Forge-Change
     # dynamicPacks: # Frontier
     # - Chemistry # Frontier
   - type: Machine

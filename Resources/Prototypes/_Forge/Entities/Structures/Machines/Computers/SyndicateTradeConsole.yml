@@ -2,7 +2,7 @@
   id: SyndicateTradingConsole
   parent: BaseLatheLube
   name: Автомат торгов Синдиката
-  description: Используеться для оформления заказов на нелегальные предметы
+  description: Используется для оформления заказов на нелегальные предметы
   components:
   - type: Sprite
     sprite: Forge/Structures/Machines/terminal_syndicatechange.rsi
@@ -15,6 +15,7 @@
       shader: unshaded
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: OreSiloClient
   - type: Machine
     board: SyndicateTradingConsoleCircuitboard
   - type: Lathe
@@ -48,7 +49,7 @@
   id: TechFabInterdyne
   parent: BaseLatheLube
   name: Interdyne Фаб
-  description: Используеться для оформления заказов на продукцию компании Interdyne.
+  description: Используется для оформления заказов на продукцию компании Interdyne.
   components:
   - type: Sprite
     sprite: Forge/Structures/Machines/interdyne_techfab.rsi
@@ -64,6 +65,7 @@
       map: ["enum.MaterialStorageVisualLayers.Inserting"]
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: OreSiloClient
   - type: Machine
     board: TechFabInterdyneMachineCircuitboard
   - type: Lathe

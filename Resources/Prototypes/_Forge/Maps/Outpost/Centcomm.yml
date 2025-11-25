@@ -1,23 +1,23 @@
 # Author Info
 # GitHub: -
 # Discord: -
-# License: CC-BY-NC-ND-3.0
-# Corvax_frontier
+# License: CC-BY-NC-ND-4.0
+# CorvaxForge
 
 # Maintainer Info
-# GitHub: https://github.com/FireFoxPhoenix
-# Discord: FireFoxPhoenix
+# GitHub: https://github.com/Ko-mp-otik
+# Discord: ko_mp_otik
 
-# Shuttle Notes:
-
+# Notes:
+#
 - type: pointOfInterest
   id: Centcomm
   parent: BasePOI
-  name: 'Центральное командование'
+  name: 'Управление Секторального Флота'
   minimumDistance: 750
   maximumDistance: 1000
   spawnGroup: NewMapsgGrid
-  gridPath: /Maps/Forge/Outpost/CentComm.yml
+  gridPath: /Maps/_Forge/Outpost/CentComm.yml
   addComponents:
   - type: ProtectedGrid
     preventArtifactTriggers: True
@@ -28,17 +28,19 @@
     preventFloorRemoval: True
     killHostileMobs: True
     noGridCollision: True
+  - type: IFF
+    color: '#488C40FF'
 
 - type: gameMap
   id: Centcomm
-  mapName: Центральное Командование
-  mapPath: /Maps/Forge/Outpost/CentComm.yml
+  mapName: 'Управление Секторального Флота'
+  mapPath: /Maps/_Forge/Outpost/CentComm.yml
   minPlayers: 0
   stations:
     Centcomm:
       stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Центральное Командование'
+          mapNameTemplate: 'Управление Секторального Флота'
         - type: StationJobs
           availableJobs: {}

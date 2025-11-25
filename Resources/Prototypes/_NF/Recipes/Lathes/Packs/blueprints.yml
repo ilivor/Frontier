@@ -191,6 +191,8 @@
   # MagnetsTechCombat
   - ClothingShoesBootsMagSecurity
   - ClothingShoesBootsMagMercenary
+  - FRecClothingShoesBootsMagMercPromax # Forge-change
+  - FRecClothingShoesBootsMagBattlePromax # Forge-change
   # HardsuitsArmored
   - ClothingOuterHardsuitMercenary
   - ClothingOuterHardsuitPrivateSecurity
@@ -370,6 +372,7 @@
   - DeviceDesynchronizer
   # MagnetsTechAdvanced
   - ClothingShoesBootsMagAdv
+  - FRecClothingShoesBootsMagAdvsPromax # Forge-change
   # HardsuitsExperimentalRD
   - ClothingOuterHardsuitRd
   # IndustrialEngineering
@@ -506,6 +509,8 @@
   - ClothingEyesHudBountyHunter
   - NFForensicPad
   - ClothingOuterHardsuitMercenaryElite #CorvaxFrontier
+  - ClothingOuterHardsuitAAMr # Forge-change
+  - ClothingOuterHardsuitAAMrAdv # Forge-change
   # ImprovedPistolAmmo
   - NFAmmunitionBoxPistol35Overpressure
   - NFAmmunitionBoxPistol45Overpressure

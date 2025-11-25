@@ -41,7 +41,7 @@
 
 - type: entity
   id: NFWeaponSubMachineGunDrozd
-  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunNanotrasen ]
+  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunNanotrasen ] #Corvax-Forge +BaseC2ContrabandUnredeemable
   name: Drozd
   description: A fully automatic SMG.
   components: &drozdComponents

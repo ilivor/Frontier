@@ -264,7 +264,7 @@
   description: PTech vending! Providing a ROBUST selection of PDAs, cartridges, and anything else a dull paper pusher needs!
   components:
   - type: VendingMachine
-    pack: PTechInventory
+    pack: PTechInventoryForge # Forge-Change
     offState: off
     brokenState: broken
     normalState: normal-unshaded

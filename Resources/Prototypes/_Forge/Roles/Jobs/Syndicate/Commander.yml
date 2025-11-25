@@ -1,11 +1,23 @@
 - type: job
   id: Commander
-  name: Командир
-  description: Глава штурмовой группы "Жнецы"
+  name: forge-job-name-syndicommander
+  description: forge-job-desc-syndicommander
   playTimeTracker: JobCommander
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 1 # 48 hours
+      time: 144000 # 40 hours
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 72000 # 20 hours
+    - !type:RoleTimeRequirement
+      role: JobSeniorOfficer
+      time: 72000 # 20 hours
+    - !type:RoleTimeRequirement
+      role: JobBrigmedic
+      time: 36000 # 10 hours
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 36000 # 10 hours
   whitelisted: true
   access:
   - SyndicateAgent
@@ -34,16 +46,16 @@
 - type: startingGear
   id: CommanderGear
   equipment:
-    ears: ClothingHeadsetAltSyndicate
+    ears: ClothingHeadsetAltSyndicateComShturm
     id: SyndiPDAComa
     belt: ClothingBeltSheathSyndicateFilled
-    pocket1: NFWeaponPistolCobra
-    mask: ClothingMaskGasSwat
+    mask: ClothingMaskGasSyndicate
+    wallet: ClothingWalletLeatherSyndi
   storage:
     back:
     - NFBoxSurvivalExtended
-    - NFMagazinePistol45
     - SyndicateDataMinerFlatpack
+    - ToolboxCommander
 
 - type: chameleonOutfit
   id: CommanderChameleonOutfit

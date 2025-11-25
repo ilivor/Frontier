@@ -1,0 +1,55 @@
+- type: latheRecipe
+  id: ClothingOuterHardsuitAAMr
+  parent: NFBaseHardSuitArmoredRecipe
+  result: ClothingOuterHardsuitAAMr
+  materials:
+    PlasmaGlass: 2000
+    Plastic: 6000
+    Plasteel: 8000
+    Durathread: 6000
+    Silver: 4000
+    Gold: 6000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitAAMrAdv
+  parent: NFBaseHardSuitArmoredRecipe
+  result: ClothingOuterHardsuitAAMrAdv
+  materials:
+    PlasmaGlass: 1500
+    UraniumGlass: 1500
+    Plastic: 6000
+    Plasteel: 9000
+    Durathread: 8000
+    Silver: 4000
+    Gold: 6000
+    Brass: 2000
+
+- type: latheRecipe
+  id: FRecClothingShoesBootsMagAdvsPromax
+  parent: NFBaseMagBootsRecipe
+  result: ClothingShoesBootsMagAdvsPromax
+  completetime: 8
+  materials:
+    Silver: 1500
+    Gold: 1000
+    Plasteel: 500
+
+- type: latheRecipe
+  id: FRecClothingShoesBootsMagMercPromax
+  parent: NFBaseMagBootsRecipe
+  result: ClothingShoesBootsMagMercPromax
+  completetime: 8
+  materials:
+    Silver: 1500
+    Gold: 1000
+    Plasteel: 500
+
+- type: latheRecipe
+  id: FRecClothingShoesBootsMagBattlePromax
+  parent: NFBaseMagBootsRecipe
+  result: ClothingShoesBootsMagBattlePromax
+  completetime: 8
+  materials:
+    Silver: 1500
+    Gold: 1000
+    Plasteel: 500

@@ -11,7 +11,7 @@
       - EncryptionKeyCommon
 
 - type: entity
-  parent: ClothingHeadset
+  parent: [BaseC2ContrabandUnredeemable, ClothingHeadset] # Corvax-Forge: +BaseC2ContrabandUnredeemable
   id: ClothingHeadsetNfsdBrown
   name: NFSD headset
   components:
@@ -123,7 +123,7 @@
 #doc headset
 
 - type: entity
-  parent: [ClothingHeadsetCMO, BaseCommandContraband]
+  parent: [ClothingHeadsetAltLoudspeaker, ClothingHeadsetCMO, BaseCommandContraband]
   id: ClothingHeadsetDoc
   name: doc's headset
   description: Letting the DoC know what's up. Takes encryption keys.
