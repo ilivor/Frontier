@@ -105,51 +105,14 @@ public sealed partial class RoboisseurComponent : Component
         "roboisseur-deny-3"
     };
 
+    [DataField("tier1Protos")]
+    public List<string> Tier2Protos = new();
+
     [DataField("tier2Protos")]
-    public List<string> Tier2Protos = new()
-    {
-        "FoodBurgerEmpowered",
-        "FoodSoupClown",
-        "FoodSoupChiliClown",
-        "FoodBurgerSuper",
-        "FoodNoodlesCopy",
-        //"FoodMothMallow",
-        //"FoodPizzaCorncob",
-        //"FoodPizzDonkpocket",
-        "FoodSoupMonkey",
-        //"FoodMothSeedSoup",
-        "FoodTartGrape",
-        "FoodMealCubancarp",
-        "FoodMealSashimi",
-        "FoodBurgerCarp",
-        //"FoodMealTaco",
-        //"FoodMothMacBalls",
-        "FoodSoupNettle",
-        "FoodBurgerDuck",
-        "FoodBurgerBaseball",
-        "FoodTacoFish",
-        "FoodBurgerClown",
-    };
+    public List<string> Tier2Protos = new();
 
     [DataField("tier3Protos")]
-    public List<string> Tier3Protos = new()
-    {
-        "FoodSaladWatermelonFruitBowl",
-        "FoodBakedCannabisBrownieBatch",
-        "FoodPizzaDank",
-        //"FoodBurgerBear",
-        "FoodBurgerMime",
-        "FoodCakeSuppermatter",
-        "FoodSoupChiliCold",
-        "FoodSoupBisque",
-        "FoodCakeSlime",
-        "FoodBurgerCrazy",
-        "FoodPieFrosty",
-        "FoodTartMime",
-        "FoodSoupBungo",
-        "FoodTartGapple",
-        "FoodCakeLemoon"
-    };
+    public List<string> Tier2Protos = new();
 
     [DataField("robossuierRewards")]
     public IReadOnlyList<string> RobossuierRewards = new[]
@@ -201,101 +164,5 @@ public sealed partial class RoboisseurComponent : Component
         //"CloningPodMachineCircuitboard",
         "FloorTileItemAstroGrass30",
         "FloorTileItemAstroIce30",
-    };
-
-    [DataField("blacklistedProtos")]
-    public IReadOnlyList<string> BlacklistedProtos = new[]
-    {
-        //"FoodMothPesto",
-        "FoodBurgerSpell",
-        "FoodBreadBanana",
-        //"FoodMothSqueakingFry",
-        //"FoodMothFleetSalad",
-        "FoodBreadMeatSpider",
-        "FoodBurgerHuman",
-        "FoodNoodlesBoiled",
-        //"FoodMothOatStew",
-        "FoodMeatLizardtailKebab",
-        "FoodSoupTomato",
-        "FoodDonkpocketGondolaWarm",
-        "FoodDonkpocketBerryWarm",
-        //"LockboxDecloner",
-        "FoodBreadButteredToast",
-        //"FoodMothCottonSoup",
-        "LeavesTobaccoDried",
-        "FoodSoupEyeball",
-        //"FoodMothKachumbariSalad",
-        "FoodMeatHumanKebab",
-        "FoodMeatRatdoubleKebab",
-        "FoodBurgerCorgi",
-        "FoodBreadPlain",
-        "FoodMeatKebab",
-        "FoodBreadBun",
-        "FoodBurgerCat",
-        "FoodSoupTomatoBlood",
-        //"FoodMothSaladBase",
-        "FoodPieXeno",
-        "FoodDonkpocketTeriyakiWarm",
-        //"FoodMothBakedCheese",
-        //"FoodMothTomatoSauce",
-        //"FoodMothPizzaCotton",
-        "AloeCream",
-        "FoodSnackPopcorn",
-        "FoodBurgerSoy",
-        //"FoodMothToastedSeeds",
-        //"FoodMothCornmealPorridge",
-        //"FoodMothBakedCorn",
-        "FoodBreadMoldySlice",
-        "FoodRiceBoiled",
-        //"FoodMothEyeballSoup",
-        "FoodMeatRatKebab",
-        "FoodBreadCreamcheese",
-        "FoodSoupOnion",
-        "FoodBurgerAppendix",
-        "FoodBurgerRat",
-        "RegenerativeMesh",
-        "FoodCheeseCurds",
-        "FoodDonkpocketHonkWarm",
-        "FoodOatmeal",
-        "FoodBreadJellySlice",
-        //"FoodMothCottonSalad",
-        "FoodBreadMoldy",
-        "FoodDonkpocketSpicyWarm",
-        "FoodCannabisButter",
-        "FoodNoodles",
-        "FoodBreadMeat",
-        "LeavesCannabisDried",
-        "FoodBurgerCheese",
-        "FoodDonkpocketDankWarm",
-        "FoodSpaceshroomCooked",
-        "FoodMealFries",
-        "MedicatedSuture",
-        "FoodDonkpocketWarm",
-        "FoodCakePlain",
-        "DisgustingSweptSoup",
-        "FoodBurgerPlain",
-        "FoodBreadGarlicSlice",
-        "FoodSoupMushroom",
-        "FoodSoupWingFangChu",
-        "FoodBreadMeatXeno",
-        "FoodCakeBrain",
-        "FoodBurgerBrain",
-        //"FoodSaladCaesar",
-        "MobBreadDog",
-        "MobCatCake",
-        "FoodBurgerXeno",
-        "FoodPizzaDonkpocket",
-        "TrashBakedBananaPeel",
-        "FoodBurgerGhost",
-        "FoodDonkpocketPizzaWarm",
-        "FoodBurgerMothRoach",
-        "FoodBurgerBear",
-        "FoodSaladOlivie",
-        "SalCoat",
-        "SalCrab",
-        "SalMime",
-        "FoodTinCondMilk",
-        "FoodTinPorrige",
-        "FoodTinErp"  
     };
 }
