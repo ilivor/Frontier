@@ -93,7 +93,7 @@
   name: SyndCommander5Set-name
   description: SyndCommander5Set-description
   sprite:
-    sprite: _NF/Objects/Weapons/Guns/Battery/antiquelasergun.rsi
+    sprite: Forge/Objects/Weapons/Guns/Battery/laser_pistol_syndie.rsi
     state: icon
   content:
   - ClothingOuterHardsuitSyndieCommander
@@ -104,7 +104,7 @@
   - HemostasisAutoInjector
   - FreedomImplanter
   - C4
-  - NFWeaponEnergyPistolLaserAntique
+  - WeaponSyndieEnergyFalconPistolLaser
   - EnergySword
 
 - type: thiefBackpackSet

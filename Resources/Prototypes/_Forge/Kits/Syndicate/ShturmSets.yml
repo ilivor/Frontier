@@ -22,12 +22,12 @@
   name: SyndShturm2Set-name
   description: SyndShturm2Set-description
   sprite:
-    sprite: _NF/Objects/Weapons/Guns/Battery/antiquelasergun.rsi
+    sprite: Forge/Objects/Weapons/Guns/Battery/laser_pistol_syndie.rsi
     state: icon
   content:
   - ClothingHeadHelmetSyndicate
   - ClothingOuterEVASuitSyndicate
-  - NFWeaponEnergyPistolLaserAntique
+  - WeaponSyndieEnergyFalconPistolLaser
   - MedkitFilled
   - CombatMedipen
   - CombatMedipen
