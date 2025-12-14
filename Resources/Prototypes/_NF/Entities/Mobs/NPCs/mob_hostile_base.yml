@@ -378,7 +378,7 @@
        task: SimpleHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
@@ -395,7 +395,7 @@
        task: SimpleRangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
@@ -412,7 +412,7 @@
        task: SimpleHumanoidHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
@@ -440,7 +440,6 @@
   - NFBaseMobRestrictions
   id: MobHumanoidHostileBase
   components:
-  - type: ComplexInteraction
   - type: NPCRetaliation
     attackMemoryLength: 10
   - type: MobMover
@@ -500,7 +499,6 @@
   - NFBaseMobRestrictions
   id: MobNonHumanHostileBase
   components:
-  - type: ComplexInteraction
   - type: NPCRetaliation
     attackMemoryLength: 10
   - type: Reactive
@@ -568,7 +566,6 @@
   - NFBaseMobRestrictions
   id: NFMobSimpleHostileBase
   components:
-  - type: ComplexInteraction
   - type: NPCRetaliation
     attackMemoryLength: 10
   - type: Reactive
