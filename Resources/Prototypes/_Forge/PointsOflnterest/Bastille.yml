@@ -26,7 +26,10 @@
     preventExplosions: False
     preventEmpEvents: True
     preventRCDUse: True
+    preventFloorPlacement: True
+    preventFloorRemoval: True
     killHostileMobs: False
+    noGridCollision: True
 
 - type: gameMap
   id: BastilleOutpost

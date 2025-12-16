@@ -5,7 +5,7 @@
   description: That is a firelock frame.
   components:
   - type: Sprite
-    sprite: Forge/Structures/Doors/Airlocks/Standard/firelock.rsi # Forge-Change
+    sprite: Structures/Doors/Airlocks/Standard/firelock.rsi
     layers:
     - state: frame1
       map: [ "enum.ConstructionVisuals.Layer" ]
