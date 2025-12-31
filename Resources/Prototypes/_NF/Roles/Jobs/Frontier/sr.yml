@@ -12,12 +12,13 @@
   whitelisted: true
   startingGear: SrGear
   alwaysUseSpawner: true
-  icon: "JobIconHeadOfPersonnel"
+  icon: "JobIconStrep" # Forge-change: JobIconStrep
   requireAdminNotify: true
   supervisors: job-supervisors-centcom
   weight: 170
   displayWeight: 60 # Top
   canBeAntag: false
+  salary: 20000 # Corvax-Forge-Salary
   accessGroups:
   - AllAccess
   special:
@@ -40,6 +41,7 @@
     - Flash
     - RubberStampSr
     - DoorRemoteCommand
+    - ClothingEyesGlassesCommand
   encryptionKeys:
   - EncryptionKeyStationMaster
 

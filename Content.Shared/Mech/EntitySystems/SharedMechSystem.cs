@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared._Forge.ForgeVars;
+using Content.Shared._Forge;
 using Content.Shared._Forge.Mech; // Forge-Change
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems; // Forge-Change
@@ -83,10 +83,11 @@ public abstract partial class SharedMechSystem : EntitySystem
         SubscribeLocalEvent<MechPilotComponent, GetMeleeWeaponEvent>(OnGetMeleeWeapon);
         SubscribeLocalEvent<MechPilotComponent, CanAttackFromContainerEvent>(OnCanAttackFromContainer);
         SubscribeLocalEvent<MechPilotComponent, AttackAttemptEvent>(OnAttackAttempt);
-        SubscribeLocalEvent<MechPilotComponent, EntGotRemovedFromContainerMessage>(OnPilotRemoved); // Forge-Change
+        SubscribeLocalEvent<MechPilotComponent, EntGotRemovedFromContainerMessage>(OnEntGotRemovedFromContainer); // Forge-Change
 
         SubscribeLocalEvent<MechComponent, UpdateCanMoveEvent>(OnMechMoveEvent); // Forge-Change
         SubscribeLocalEvent<MechPilotComponent, UpdateCanMoveEvent>(OnPilotMoveEvent); // Forge-Change
+        SubscribeLocalEvent<MechPilotComponent, ChangeDirectionAttemptEvent>(OnPilotMoveEvent); // Frontier
         SubscribeLocalEvent<MechComponent, ChangeDirectionAttemptEvent>(OnMechMoveEvent); // Forge-Change
 
         SubscribeLocalEvent<MechEquipmentComponent, ShotAttemptedEvent>(OnShotAttempted); // Forge-Change
@@ -101,7 +102,7 @@ public abstract partial class SharedMechSystem : EntitySystem
         InitializeForge();
     }
 
-    private void OnPilotMoveEvent(EntityUid uid, MechPilotComponent component, UpdateCanMoveEvent args) // Forge-Change
+    private void OnPilotMoveEvent(EntityUid uid, MechPilotComponent component, CancellableEntityEventArgs args) // Forge-Change, Frontier
     {
         if (component.LifeStage > ComponentLifeStage.Running || !TryComp<MechComponent>(component.Mech, out var mech))
             return;
@@ -109,7 +110,7 @@ public abstract partial class SharedMechSystem : EntitySystem
         if (mech.Broken || mech.Integrity <= 0 || mech.Energy <= 0)
             args.Cancel();
     }
-    
+
     private void OnMechMoveEvent(EntityUid uid, MechComponent component, CancellableEntityEventArgs args) // Forge-Change
     {
         if (component.LifeStage > ComponentLifeStage.Running)
@@ -120,7 +121,7 @@ public abstract partial class SharedMechSystem : EntitySystem
     }
 
     // Forge-Change: Fixes scram implants or teleports locking the pilot out of being able to move.
-    private void OnEntGotRemovedFromContainer(EntityUid uid, MechPilotComponent component, EntGotRemovedFromContainerMessage args)
+    private void OnEntGotRemovedFromContainer(EntityUid uid, MechPilotComponent component, EntGotRemovedFromContainerMessage args) // Forge-Change
     {
         TryEject(component.Mech, pilot: uid);
     }
@@ -130,9 +131,9 @@ public abstract partial class SharedMechSystem : EntitySystem
         if (args.Handled)
             return;
         args.Handled = true;
-        
+
         component.Internals = !component.Internals;
-        
+
         _actions.SetToggled(component.MechToggleInternalsActionEntity, component.Internals);
     }
 
@@ -213,7 +214,7 @@ public abstract partial class SharedMechSystem : EntitySystem
 
         UpdateActions(mech, pilot, component);
     }
-    
+
     private void UpdateActions(EntityUid mech, EntityUid pilot, MechComponent? component = null)
     {
         if (!Resolve(mech, ref component))
@@ -408,12 +409,12 @@ public abstract partial class SharedMechSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return false;
 
-        if ((component.Energy / component.MaxEnergy) * 100 <= 25 
-            && component.PlayPowerSound 
+        if ((component.Energy / component.MaxEnergy) * 100 <= 25
+            && component.PlayPowerSound
             && component.PilotSlot.ContainedEntity != null)
         {
             _audioSystem.PlayEntity(component.LowPowerSound, component.PilotSlot.ContainedEntity.Value, uid);
-            
+
             component.PlayPowerSound = false;
         }
         else if ((component.Energy / component.MaxEnergy) * 100 >= 25)
@@ -438,12 +439,12 @@ public abstract partial class SharedMechSystem : EntitySystem
 
         component.Integrity = FixedPoint2.Clamp(value, 0, component.MaxIntegrity);
 
-        if ((component.Integrity / component.MaxIntegrity) * 100 <= 50 
-            && component.PlayIntegritySound 
+        if ((component.Integrity / component.MaxIntegrity) * 100 <= 50
+            && component.PlayIntegritySound
             && component.PilotSlot.ContainedEntity != null)
         {
             _audioSystem.PlayEntity(component.CriticalDamageSound, component.PilotSlot.ContainedEntity.Value, uid);
-            
+
             component.PlayIntegritySound = false;
         }
         else if ((component.Integrity / component.MaxIntegrity) * 100 >= 50)
@@ -598,23 +599,15 @@ public abstract partial class SharedMechSystem : EntitySystem
 
     private void BlockHands(EntityUid uid, EntityUid mech, HandsComponent handsComponent)
     {
-        var freeHands = 0;
-        foreach (var hand in _hands.EnumerateHands(uid, handsComponent))
+        // First, yeet any and all virtual items.
+        // This is because we might be re-entering a mech.
+        _virtualItem.DeleteInHandsMatching(uid, mech);
+
+        // Then, drop all physical items.
+        // We don't care if they're unremovable, just get them out of the hands.
+        foreach (var hand in _hands.EnumerateHands((uid, handsComponent)))
         {
-            if (hand.HeldEntity == null)
-            {
-                freeHands++;
-                continue;
-            }
-
-            // Is this entity removable? (they might have handcuffs on)
-            if (HasComp<UnremoveableComponent>(hand.HeldEntity) && hand.HeldEntity != mech)
-                continue;
-
-            _hands.DoDrop(uid, hand, true, handsComponent);
-            freeHands++;
-            if (freeHands == 2)
-                break;
+            _hands.DoDrop(uid, hand, true);
         }
         if (_virtualItem.TrySpawnVirtualItemInHand(mech, uid, out var virtItem1))
             EnsureComp<UnremoveableComponent>(virtItem1.Value);

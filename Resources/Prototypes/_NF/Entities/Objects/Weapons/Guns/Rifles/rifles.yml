@@ -35,14 +35,14 @@
   suffix: Frontier
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Rifles/foam_rifle.rsi
+    sprite: Objects/Fun/Foam/foam_rifle.rsi
     layers:
     - state: icon
       map: [ "enum.GunVisualLayers.Base" ]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Rifles/foam_rifle.rsi
+    sprite: Objects/Fun/Foam/foam_rifle.rsi
   - type: Item
-    sprite: Objects/Weapons/Guns/Rifles/foam_rifle_inhand_64x.rsi
+    sprite: Objects/Fun/Foam/foam_rifle_inhand_64x.rsi
 
 #region WizDen: Rubber
 - type: entity
@@ -82,6 +82,7 @@
     capacity: 8
   - type: Gun # Corvax-Forge: Weaponary update
     fireRate: 3
+    projectileSpeed: 40
 
 - type: entity
   id: NFWeaponRifleSVS
@@ -91,6 +92,7 @@
   components:
   - type: Gun # Corvax-Forge: Weaponary update
     fireRate: 3.5
+    projectileSpeed: 40
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Rifles/svs42.rsi
   - type: Clothing

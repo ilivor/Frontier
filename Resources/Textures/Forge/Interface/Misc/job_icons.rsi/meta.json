@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Create by autsaider_m",
+    "copyright": "Create by autsaider_m, StRep Eifall",
 
     "size": {
         "x": 8,
@@ -9,13 +9,34 @@
     },
     "states": [
         {
-            "name": "stormtrooper"
-        },
-        {
             "name": "commander"
         },
         {
+            "name": "stormtrooper"
+        },
+        {
+            "name": "medsyn"
+        },
+        {
+            "name": "engysyn"
+        },
+        {
+            "name": "smuggler"
+        },
+        {
+            "name": "bodyguard"
+        },
+        {
             "name": "syndicatecadet"
+        },
+        {
+            "name": "doc"
+        },
+        {
+            "name": "engynfsd"
+        },
+        {
+            "name": "strep"
         }
     ]
 }

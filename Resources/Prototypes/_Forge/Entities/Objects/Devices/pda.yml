@@ -205,13 +205,13 @@
       - AstroNavCartridge
 
 - type: entity
-  parent: BaseSecurityPDA
+  parent: CentcomPDA
   id: SpecOperPDA
   name: КПК офицера
   description: Сам списывает штрафы со счёта ДСБФ.
   components:
   - type: Pda
-    id: CentcomIDCard
+    id: CentcomIDCardMSFSpecOpsOfficer
     penSlot:
       startingItem: PenCentcom
       whitelist:
@@ -241,3 +241,68 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
+
+- type: entity
+  name: КПК Центком
+  description: Светло-зелёный символ ходячей бюрократии.
+  parent: CentcomPDA
+  id: MSFAdmiralPDA
+  suffix: адмирал УСФ
+  components:
+  - type: Pda
+    id: CentcomIDCardMSFAdmiral
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  name: КПК Центком
+  description: Светло-зелёный символ ходячей бюрократии.
+  parent: CentcomPDA
+  id: MSFOperatorPDA
+  suffix: оператор УСФ
+  components:
+  - type: Pda
+    id: CentcomIDCardMSFOperator
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  name: КПК Центком
+  description: Светло-зелёный символ ходячей бюрократии.
+  parent: CentcomPDA
+  id: MSFRepPDA
+  suffix: представитель флота
+  components:
+  - type: Pda
+    id: CentcomIDCardMSFRep
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: EngineerNfsdPDA
+  name: specialist PDA
+  description: Whosoever bears this PDA is close to being the law.
+  components:
+  - type: Pda
+    id: EngineerNfsdIDCard
+    bookSlot: # Frontier
+      startingItem: HyperlinkBookNfsdSop
+      priority: -2
+      whitelist:
+        tags:
+        - BookSpaceLaw
+        - BookNfsdSop
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-deputy
+  - type: PdaBorderColor
+    borderColor: "#FFFDD0"
+    accentHColor: "#896b49"
+  - type: Icon
+    state: pda-deputy

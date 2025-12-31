@@ -1,24 +1,24 @@
 # Author Info
 # GitHub: -
 # Discord: autsaider_m
-# License: CC-BY-NC-ND-3.0
-# Corvax_frontier
+# License: CC-BY-NC-ND-4.0
+# CorvaxForge
 
 # Maintainer Info
 # GitHub: https://github.com/mersen-tyn
 # Discord: mersen
 
 # Shuttle Notes:
-
+#
 - type: vessel
   id: Dagger1
   parent: BaseVessel
   name: TL Кинжал
-  description: Шаттл перехватчик Кинжал. Произведено частной военно-производственной компаний TechnicLogistic по спец. заказу НТ. Рекомендуемый состав команды 1-2 человека.
+  description: Шаттл перехватчик Кинжал. Произведено частной военно-производственной корпорации TechnicLogistic по спец. заказу НТ. Рекомендуемый состав команды 1-2 человека.
   price: 27500
   category: Small
   group: Custom
-  shuttlePath: /Maps/Forge/Shuttles/Nfsd/dagger.yml
+  shuttlePath: /Maps/_Forge/Shuttles/Nfsd/dagger.yml
   class:
   - Fighter
   addComponents:
@@ -28,7 +28,7 @@
 - type: gameMap
   id: Dagger1
   mapName: 'TL Кинжал'
-  mapPath: /Maps/Forge/Shuttles/Nfsd/dagger.yml
+  mapPath: /Maps/_Forge/Shuttles/Nfsd/dagger.yml
   minPlayers: 0
   stations:
     Dagger1:

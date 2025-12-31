@@ -1,7 +1,7 @@
 - type: job
   id: paraMedical
-  name: Парамедик
-  description: Полевой медик занимающийся спасением раненых.
+  name: forge-job-name-paramedical
+  description: forge-job-desc-paramedical
   playTimeTracker: JobparaMedical
   requirements:
     - !type:OverallPlaytimeRequirement
@@ -16,6 +16,7 @@
   weight: 40
   displayWeight: 40
   setPreference: true
+  salary: 10000
   access:
   - Medical
   accessGroups:
@@ -50,17 +51,10 @@
 - type: startingGear
   id: ParaMedicalGear
   equipment:
-    ears: ClothingHeadsetMedical
-    id: ParamedicPDA
-    belt: ClothingBeltMedicalEMTFilled
-    pocket1: WeaponShotgunKD12Medic
-    pocket2: BoxBeanbagKS23
-    eyes: ClothingEyesHudMedical
+    pocket1: ToolboxParamed
   storage:
     back:
     - NFBoxSurvivalExtended
-    - PaperWrittenMedic
-    - DefibrillatorCompact
     - MedTekCartridge
 
 #- type: startingGear

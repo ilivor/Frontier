@@ -1,10 +1,10 @@
 # Author Info
-# GitHub:
+# GitHub: -
 # Discord: t4k_dnh - new
 
 # Maintainer Info
-# GitHub: ???
-# Discord: ???
+# GitHub: -
+# Discord: -
 
 # Notes:
 #
@@ -15,7 +15,7 @@
   minimumDistance: 750
   maximumDistance: 1000
   spawnGroup: Required
-  gridPath: /Maps/Forge/POI/nfsd.yml #Forge-Change
+  gridPath: /Maps/_Forge/POI/nfsd.yml #Forge-Change
   addComponents:
   - type: IFF
     color: "#8e6444"
@@ -31,7 +31,7 @@
 - type: gameMap
   id: Nfsd
   mapName: 'Аванпост ДСБФ'
-  mapPath: /Maps/Forge/POI/nfsd.yml #Forge-Change
+  mapPath: /Maps/_Forge/POI/nfsd.yml #Forge-Change
   minPlayers: 0
   stations:
     Nfsd:
@@ -40,7 +40,7 @@
         - type: StationNameSetup
           mapNameTemplate: 'Аванпост ДСБФ'
         - type: ExtraStationInformation
-          iconPath: /Textures/_NF/Structures/Decoration/banner.rsi/nfsd-banner.png
+          iconPath: /Textures/Forge/Logo/Icon/nfsd-banner.png  #Forge-Change
           stationSubtext: 'frontier-lobby-nfsd-subtext'
           stationDescription: 'frontier-lobby-nfsd-description'
           lobbySortOrder: 2
@@ -51,6 +51,7 @@
             SeniorOfficer: [ 2, 2 ]
             Brigmedic: [ 1, 1 ]
             NFDetective: [ 1, 1 ]
+            EngineerNfsd: [ 1, 1 ] #Forge
             Deputy: [ 3, 3 ]
             Cadet: [ 1, 1 ]
             # Others:

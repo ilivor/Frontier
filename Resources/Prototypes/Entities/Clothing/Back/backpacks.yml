@@ -32,6 +32,10 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: AllowsSleepInside # Frontier
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - Backpack
 
 - type: entity
   parent: NFClothingBackpack # Frontier: ClothingBackpack<NFClothingBackpack
@@ -267,7 +271,7 @@
   components:
     - type: Storage
       grid:
-      - 0,0,7,6
+      - 0,0,7,7
 
 #Syndicate
 - type: entity
@@ -284,6 +288,8 @@
     grid:
     - 0,0,7,3
     - 8,1,8,3
+  - type: StaticPrice
+    price: 1000
 
 #Special
 - type: entity
@@ -321,7 +327,9 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,7,7 # Frontier: Was 0,0,19,9
+    - 0,0,14,14 # Frontier: Was 0,0,19,9 # Corvax-Forge: 0,0,7,7 -> 0,0,14,14
+  - type: ExplosionResistance # Corvax-Forge
+    damageCoefficient: 0.5
 
 - type: entity
   parent: NFClothingBackpack # Frontier: ClothingBackpack<NFClothingBackpackClown

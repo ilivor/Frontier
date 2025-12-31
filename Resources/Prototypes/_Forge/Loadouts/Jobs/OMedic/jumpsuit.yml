@@ -1,0 +1,146 @@
+- type: loadout
+  id: ClothingUniformJumpsuitMedicalDoctorOMedLd
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+
+- type: loadout
+  id: ClothingUniformJumpskirtMedicalDoctorOMedLd
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtMedicalDoctor
+
+# Химик
+- type: loadout
+  id: ClothingUniformJumpsuitChemistryOMedLd
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChemistry
+
+- type: loadout
+  id: ClothingUniformJumpskirtChemistryOMedLd
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtChemistry
+
+# Pathologis
+- type: loadout
+  id: OMedLdPathologist1
+  price: 0
+  equipment:
+    jumpsuit: ADTClothingUniformPathologistSuit
+
+- type: loadout
+  id: OMedLdPathologist2
+  price: 0
+  equipment:
+    jumpsuit: ADTClothingUniformPathologistSkirt
+
+# Pathologis alt
+- type: loadout
+  id: OMedLdPathologist3
+  price: 0
+  equipment:
+    jumpsuit: ADTClothingUniformPathologistSuitAlt
+
+- type: loadout
+  id: OMedLdPathologist4
+  price: 0
+  equipment:
+    jumpsuit: ADTClothingUniformPathologistSkirtAlt
+
+# region PlayTime
+# ведущего врача
+- type: loadout
+  id: ClothingUniformJumpsuitSeniorPhysicianOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorPhysician
+
+- type: loadout
+  id: ClothingUniformJumpskirtSeniorPhysicianOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT1
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSeniorPhysician
+
+# вирусолог
+- type: loadout
+  id: ClothingUniformJumpsuitVirologyOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitVirology
+
+- type: loadout
+  id: ClothingUniformJumpskirtVirologyOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT1
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtVirology
+
+# вирусолог Old
+- type: loadout
+  id: ClothingUniformJumpsuitVirologyOldOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitVirologyOld
+
+- type: loadout
+  id: ClothingUniformJumpskirtVirologyOldOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT1
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtVirologyOld
+
+# военный комбез
+- type: loadout
+  id: ClothingUniformJumpsuitMilitaryMedicalDoctorOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT2
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryMedicalDoctor
+
+- type: loadout
+  id: ClothingUniformJumpsuitMilitaryChemistryOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT2
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryChemistry
+
+- type: loadout
+  id: ClothingUniformJumpsuitMilitaryVirologyOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT2
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryVirology
+
+# комбез медика ОБР
+- type: loadout
+  id: ClothingUniformJumpsuitERTMedicOMedLd
+  price: 0
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OMedT5
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitERTMedic

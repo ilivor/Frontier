@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseStructureDisableToolUse, BaseLathe]
+  parent: [ BaseLathe ]
   id: ExchangerSyndicate
   name: Exchanger Syndicate
   description: Exchanger Syndicate
@@ -14,8 +14,6 @@
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 100
-  - type: Advertise
-    pack: CuddlyCritterAds
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -44,3 +42,20 @@
     whitelist:
       tags:
         - SpaceCash
+  - type: Machine
+    board: ExchangerMachineCircuitboard
+
+- type: entity
+  id: ExchangerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: обменник контрабандиста (машинная плата)
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ExchangerSyndicate
+    requirements:
+      MatterBin: 5
+      Manipulator: 5
+    stackRequirements:
+      Steel: 5

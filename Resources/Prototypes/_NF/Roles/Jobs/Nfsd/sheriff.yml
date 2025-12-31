@@ -34,6 +34,7 @@
   weight: 180
   displayWeight: 70
   canBeAntag: false
+  salary: 17000 # Corvax-Forge-Salary
   accessGroups:
   - AllAccess
   special:
@@ -61,8 +62,7 @@
     - BaseSecurityUplinkRadioSheriff
     - RubberStampSheriff
     - ClothingShoesBootsMagCombatERT
-  inhand:
-    - ForgeWeaponEnergyShotgun
+    - DogtagsSheriff
 
 - type: chameleonOutfit
   id: SheriffChameleonOutfit

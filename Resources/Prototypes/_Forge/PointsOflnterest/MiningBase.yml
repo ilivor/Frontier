@@ -1,15 +1,15 @@
 # Author Info
 # GitHub: -
 # Discord: t4k_dnh
-# License: CC-BY-NC-ND-3.0
-# Corvax_frontier
+# License: CC-BY-NC-ND-4.0
+# CorvaxForge
 
 # Maintainer Info
 # GitHub: https://github.com/mersen-tyn
 # Discord: mersen
 
 # Notes:
-
+#
 - type: pointOfInterest
   id: MiningBase
   parent: BasePOI
@@ -17,7 +17,7 @@
   minimumDistance: 1650
   maximumDistance: 3400
   spawnGroup: Required
-  gridPath: /Maps/Forge/POI/MiningBase.yml
+  gridPath: /Maps/_Forge/POI/MiningBase.yml
   addComponents:
   - type: IFF
     color: "#a68614"
@@ -37,7 +37,7 @@
 - type: gameMap
   id: MiningBase
   mapName: 'База Шахтёров'
-  mapPath: /Maps/Forge/POI/MiningBase.yml
+  mapPath: /Maps/_Forge/POI/MiningBase.yml
   minPlayers: 0
   stations:
     MiningBase:
@@ -46,7 +46,7 @@
         - type: StationNameSetup
           mapNameTemplate: 'База Шахтёров'
         - type: ExtraStationInformation
-          iconPath: /Textures/Objects/Weapons/Melee/pickaxe.rsi/pickaxe.png
+          iconPath: /Textures/Forge/Logo/Icon/pickaxe.png
           stationSubtext: 'frontier-lobby-mining-subtext'
           stationDescription: 'frontier-lobby-mining-description'
           lobbySortOrder: 3

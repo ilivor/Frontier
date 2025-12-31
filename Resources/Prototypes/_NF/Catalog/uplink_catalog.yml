@@ -22,6 +22,17 @@
   categories:
   - UplinkWeaponry
 
+- type: listing # Forge-Change
+  id: UplinkNFWeaponPistolAnaconda45
+  name: uplink-pistol-anaconda-name
+  description: uplink-pistol-anaconda-desc
+  productEntity: NFWeaponPistolAnaconda45
+  discountCategory: rareDiscounts
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWeaponry
+
 - type: listing
   id: UplinkNFPistolCobra
   name: uplink-pistol-cobra-name
@@ -65,6 +76,28 @@
     Telecrystal: 2
   categories:
   - UplinkAmmo
+
+- type: listing
+  id: UplinkNFMagazineShotgunPellet
+  name: uplink-magazine-bulldog-pellet-name
+  description: uplink-magazine-bulldog-pellet-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets }
+  productEntity: NFMagazineShotgunDrum
+  cost:
+    Telecrystal: 2
+  categories:
+    - UplinkAmmo
+
+- type: listing
+  id: UplinkNFMagazineShotgunSlug
+  name: uplink-magazine-bulldog-slug-name
+  description: uplink-magazine-bulldog-slug-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug }
+  productEntity: NFMagazineShotgunDrumSlug
+  cost:
+    Telecrystal: 3
+  categories:
+    - UplinkAmmo
 
 - type: listing
   id: UplinkNFMagazinePistolCaselessRifle

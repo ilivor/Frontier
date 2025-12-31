@@ -311,7 +311,7 @@
   name: loadout-group-contractor-outerclothing
   minLimit: 0
   loadouts:
-  - ContractorClothingOuterHardsuitVoidParamed
+#  - ContractorClothingOuterHardsuitVoidParamed # Forge-change
   - ContractorClothingOuterHoodieGrey
   - ContractorClothingOuterVestHazard
   - ContractorClothingOuterApron
@@ -391,6 +391,8 @@
   - ContractorClothingOuterPlagueSuit
   - ContractorWetFloorSign
   - ContractorClothingOuterCoatExpensive
+  - ForgeLdLettermanNanotrasen # Forge-change add
+  - ForgeLdLettermanSyndicate # Forge-change add
   - ContractorClothingOuterCoatSpaceAsshole
 
 - type: loadoutGroup
@@ -633,7 +635,7 @@
   - ContractorClothingNeckTieRed
   - ContractorClothingNeckTieSci
   - ContractorClothingNeckLawyerbadge
-  - ContractorClothingNeckHeadphones
+  - ContractorClothingMultipleHeadphones
   - ContractorClothingNeckCrucifix
   - ContractorClothingNeckBellCollar
   - ContractorCDDogtags
@@ -876,6 +878,8 @@
   - ContractorClothingMaskSadMime
   - ContractorClothingMaskClown
   - ContractorClothingMaskClownBald
+  - ForgeClothingMaskNeckGaiter # Forge-change add: ForgeClothingMaskNeckGaiter
+  - ForgeClothingMaskNeckGaiterRed # Forge-change add: ForgeClothingMaskNeckGaiterRed
   fallbacks:
   - ContractorClothingMaskBreath
 
@@ -890,10 +894,13 @@
   - ContractorNFBoxSurvivalExtendedNitrogen
   - ContractorNFBoxSurvivalSheleg
   - ContractorNFBoxSurvivalExtendedSheleg
+  - ForgeAndroidSurvival # Forge-add
+  - ForgeAndroidExtendedSurvival # Forge-add
   fallbacks:
   - ContractorNFBoxSurvival
   - ContractorNFBoxSurvivalNitrogen
   - ContractorNFBoxSurvivalSheleg
+  - ForgeAndroidSurvival # Forge-add
 
 - type: loadoutGroup
   id: ContractorEncryptionKey
@@ -902,7 +909,7 @@
   maxLimit: 5
   loadouts:
   - ContractorEncryptionKeyTraffic
-#  - ContractorEncryptionKeyMedical #CorvaxFrontier
+  - ContractorEncryptionKeyMedical
   - ContractorEncryptionKeyCargo
   - ContractorEncryptionKeyEngineering
   - ContractorEncryptionKeyScience

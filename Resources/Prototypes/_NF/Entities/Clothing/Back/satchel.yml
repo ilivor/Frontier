@@ -26,12 +26,19 @@
     sprite: _NF/Clothing/Back/Satchels/pilot.rsi
 
 - type: entity
-  parent: ClothingBackpackSatchelSecurity
+  parent: [BaseC2ContrabandUnredeemable, ClothingBackpackSatchelSecurity] # Corvax-Forge: +BaseC2ContrabandUnredeemable
   id: ClothingBackpackSatchelNfsdBrown
   name: NFSD satchel
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Satchels/nfsd_brown.rsi
+  - type: ExplosionResistance # Corvax-Forge
+    damageCoefficient: 0.1
+  - type: Storage
+    grid:
+    - 0,0,1,4
+    - 3,0,6,4
+    - 8,0,9,4
 
 - type: entity
   parent: ClothingBackpackSatchelNfsdBrown

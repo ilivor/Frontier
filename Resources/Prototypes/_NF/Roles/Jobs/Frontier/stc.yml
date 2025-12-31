@@ -17,6 +17,7 @@
   weight: 160
   displayWeight: 50 # Second from the top
   setPreference: true
+  salary: 13500 # Corvax-Forge-Salary
   access:
   - Service
   - Maintenance
@@ -24,6 +25,8 @@
   - Frontier
   - StationTrafficController
   special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, TrackingImplant ]
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift

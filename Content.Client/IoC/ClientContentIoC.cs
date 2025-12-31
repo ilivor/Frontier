@@ -1,4 +1,4 @@
-using Content.Client._Forge.Sponsors; // Forge-Change
+using Content.Client._Forge.Sponsor; // Forge-Change
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -13,6 +13,7 @@ using Content.Client.Launcher;
 using Content.Client.Mapping;
 using Content.Client.Parallax.Managers;
 using Content.Client.Players.PlayTimeTracking;
+using Content.Client.Playtime;
 using Content.Client.Replay;
 using Content.Client.Screenshot;
 using Content.Client.Stylesheets;
@@ -21,7 +22,7 @@ using Content.Client.Voting;
 using Content.Shared.Administration.Logs;
 using Content.Client.Lobby;
 using Content.Client.Players.RateLimiting;
-using Content.Shared._Forge.Sponsors; // Forge-Change
+using Content.Shared._Forge.Sponsor; // Forge-Change
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
@@ -66,6 +67,7 @@ namespace Content.Client.IoC
             collection.Register<DiscordAuthManager>(); // Forge-Change
             collection.Register<SponsorManager>(); // Forge-Change
             collection.Register<ISharedSponsorManager, SponsorManager>(); // Forge-Change
+            collection.Register<ClientsidePlaytimeTrackingManager>();
         }
     }
 }

@@ -16,6 +16,7 @@
   weight: 70
   displayWeight: 10
   canBeAntag: false
+  salary: 8000 # Corvax-Forge-Salary
   accessGroups:
   - CadetNfsdAccess
   special:
@@ -36,6 +37,7 @@
     - NFMagazineHighCapacityPistol35
     - NFMagazineHighCapacityPistol35Rubber
     - FrontierUplinkCoin10
+    - DogtagsCadet
 
 - type: chameleonOutfit
   id: CadetChameleonOutfit

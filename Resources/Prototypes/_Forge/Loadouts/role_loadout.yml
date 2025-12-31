@@ -3,71 +3,186 @@
   canCustomizeName: true
   groups:
   - SmugglerCaptainHead
-  - SmugglerJumpsuit
-  - SmugglerBags
-  - SmugglerGloves
-  - SmugglerShoes
-  - SmugglerNeck
-  - SmugglerOuterclothing
   - SmugglerGlasses
+  - SmugglerJumpsuit
+  - SmugglerOuterclothing
+  - SmugglerNeck
+  - SmugglerGloves
+  - SmugglerBags
+  - StormtrooperShoes
+  - SmugglerWeapon
+
+- type: roleLoadout
+  id: JobsmugglerBodyguard
+  canCustomizeName: true
+  groups:
+  - SmugglerCaptainHead
+  - SmugglerGlasses
+  - SmugglerJumpsuit
+  - SmugglerOuterclothing
+  - SmugglerNeck
+  - SmugglerGloves
+  - SmugglerBags
+  - StormtrooperShoes
+
+- type: roleLoadout
+  id: JobEngineerSyn
+  canCustomizeName: true
+  groups:
+  - EngineerSynHead
+  - StormtrooperGlasses
+  - EngineerSynJumpsuit
+  - EngineerSynOuter
+  - StormtrooperNeck
+  - StormtrooperGloves
+  - StormtrooperBags
+  - StormtrooperShoes
+  - EngineerSynBackpackItems
 
 - type: roleLoadout
   id: JobMedSyn
   canCustomizeName: true
   groups:
-  - SmugglerCaptainHead
-  - MedSynJumpsuit
-  - MedSynBack
+  - MedSynHead
   - MedSynGlasses
-  - SmugglerShoes
-  - SmugglerNeck
+  - MedSynJumpsuit
   - SmugglerOuterclothing
+  - SmugglerNeck
   - MedSynGloves
+  - MedSynBack
+  - StormtrooperShoes
+  - MedSynBackpackItems
 
 - type: roleLoadout
   id: JobStormtrooper
   canCustomizeName: true
   groups:
   - StormtrooperCaptainHead
+  - StormtrooperGlasses
   - StormtrooperJumpsuit
-  - StormtrooperBags
-  - StormtrooperGlasses
-  - StormtrooperShoes
-  - StormtrooperNeck
   - StormtrooperOuterclothing
-  - StormtrooperGlasses
+  - StormtrooperNeck
   - StormtrooperGloves
+  - StormtrooperBags
+  - StormtrooperShoes
+  - SyndicateBackpackItems
 
 - type: roleLoadout
   id: JobCommander
   canCustomizeName: true
   groups:
   - CommanderCaptainHead
-  - CommanderJumpsuit
-  - CommanderBags
   - CommanderGlasses
-  - CommanderShoes
-  - CommanderNeck
+  - CommanderJumpsuit
   - CommanderOuterclothing
   - CommanderGloves
+  - CommanderNeck
+  - CommanderBags
+  - StormtrooperShoes
+  - SyndicateBackpackItems
 
 - type: roleLoadout
   id: JobparaMedical
   groups:
-  - ParaMedicalJumpsuit
-  - ParaMedicalBackpack
-  - ParaMedicalOuterClothing
-  - ParaMedicalShoes
+  - paraMedicalEars
   - ParaMedicalHead
+  - paraMedicalFace
+  - paraMedicalGlasses
+  - ParaMedicalJumpsuit
+  - ParaMedicalOuterClothing
+  - ParaMedicalNeck
   - DocGloves
-  - ContractorOuterClothing
-  - ContractorFace
-  - ContractorGlasses
-  - ContractorBelt
-  - ContractorWallet
+  - ParaMedicalBackpack
+  - paraMedicalPDA
+  - paraMedicalEncryptionKey
+  - ContractorShoes
+  - ParaMedicalBelt
+  - ParaMedicalWallet
   - ContractorCartridge
   - ContractorImplanter
   - ContractorEncryptionKey
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
+  - paraMedicalBackpackItems
+
+- type: roleLoadout
+  id: JobOutpostMedic
+  groups:
+  - paraMedicalGlasses
+  - ContractorFace
+  - OMedicJumpsuit
+  - OMedicOuterClothing
+  - DocGloves
+  - OMedicShoes
+  - OMedicBackpack
+  - OMedicPDA
+  - ParaMedicalBelt
+  - ParaMedicalWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific
+  - ContractorBoxSurvival
+
+- type: roleLoadout
+  id: JobOutpostEngineer
+  groups:
+  - OEngiHead
+  - ContractorFace
+  - OEngiJumpsuit
+  - OEngiShoes
+  - OEngiBackpack
+  - OEngiBelt
+  - OEngineerPDA
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific
+  - ContractorBoxSurvival
+
+- type: roleLoadout
+  id: JobOutpostService
+  groups:
+  - OServiceHead
+  - ContractorFace
+  - OServiceGlasses
+  - OServiceJumpsuit
+  - OServiceOuterClothing
+  - OServiceShoes
+  - OServiceBackpack
+  - OServiceBelt
+  - OServicePDA
+  - OServiceForcedOuterClothing
+  - ContractorGloves
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific
+  - ContractorBoxSurvival
+
+- type: roleLoadout
+  id: JobEngineerNfsd
+  groups:
+  - EngineerNfsdHead
+  - EngineerNfsdNeck
+  - EngineerNfsdJumpsuit
+  - NfsdGlovesBrown
+  - NfsdBackpackBrown
+  - DeputyOuterClothing
+  - NfsdForcedOuterClothing
+  - NfsdShoesBrown
+  - NfsdFace
+  - NfsdEarsBrown
+  - NfsdBoxSurvival
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorEncryptionKey
+  - EngineerNfsdBackpackItems
+  - ContractorHandItems
+  - NfsdSpeciesSpecific

@@ -416,6 +416,7 @@ public sealed partial class MarkingPicker : Control
             CMarkingColors.AddChild(colorContainer);
 
             ColorSelectorSliders colorSelector = new ColorSelectorSliders();
+            colorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             colorSliders.Add(colorSelector);
 
             colorContainer.AddChild(new Label { Text = $"{stateNames[i]} color:" });
@@ -485,7 +486,7 @@ public sealed partial class MarkingPicker : Control
             markingSet.AddBack(MarkingCategories.FacialHair, FacialHairMarking);
         }
 
-        if (!_markingManager.MustMatchSkin(_currentSpecies, marking.BodyPart, out var _, _prototypeManager))
+        if (!_markingManager.MustMatchSkin(_currentSpecies, marking.BodyPart, out var alpha, _prototypeManager)) // Forge-Change Corvax-Wega-Hair-Extended
         {
             // Do default coloring
             var colors = MarkingColoring.GetMarkingLayerColors(
@@ -501,10 +502,20 @@ public sealed partial class MarkingPicker : Control
         }
         else
         {
-            // Color everything in skin color
+            // First color from skin, others from default colors
+            var colors = MarkingColoring.GetMarkingLayerColors(
+                marking,
+                CurrentSkinColor,
+                CurrentEyeColor,
+                markingSet
+            );
+
             for (var i = 0; i < marking.Sprites.Count; i++)
             {
-                markingObject.SetColor(i, CurrentSkinColor);
+                var color = i == 0
+                    ? CurrentSkinColor.WithAlpha(alpha)
+                    : colors[i];
+                markingObject.SetColor(i, color);
             }
         }
 

@@ -19,6 +19,12 @@ namespace Content.Server.Nuke
     public sealed partial class NukeComponent : SharedNukeComponent
     {
         /// <summary>
+        ///     Corvax-Forge: If false - bomb cant change sector alert level.
+        /// </summary>
+        [DataField]
+        public bool CanChangeAlertLevel = true;
+
+        /// <summary>
         ///     Default bomb timer value in seconds.
         /// </summary>
         [DataField]
@@ -56,7 +62,7 @@ namespace Content.Server.Nuke
         ///     How long a user must wait to disarm the bomb.
         /// </summary>
         [DataField("disarmDoafterLength")]
-        public float DisarmDoafterLength = 30.0f;
+        public float DisarmDoAfterLength = 30.0f;
 
         [DataField("alertLevelOnActivate")] public string AlertLevelOnActivate = default!;
         [DataField("alertLevelOnDeactivate")] public string AlertLevelOnDeactivate = default!;

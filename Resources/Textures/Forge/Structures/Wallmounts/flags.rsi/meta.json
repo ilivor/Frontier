@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "TechicLogistic flag by Autsaider, Scrap Tech flag by MrIzo",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "TL_flag"
+    },
+    {
+      "name": "scrap_tech"
+    }
+  ]
+}

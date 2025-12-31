@@ -12,7 +12,7 @@
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Item
-    size: Huge
+    size: Large #FrontierCorvax-Size-Fix
   - type: Clothing
     sprite: Forge/Objects/Weapons/Guns/SMGs/vector22.rsi
     quickEquip: false
@@ -21,6 +21,7 @@
     - Belt
   - type: Gun
     fireRate: 12
+    projectileSpeed: 40
     selectedMode: FullAuto
     soundGunshot:
       path: /Audio/Forge/Weapons/Guns/Gunshots/Vector22.ogg
@@ -81,6 +82,7 @@
     minAngle: 2
     maxAngle: 8
     fireRate: 4.2
+    projectileSpeed: 40
     selectedMode: SemiAuto
     soundGunshot:
       path: /Audio/Forge/Weapons/Guns/Gunshots/Vector45.ogg

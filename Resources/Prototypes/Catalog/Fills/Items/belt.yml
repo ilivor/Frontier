@@ -87,6 +87,7 @@
 #      - id: TrashBag # Frontier - Not used, too large.
       - id: Holoprojector # Frontier
       - id: LightReplacer
+      - id: WireBrush
 
 - type: entity
   id: ClothingBeltMedicalFilled
@@ -143,7 +144,7 @@
 
 - type: entity
   id: ClothingBeltMilitaryWebbingGrenadeFilled
-  parent: ClothingBeltMilitaryWebbing
+  parent: ClothingBeltMilitaryWebbingSyndicate # Corvax-Frontier
   name: grenadier chest rig
   suffix: Filled
   components:
@@ -151,8 +152,6 @@
     size: Ginormous
   - type: Storage
     maxItemSize: Normal
-    grid:
-    - 0,0,7,1
   - type: StorageFill
     contents:
       - id: ExGrenade
@@ -164,7 +163,7 @@
 
 - type: entity
   id: ClothingBeltMilitaryWebbingMedFilled
-  parent: ClothingBeltMilitaryWebbingMed
+  parent: ClothingBeltMilitaryWebbingSyndicateMed # Corvax-Frontier
   suffix: Filled
   components:
   - type: StorageFill

@@ -15,7 +15,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
     public string HairStyleId { get; set; } = HairStyles.DefaultHairStyle;
 
     [DataField]
-    public Color HairColor { get; set; } = Color.Black;
+    public List<Color> HairColor { get; set; } = new() { Color.Black }; // Forge-Change Corvax-Wega-Hair-Extended
 
     [DataField("facialHair")]
     public string FacialHairStyleId { get; set; } = HairStyles.DefaultFacialHairStyle;
@@ -33,7 +33,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
     public List<Marking> Markings { get; set; } = new();
 
     public HumanoidCharacterAppearance(string hairStyleId,
-        Color hairColor,
+        List<Color> hairColor, // Forge-Change Corvax-Wega-Hair-Extended
         string facialHairStyleId,
         Color facialHairColor,
         Color eyeColor,
@@ -41,7 +41,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         List<Marking> markings)
     {
         HairStyleId = hairStyleId;
-        HairColor = ClampColor(hairColor);
+        HairColor = hairColor.Select(ClampColor).ToList(); // Forge-Change Corvax-Wega-Hair-Extended
         FacialHairStyleId = facialHairStyleId;
         FacialHairColor = ClampColor(facialHairColor);
         EyeColor = ClampColor(eyeColor);
@@ -60,7 +60,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         return new(newName, HairColor, FacialHairStyleId, FacialHairColor, EyeColor, SkinColor, Markings);
     }
 
-    public HumanoidCharacterAppearance WithHairColor(Color newColor)
+    public HumanoidCharacterAppearance WithHairColor(List<Color> newColor) // Forge-Change Corvax-Wega-Hair-Extended
     {
         return new(HairStyleId, newColor, FacialHairStyleId, FacialHairColor, EyeColor, SkinColor, Markings);
     }
@@ -100,12 +100,13 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             HumanoidSkinColor.TintedHues => Humanoid.SkinColor.TintedHues(speciesPrototype.DefaultSkinTone),
             HumanoidSkinColor.VoxFeathers => Humanoid.SkinColor.ClosestVoxColor(speciesPrototype.DefaultSkinTone),
             HumanoidSkinColor.ShelegToned => Humanoid.SkinColor.ShelegSkinTone(speciesPrototype.DefaultHumanSkinTone), // Frontier
+            HumanoidSkinColor.AriralPale => Humanoid.SkinColor.AriralColor(speciesPrototype.DefaultHumanSkinTone), // Corvax-Wega-Ariral
             _ => Humanoid.SkinColor.ValidHumanSkinTone,
         };
 
         return new(
             HairStyles.DefaultHairStyle,
-            Color.Black,
+            new List<Color> { Color.Black }, // Forge-Change Corvax-Wega-Hair-Extended
             HairStyles.DefaultFacialHairStyle,
             Color.Black,
             Color.Black,
@@ -132,10 +133,10 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
 
         var newHairStyle = hairStyles.Count > 0
             ? random.Pick(hairStyles)
-            : HairStyles.DefaultHairStyle;
+            : HairStyles.DefaultHairStyle.Id;
 
         var newFacialHairStyle = facialHairStyles.Count == 0 || sex == Sex.Female
-            ? HairStyles.DefaultFacialHairStyle
+            ? HairStyles.DefaultFacialHairStyle.Id
             : random.Pick(facialHairStyles);
 
         var newHairColor = random.Pick(HairStyles.RealisticHairColors);
@@ -154,8 +155,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         switch (skinType)
         {
             case HumanoidSkinColor.HumanToned:
-                var tone = Math.Round(Humanoid.SkinColor.HumanSkinToneFromColor(newSkinColor));
-                newSkinColor = Humanoid.SkinColor.HumanSkinTone((int)tone);
+                newSkinColor = Humanoid.SkinColor.HumanSkinTone(random.Next(0, 101));
                 break;
             case HumanoidSkinColor.Hues:
                 break;
@@ -165,9 +165,14 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             case HumanoidSkinColor.VoxFeathers:
                 newSkinColor = Humanoid.SkinColor.ProportionalVoxColor(newSkinColor);
                 break;
+            // Forge-Change-Start wega ariral
+            case HumanoidSkinColor.AriralPale:
+                newSkinColor = Humanoid.SkinColor.AriralColor(random.Next(0, 101));
+                break;
+            // Forge-Change-End wega ariral
         }
 
-        return new HumanoidCharacterAppearance(newHairStyle, newHairColor, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, new());
+        return new HumanoidCharacterAppearance(newHairStyle, new List<Color> { newHairColor }, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, new ()); // Forge-Change Corvax-Wega-Hair-Extended
 
         float RandomizeColor(float channel)
         {
@@ -185,7 +190,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         var hairStyleId = appearance.HairStyleId;
         var facialHairStyleId = appearance.FacialHairStyleId;
 
-        var hairColor = ClampColor(appearance.HairColor);
+        var hairColor = appearance.HairColor.Select(ClampColor).ToList(); // Forge-Change Corvax-Wega-Hair-Extended
         var facialHairColor = ClampColor(appearance.FacialHairColor);
         var eyeColor = ClampColor(appearance.EyeColor);
 
@@ -241,7 +246,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             error = $"Причёски не совпадают {HairStyleId} != {other.HairStyleId}";
             return false;
         }
-        if (!ColorApproximatelyEqual(HairColor, other.HairColor))
+        if (!HairColor.SequenceEqual(other.HairColor)) // Corvax-Wega-Hair-Extended
         {
             error = $"Цвет волос не совпадает {HairColor} != {other.HairColor}";
             return false;
