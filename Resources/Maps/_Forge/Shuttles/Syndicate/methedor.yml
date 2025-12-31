@@ -1345,13 +1345,6 @@ entities:
     - type: Transform
       pos: 3.5,5.5
       parent: 1
-- proto: CrateArmoryWeapon120mm
-  entities:
-  - uid: 142
-    components:
-    - type: Transform
-      pos: -4.5,-2.5
-      parent: 1
 - proto: CrateSyndicate
   entities:
   - uid: 143
@@ -2494,7 +2487,7 @@ entities:
       - 21
     - type: Physics
       bodyType: Static
-- proto: WeaponNavalCannon120mmUnanchor
+- proto: WeaponTurretAK570
   entities:
   - uid: 190
     components:

@@ -68,42 +68,43 @@
         - SeniorOfficer
         - Sheriff
 
-- type: listing
-  id: UplinkSecurityCombatHardsuit
-  name:  uplink-security-hardsuit-combat-name
-  description: uplink-security-hardsuit-combat-desc
-  productEntity: ClothingOuterHardsuitNfsdCombat
-  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_combat.rsi, state: icon }
-  cost:
-    FrontierUplinkCoin: 7 # Corvax-Forge: Armor rebalance
-  categories:
-    - UplinkSecurityHardsuits
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-
-- type: listing
-  id: UplinkSecurityCommandHardsuit
-  name:  uplink-security-hardsuit-commmand-name
-  description: uplink-security-hardsuit-commmand-desc
-  productEntity: ClothingOuterHardsuitNfsdCommand
-  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_command.rsi, state: icon }
-  cost:
-    FrontierUplinkCoin: 13 # Corvax-Forge: Armor rebalance
-  categories:
-    - UplinkSecurityHardsuits
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-    - !type:BuyerJobCondition
-      whitelist:
-        - Bailiff
-        - SeniorOfficer
-        - Sheriff
+# Forge-change: move to NFSD rnd-server
+#- type: listing
+#  id: UplinkSecurityCombatHardsuit
+#  name:  uplink-security-hardsuit-combat-name
+#  description: uplink-security-hardsuit-combat-desc
+#  productEntity: ClothingOuterHardsuitNfsdCombat
+#  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_combat.rsi, state: icon }
+#  cost:
+#    FrontierUplinkCoin: 7 # Corvax-Forge: Armor rebalance
+#  categories:
+#    - UplinkSecurityHardsuits
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - SecurityUplink
+#
+#- type: listing
+#  id: UplinkSecurityCommandHardsuit
+#  name:  uplink-security-hardsuit-commmand-name
+#  description: uplink-security-hardsuit-commmand-desc
+#  productEntity: ClothingOuterHardsuitNfsdCommand
+#  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_command.rsi, state: icon }
+#  cost:
+#    FrontierUplinkCoin: 13 # Corvax-Forge: Armor rebalance
+#  categories:
+#    - UplinkSecurityHardsuits
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - SecurityUplink
+#    - !type:BuyerJobCondition
+#      whitelist:
+#        - Bailiff
+#        - SeniorOfficer
+#        - Sheriff
 
 # - type: listing                                # Corvax-Forge: Armor rebalance
 #   id: UplinkSecurityHardsuitSheriff
@@ -123,25 +124,25 @@
 #     - !type:BuyerJobCondition
 #       whitelist:
 #         - Sheriff
-
-- type: listing
-  id: UplinkSecurityHardsuitSyndieReverseEngineered
-  name:  uplink-security-hardsuit-experimental-name
-  description: uplink-security-hardsuit-experimental-desc
-  productEntity: ClothingOuterHardsuitNfsdExperimental
-  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_experimental.rsi, state: icon }
-  cost:
-    FrontierUplinkCoin: 40
-  categories:
-    - UplinkSecurityHardsuits
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-    - !type:BuyerJobCondition
-      whitelist:
-        - Sheriff
+#
+#- type: listing
+#  id: UplinkSecurityHardsuitSyndieReverseEngineered
+#  name:  uplink-security-hardsuit-experimental-name
+#  description: uplink-security-hardsuit-experimental-desc
+#  productEntity: ClothingOuterHardsuitNfsdExperimental
+#  icon: { sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_experimental.rsi, state: icon }
+#  cost:
+#    FrontierUplinkCoin: 40
+#  categories:
+#    - UplinkSecurityHardsuits
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - SecurityUplink
+#    - !type:BuyerJobCondition
+#      whitelist:
+#        - Sheriff
 
 #region weapons
 - type: listing
@@ -1697,141 +1698,6 @@
         - Bailiff
         - Sheriff
         - SeniorOfficer
-
-- type: listing
-  id: UplinkSecurity80BGrenadeAmmo
-  name:  Картридж бесконтактных боеприпасов .80мм
-  description: Картридж содержащий бесконтактные боеприпасы калибра .80мм
-  productEntity: MagazineBox80mmPF
-  cost:
-    FrontierUplinkCoin: 3 #CorvaxFrontier
-  categories:
-    - UplinkSecurityAmmo
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-
-- type: listing
-  id: UplinkSecurity80BBGrenadeAmmo
-  name:  Картридж бронебойных боеприпасов .80мм
-  description: Картридж содержащий бронебойные боеприпасы калибра .80мм
-  productEntity: MagazineBox80mmAP
-  cost:
-    FrontierUplinkCoin: 3 #CorvaxFrontier
-  categories:
-    - UplinkSecurityAmmo
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-
-- type: listing
-  id: UplinkSecurity80FGrenadeAmmo
-  name:  Картридж фугасных боеприпасов .80мм
-  description: Картридж содержащий фугасные боеприпасы калибра .80мм
-  productEntity: MagazineBox80mm
-  cost:
-    FrontierUplinkCoin: 3 #CorvaxFrontier
-  categories:
-    - UplinkSecurityAmmo
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-
-- type: listing
-  id: UplinkSecurity105BGrenadeAmmo
-  name:  Картридж бесконтактных боеприпасов .105мм
-  description: Картридж содержащий бесконтактные боеприпасы калибра .105мм
-  productEntity: MagazineBox105mmPF
-  cost:
-    FrontierUplinkCoin: 4 #CorvaxFrontier
-  categories:
-    - UplinkSecurityAmmo
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-
-- type: listing
-  id: UplinkSecurity105BBGrenadeAmmo
-  name:  Картридж бронебойных боеприпасов .105мм
-  description: Картридж содержащий бронебойные боеприпасы калибра .105мм
-  productEntity: MagazineBox105mmAP
-  cost:
-    FrontierUplinkCoin: 4 #CorvaxFrontier
-  categories:
-    - UplinkSecurityAmmo
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-
-- type: listing
-  id: UplinkSecurity105FGrenadeAmmo
-  name:  Картридж фугасных боеприпасов .105мм
-  description: Картридж содержащий фугасные боеприпасы калибра .105мм
-  productEntity: MagazineBox105mmHE
-  cost:
-    FrontierUplinkCoin: 4 #CorvaxFrontier
-  categories:
-    - UplinkSecurityAmmo
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-
-- type: listing
-  id: UplinkSecurity140FGrenadeAmmo
-  name:  Ящик фугасных боеприпасов .140мм
-  description: Ящик содержащий фугасные боеприпасы калибра .140мм
-  productEntity: CrateArmoryWeaponNavalCannon140mmHE
-  cost:
-    FrontierUplinkCoin: 5 #CorvaxFrontier
-  categories:
-    - UplinkSecurityAmmo
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-
-- type: listing
-  id: UplinkSecurity140BGrenadeAmmo
-  name:  Ящик бесконтактных боеприпасов .140мм
-  description: Ящик содержащий бесконтактные боеприпасы калибра .140мм
-  productEntity: CrateArmoryWeaponNavalCannon140mmPF
-  cost:
-    FrontierUplinkCoin: 5 #CorvaxFrontier
-  categories:
-    - UplinkSecurityAmmo
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
-
-- type: listing
-  id: UplinkSecurity140BBGrenadeAmmo
-  name:  Ящик бронебойных боеприпасов .140мм
-  description: Ящик содержащий бронебойные боеприпасы калибра .140мм
-  productEntity: CrateArmoryWeaponNavalCannon140mmAP
-  cost:
-    FrontierUplinkCoin: 5 #CorvaxFrontier
-  categories:
-    - UplinkSecurityAmmo
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
 
 - type: listing
   id: UplinkSecurityWeaponPulse200

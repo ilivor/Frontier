@@ -86,8 +86,8 @@
   groups:
   - paraMedicalEars
   - ParaMedicalHead
+  - paraMedicalFace
   - paraMedicalGlasses
-  - ContractorFace
   - ParaMedicalJumpsuit
   - ParaMedicalOuterClothing
   - ParaMedicalNeck
@@ -95,8 +95,8 @@
   - ParaMedicalBackpack
   - paraMedicalPDA
   - paraMedicalEncryptionKey
-  - ParaMedicalShoes
-#  - ContractorBelt
+  - ContractorShoes
+  - ParaMedicalBelt
   - ParaMedicalWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -109,6 +109,7 @@
 - type: roleLoadout
   id: JobOutpostMedic
   groups:
+  - paraMedicalGlasses
   - ContractorFace
   - OMedicJumpsuit
   - OMedicOuterClothing
@@ -116,6 +117,7 @@
   - OMedicShoes
   - OMedicBackpack
   - OMedicPDA
+  - ParaMedicalBelt
   - ParaMedicalWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -162,3 +164,25 @@
   - ContractorHandItems
   - NFSpeciesSpecific
   - ContractorBoxSurvival
+
+- type: roleLoadout
+  id: JobEngineerNfsd
+  groups:
+  - EngineerNfsdHead
+  - EngineerNfsdNeck
+  - EngineerNfsdJumpsuit
+  - NfsdGlovesBrown
+  - NfsdBackpackBrown
+  - DeputyOuterClothing
+  - NfsdForcedOuterClothing
+  - NfsdShoesBrown
+  - NfsdFace
+  - NfsdEarsBrown
+  - NfsdBoxSurvival
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorEncryptionKey
+  - EngineerNfsdBackpackItems
+  - ContractorHandItems
+  - NfsdSpeciesSpecific

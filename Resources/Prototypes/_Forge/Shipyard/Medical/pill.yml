@@ -11,11 +11,11 @@
 # Shuttle Notes:
 #
 - type: vessel
-  id: pill
+  id: Pill
   parent: BaseVessel
   name: NMS Таблетка
   description: Малогабаритный медицинский шаттл. Рекомендованный состав команды 1-2 человек.
-  price: 17500 #меньше не поставлю, ибо нефиг
+  price: 16500
   category: Small
   group: Medical
   access: Medical
@@ -24,12 +24,12 @@
   - Medical
 
 - type: gameMap
-  id: pill
+  id: Pill
   mapName: 'NMS Таблетка'
   mapPath: /Maps/_Forge/Shuttles/Medical/pill.yml
   minPlayers: 0
   stations:
-    pill:
+    Pill:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
