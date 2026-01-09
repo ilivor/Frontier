@@ -1,0 +1,27 @@
+# UI/window/hseal_keypad.xml
+<KeypadWindow>
+  <PanelContainer StyleClasses="keypadWindow">
+    <Label Text="HERMETIC SEAL CONTROL" HorizontalAlignment="Center"/>
+    
+    <PanelContainer StyleClasses="codeDisplay">
+      <Label Text="{CodeDisplay}" HorizontalAlignment="Center" FontSize="14"/>
+    </PanelContainer>
+    
+    <GridContainer Columns="3" VSeparation="4" HSeparation="4">
+      <Button Text="1" Message="SealDigit:1"/>
+      <Button Text="2" Message="SealDigit:2"/>
+      <Button Text="3" Message="SealDigit:3"/>
+      <Button Text="4" Message="SealDigit:4"/>
+      <Button Text="5" Message="SealDigit:5"/>
+      <Button Text="6" Message="SealDigit:6"/>
+      <Button Text="7" Message="SealDigit:7"/>
+      <Button Text="8" Message="SealDigit:8"/>
+      <Button Text="9" Message="SealDigit:9"/>
+      <Button Text="C" Message="SealClear" StyleClasses="caution"/>
+      <Button Text="0" Message="SealDigit:0"/>
+      <Button Text="E" Message="SealEnter" StyleClasses="inverted"/>
+    </GridContainer>
+    
+    <Label Text="{Status}" HorizontalAlignment="Center"/>
+  </PanelContainer>
+</KeypadWindow>
