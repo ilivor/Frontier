@@ -1,3 +1,12 @@
+using Content.Shared.Examine;
+using Content.Shared.Paper;
+using Robust.Shared.Map;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+
+namespace Content.Shared.Doors.Systems;
+
 public sealed class HermeticCodePaperSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
