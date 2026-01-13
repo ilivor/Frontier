@@ -5,6 +5,10 @@
   components:
   - type: SpawnPoint
     job_id: smuggler
+  - type: PlayerCountRestrictedRole
+    roleId: Smuggler
+    minPlayers: 2
+    slotsWhenAvailable: 3
 
 - type: entity
   id: SpawnPointMedSyn
@@ -47,8 +51,8 @@
     job_id: OutpostService
   - type: Sprite
     layers:
-      - state: green
-      - state: serviceworker
+    - state: green
+    - state: serviceworker
 
 - type: entity
   id: SpawnPointMedicOutpost
@@ -59,8 +63,8 @@
     job_id: OutpostMedic
   - type: Sprite
     layers:
-      - state: green
-      - state: medicalintern
+    - state: green
+    - state: medicalintern
 
 - type: entity
   id: SpawnPointEngineerOutpost
@@ -71,8 +75,8 @@
     job_id: OutpostEngineer
   - type: Sprite
     layers:
-      - state: green
-      - state: technicalassistant
+    - state: green
+    - state: technicalassistant
 
 - type: entity
   id: SpawnPointSmugglerBodyguard
