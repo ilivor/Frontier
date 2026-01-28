@@ -56,20 +56,14 @@
   components:
   - type: MultiHandedItem
   - type: Sprite
-    sprite: _NF/Objects/Storage/Cases/guncaselong.rsi
+    sprite: Forge/Objects/Storage/Cases/guncaselong.rsi
     layers:
     - map: [ base ]
       state: icon
     - state: unshaded
       shader: unshaded
-  - type: GenericVisualizer
-    visuals:
-      enum.StorageVisuals.Open:
-        base:
-          True: { state: icon-open }
-          False: { state: icon }
   - type: Item
-    sprite: _NF/Objects/Storage/Cases/guncaselong.rsi
+    sprite: Forge/Objects/Storage/Cases/guncaselong.rsi
     size: Ginormous
     shape:
     - 0,0,8,3
