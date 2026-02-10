@@ -34,3 +34,14 @@
   id: TLFlag
   name: флаг TechnicLogistic
   description: Выглядит довольно странно... Судя по всему в конструкции присутствует тритий.
+
+- type: entity
+  parent: BaseTLFlag
+  id: RenFlag
+  name: флаг Ренегатов
+  description: Свобода звёздам!
+  suffix: Ренегаты
+  components:
+   - type: Sprite
+     sprite: Forge/Structures/Wallmounts/flags.rsi
+     state: flag_renegate

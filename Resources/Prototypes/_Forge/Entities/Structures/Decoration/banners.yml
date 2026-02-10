@@ -18,3 +18,14 @@
   - type: Sprite
     sprite: Forge/Structures/Decoration/banner.rsi
     state: banner_tl
+
+- type: entity
+  id: BannerRen
+  parent: BannerBase
+  name: Banner Renegates
+  description: Banner of the Renegates.
+  suffix: Ренегаты
+  components:
+  - type: Sprite
+    sprite: Forge/Structures/Decoration/banner.rsi
+    state: banner_renegate
