@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client._NF.Research.UI;
+namespace Content.Client._Goobstation.Research.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class MiniRecipeCardControl : Control
@@ -22,8 +22,7 @@ public sealed partial class MiniRecipeCardControl : Control
         NameLabel.SetMessage(lathe.GetRecipeName(proto));
 
         if (proto.Result.HasValue)
-            // Showcase.Texture = sprite.Frame0(prototypeManager.Index(proto.Result.Value)); // Frontier
-            Showcase.SetPrototype(proto.Result); // Frontier
+            Showcase.Texture = sprite.Frame0(prototypeManager.Index(proto.Result.Value));
 
         if (proto.Description.HasValue)
         {

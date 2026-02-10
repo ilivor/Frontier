@@ -14,13 +14,13 @@
                 StyleClasses="ButtonSquare"
                 Margin="0">
             <BoxContainer Orientation="Horizontal" Margin="0">
-                <EntityPrototypeView Name="Showcase"
+                <TextureRect Name="Showcase"
                              HorizontalExpand="False"
                              VerticalExpand="False"
                              Margin="1"
-                             Scale="1 1"/>
+                             TextureScale="1 1"/>
                 <Control MinWidth="5"/>
-                <RichTextLabel Name="NameLabel" StyleClasses="LabelSubText" VerticalAlignment="Center" MaxWidth="280"/>
+                <RichTextLabel Name="NameLabel" StyleClasses="LabelSubText" VerticalAlignment="Center"/>
             </BoxContainer>
         </Button>
     </BoxContainer>

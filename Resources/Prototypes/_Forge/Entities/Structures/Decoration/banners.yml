@@ -20,6 +20,16 @@
     state: banner_tl
 
 - type: entity
+  id: BannerNSC
+  parent: BannerBase
+  name: Banner NSC
+  description: The banner of the trade alliance Nexus Star Consortium smells like expensive paint.
+  components:
+  - type: Sprite
+    sprite: Forge/Structures/Decoration/banner.rsi
+    state: banner_nexus
+
+- type: entity
   id: BannerRen
   parent: BannerBase
   name: Banner Renegates

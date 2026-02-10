@@ -1,6 +1,6 @@
 using Robust.Shared.Maths;
 
-namespace Content.Shared._NF.Research;
+namespace Content.Shared._Goobstation.Research;
 
 /// <summary>
 /// Optimized configurable color scheme for research UI elements
@@ -8,17 +8,17 @@ namespace Content.Shared._NF.Research;
 /// <remarks>
 /// This class centralizes all research UI colors to eliminate hardcoded values and improve maintainability.
 /// Colors are organized by functional categories and can be modified at runtime.
-/// 
+///
 /// Example usage:
 /// <code>
 /// // Get tech item colors
 /// var colors = ResearchColorScheme.GetTechItemColors(ResearchAvailability.Available);
-/// 
+///
 /// // Get UI element colors
 /// var scrollbarColors = ResearchColorScheme.UIColors.Scrollbar;
-/// 
+///
 /// // Customize colors
-/// ResearchColorScheme.SetTechItemColors(ResearchAvailability.Researched, 
+/// ResearchColorScheme.SetTechItemColors(ResearchAvailability.Researched,
 ///     background: Color.Green, border: Color.LightGreen);
 /// </code>
 /// </remarks>

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "TechicLogistic flag by Autsaider, Scrap Tech flag by MrIzo, flag_renegate by Weilpatient",
+  "copyright": "TechicLogistic flag by Autsaider, Scrap Tech flag by MrIzo, nexus_flag by no_idea_for_name, flag_renegate by Weilpatient",
   "size": {
     "x": 32,
     "y": 32
@@ -15,6 +15,9 @@
     },
     {
       "name": "scrap_tech"
+    },
+    {
+      "name": "nexus_flag"
     }
   ]
 }
